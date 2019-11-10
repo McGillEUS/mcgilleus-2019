@@ -3,7 +3,7 @@
 html,body {
   height: 100%;
   width: 100%;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Calibri', sans-serif;
   color: #222;
 }
 /*
@@ -19,7 +19,7 @@ navbar {
  padding-right: 15px;
 }
 .nav-link {
-font-size: 0.9em !important;
+font-size: 1.2em !important;
 }
 .carousel-inner img {
     margin: auto;
@@ -276,6 +276,12 @@ color: #d42e12 !important;
 
 .list{
   padding-top: 5%;
+}
+
+.sponsorCard {
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
 }
 
 /* Images */
