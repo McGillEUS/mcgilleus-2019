@@ -15,6 +15,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
     <link href="style.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/magnific-popup.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.0.0/jquery.magnific-popup.min.js"></script>
 </head>
 <body>
 
@@ -23,7 +28,7 @@
 <!-- Navigation -->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="#"> 
             <img src = "img/eus_logo.png" style = "width: 125px;height:90px;" class= "responsive">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -33,37 +38,44 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a> </li>
+                    <a class="nav-link" href="index.html">Home</a> </li>    
                 <li class="nav-item">
-                    <a class="nav-link" href="council.html">Council</a> </li>
+                    <a class="nav-link" href="Covid.html">Covid-19</a> </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="board.html">Board</a> </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Events.html">Events</a> </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="Getting%20Involved.html">Get Involved</a> </li>
+                      <a class="nav-link active" href="Getting%20Involved.html">Get Involved</a> </li>   
                 <li class="nav-item">
                     <a class="nav-link" href="resources.html">Resources</a> </li>
-                <li class="nav-item">
+                <li class="nav-item">	
                     <a class="nav-link" href="Contact%20Us.html"> Contact Us </a> </li>
+
             </ul>
         </div>
     </div>
 </nav>
 
 <!-- Title -->
+<script>
+    $( document ).ready(function() {
+      $('#headerVideoLink').magnificPopup({
+      type:'inline',
+      midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
+      });
+  });
+     
+  </script>
+
 <div class="container-fluid padding">
-    <div class="row text-center welcome">
-        <div class="col-md-12">
-            <h1>Get Involved</h1>
-            <p>Coming Soon!</p>
-            <p>
-                In the meantime, checkout the  <a href="https://eus.wiki/Job_Board">EUS Wiki Job Board</a>
-                for open EUS positions!
-            </p>
+    <div class="row">
+      <div class="col-sm-12">
+        <p class="text-center mt-5">
+          <a href="#headerPopup" id="headerVideoLink" target="_blank" class="btn btn-outline-danger popup-modal" style="font-size:160%;"> Frosh - EUS Involvment Series 2020 Introduction Video</a>
+        </p>
+        <div id="headerPopup" class="mfp-hide embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" width="854" height="480" src="https://www.youtube.com/embed/ru1BucwkIPw" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
         </div>
+      </div>
     </div>
-</div>
+  </div>
 
 <hr width="75%">
 
@@ -137,7 +149,7 @@
     <div class="container-fluid padding">
         <div class="row text-center">
             <div class="col-md-12">
-                <img src="img/eus_logo.png" width="10%" height="auto" style= "filter:grayscale(100%);">
+                <img src="img/eus_logo.png" width="10%" height="auto" >
 
                 <hr class="light">
                 <p></p>
