@@ -309,14 +309,14 @@ color: #d42e12 !important;
 
 }
 
-#headerPopup{
+p.parent-container{
   width:75%;
-  margin:0 auto;
+  margin:0 auto ;
 }
 
-#headerPopup iframe{
+p.parent-container iframe{
   width:100%;
-  margin:0 auto;
+  margin:5 auto;
 }
 
 /*--- Bootstrap Padding Fix --*/
