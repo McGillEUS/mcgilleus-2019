@@ -18,6 +18,10 @@ navbar {
   padding: .6rem;
 }
 
+.navbar {
+  opacity: 70%;
+}
+
 .navbar-nav li {
   padding-right: 15px;
 }
@@ -32,13 +36,24 @@ navbar {
   height: 100%;
 }
 
+.carousel-top {
+  margin-top: -120px;
+}
+
+ul.nodot {
+  list-style: none;
+}
+
 .black-white img {
   -webkit-filter: grayscale(100%);
   /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
 }
 
-
+ul#other-resources {
+  margin-left: 5%;
+  font-size: 1.25em;
+}
 
 .carousel-caption {
   position: absolute;
