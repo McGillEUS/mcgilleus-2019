@@ -40,6 +40,11 @@ navbar {
   margin-top: -120px;
 }
 
+.third-col {
+  flex: 0 0 33.3%;
+  max-width: 33.3%;
+}
+
 ul.nodot {
   list-style: none;
 }
