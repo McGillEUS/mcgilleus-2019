@@ -30,6 +30,12 @@ navbar {
   font-size: 1.2em !important;
 }
 
+.roombooking-button {
+  align-content: center;
+  vertical-align: middle;
+  height: 100%;
+}
+
 .carousel-inner img {
   margin: auto;
   width: 100%;
