@@ -51,6 +51,32 @@ navbar {
   max-width: 33.3%;
 }
 
+.involved-category {
+  font-weight: bold;
+  margin-bottom: .5em;
+}
+
+.involved-box {
+  padding: .375rem .75rem;
+}
+
+.involved-column {
+  min-height: 1px;
+}
+
+.involved-image {
+  margin-bottom: 2.5rem;
+  font-size:60%;
+  float:left;
+  height: 164px;
+  width: 176px;
+}
+
+.involved-image > img {
+  max-height: 150px;
+  max-width: 150px;
+}
+
 ul.nodot {
   list-style: none;
 }
@@ -313,7 +339,6 @@ figure {
 
 .row {
   display: flex;
-
 }
 
 /* Create two equal columns that sits next to each other */
