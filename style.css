@@ -19,7 +19,7 @@ navbar {
 }
 
 .navbar {
-  opacity: 70%;
+  opacity: 80%;
 }
 
 .navbar-nav li {
@@ -34,6 +34,8 @@ navbar {
   align-content: center;
   vertical-align: middle;
   height: 100%;
+  background-color: red;
+  color: white;
 }
 
 .carousel-inner img {
