@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="view-transition" content="same-origin">
+    <title>Involvement | McGill EUS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 
+                        mcgill: '#ED1B2F', 
+                        cobalt: '#2563EB',
+                        tangerine: '#F97316',
+                        teal: '#0D9488',
+                        indigo: '#6366f1',
+                        amber: '#f59e0b',
+                        slateDark: '#0F172A'
+                    },
+                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+                    borderRadius: { 'xl': '1rem', '2xl': '1.5rem', '3xl': '2rem' },
+                    boxShadow: {
+                        'soft': '0 20px 40px -15px rgba(0,0,0,0.05)'
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body { background-color: #FAFAFA; color: #1A1A1A; overflow-x: hidden; }
+        
+        nav { view-transition-name: main-nav; }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,0,0,0.03);
+        }
+
+        /* Animations */
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .section-reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Card Hover Effects - Smoother and subtler */
+        .hover-card {
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+            border: 1px solid transparent;
+        }
+        .hover-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 25px 50px -12px rgba(0,0,0,0.1);
+            border-color: rgba(0,0,0,0.05);
+        }
+        /* Dark mode card hover */
+        .hover-card-dark {
+            transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .hover-card-dark:hover {
+             transform: translateY(-6px);
+             background-color: rgba(255,255,255,0.1);
+        }
+
+        #mobile-menu {
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .hover-card img, .hover-card-dark img {
+            transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
+        }
+        .hover-card:hover img, .hover-card-dark:hover img {
+            transform: scale(1.08);
+        }
+
+        .bg-glow {
+            position: fixed;
+            width: 1000px; height: 1000px;
+            z-index: -1;
+            pointer-events: none;
+            opacity: 0.5;
+            filter: blur(100px);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div class="bg-glow top-[-300px] left-[-300px]" style="background: radial-gradient(circle, rgba(237, 27, 47, 0.06) 0%, rgba(255, 255, 255, 0) 60%);"></div>
+    <div class="bg-glow bottom-[-300px] right-[-300px]" style="background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, rgba(255, 255, 255, 0) 60%);"></div>
+
+        <div id="mobile-menu" class="fixed inset-0 bg-white/98 backdrop-blur-2xl z-[200] transform translate-x-full md:hidden flex flex-col justify-center items-center gap-8">
+        <button id="close-menu-btn" class="absolute top-8 right-8 text-3xl text-gray-800 hover:text-mcgill transition-colors">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="index.html" class="text-3xl font-black uppercase tracking-widest hover:text-mcgill transition-colors">Home</a>
+        <a href="getting-involved.html" class="text-3xl font-black uppercase tracking-widest text-gray-800 text-mcgill transition-colors">Involvement</a>
+        <a href="resources.html" class="text-3xl font-black uppercase tracking-widest text-gray-800 hover:text-mcgill transition-colors">Resources</a>
+        <a href="contact.html" class="text-3xl font-black uppercase tracking-widest text-gray-800 hover:text-mcgill transition-colors">Contact</a>
+        <a href="https://linktr.ee/EUS_Spaces" target="_blank" class="bg-black text-white px-10 py-4 rounded-full text-xl font-bold uppercase tracking-widest hover:bg-mcgill transition-all mt-4">
+            Book Space
+        </a>
+    </div>
+
+    <nav class="fixed top-0 w-full z-[100] glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex justify-between items-center">
+            <a href="index.html" class="flex items-center group py-2">
+                <img src="img/eus_logo.png" alt="EUS Icon" class="w-14 h-14 object-contain transition-all duration-500 ease-out group-hover:scale-[1.2] group-hover:rotate-[12deg] drop-shadow-sm group-hover:drop-shadow-xl">
+            </a>
+            
+            <div class="hidden md:flex items-center gap-10 font-bold text-[10px] uppercase tracking-[0.2em] text-gray-400">
+                <a href="index.html" class="hover:text-mcgill transition-colors">Home</a>
+                <a href="getting-involved.html" class="text-mcgill transition-colors">Involvement</a>
+                <a href="resources.html" class="hover:text-mcgill transition-colors">Resources</a>
+                <a href="contact.html" class="hover:text-mcgill transition-colors">Contact</a>
+                <a href="https://linktr.ee/EUS_Spaces" target="_blank" class="bg-black text-white px-6 py-2.5 rounded-full hover:bg-mcgill transition-all">
+                    Book Space
+                </a>
+            </div>
+            
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-gray-800 hover:text-mcgill transition-colors">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main class="pt-32">
+        
+        <div class="px-5 max-w-7xl mx-auto mb-16 section-reveal">
+            <h1 class="text-5xl md:text-7xl font-black tracking-tighter leading-[0.9] mb-6 text-gray-900">
+                Find Your <br> <span class="text-mcgill">Community.</span>
+            </h1>
+            <p class="text-xl text-gray-500 max-w-2xl font-medium leading-relaxed ls-tight">
+                Engineering is more than just classes. Explore over 50+ societies, design teams, and clubs to build your network.
+            </p>
+        </div>
+
+        <section class="py-16 bg-red-50/30 section-reveal">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-mcgill text-2xl shadow-sm">
+                            <i class="fa-solid fa-sitemap"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl md:text-4xl font-black tracking-tight text-gray-900">Departmental Societies</h2>
+                             <p class="text-mcgill font-bold text-xs uppercase tracking-widest mt-1">Your Academic Home Base</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 font-medium max-w-md text-left md:text-right">Every department has a society dedicated to your academic and social representation.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <a href="https://www.instagram.com/mcgill.asa" target="_blank" class="hover-card bg-white p-8 rounded-3xl shadow-soft flex flex-col items-center gap-5 text-center group">
+                        <img src="img/getinvolved/asa.jpg" class="w-24 h-24 rounded-full object-cover shadow-sm group-hover:shadow-md">
+                        <div>
+                            <h3 class="font-black text-2xl text-gray-900 group-hover:text-mcgill transition-colors mb-1">ASA</h3>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Architecture</span>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/buss.mcgill" target="_blank" class="hover-card bg-white p-8 rounded-3xl shadow-soft flex flex-col items-center gap-5 text-center group">
+                        <img src="img/getinvolved/buss.png" class="w-24 h-24 rounded-full object-cover shadow-sm group-hover:shadow-md">
+                        <div>
+                            <h3 class="font-black text-2xl text-gray-900 group-hover:text-mcgill transition-colors mb-1">BUSS</h3>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Bio-Eng</span>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/ceusmcgill" target="_blank" class="hover-card bg-white p-8 rounded-3xl shadow-soft flex flex-col items-center gap-5 text-center group">
+                        <img src="img/getinvolved/ceus.jpg" class="w-24 h-24 rounded-full object-cover shadow-sm group-hover:shadow-md">
+                        <div>
+                            <h3 class="font-black text-2xl text-gray-900 group-hover:text-mcgill transition-colors mb-1">CEUS</h3>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Civil</span>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/chessmcgill" target="_blank" class="hover-card bg-white p-8 rounded-3xl shadow-soft flex flex-col items-center gap-5 text-center group">
+                        <img src="img/getinvolved/chess.png" class="w-24 h-24 rounded-full object-cover shadow-sm group-hover:shadow-md">
+                        <div>
+                            <h3 class="font-black text-2xl text-gray-900 group-hover:text-mcgill transition-colors mb-1">CHESS</h3>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Chemical</span>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/mcgill_ecsess" target="_blank" class="hover-card bg-white p-8 rounded-3xl shadow-soft flex flex-col items-center gap-5 text-center group">
+                        <img src="img/getinvolved/ecsess.jpg" class="w-24 h-24 rounded-full object-cover shadow-sm group-hover:shadow-md">
+                        <div>
+                            <h3 class="font-black text-2xl text-gray-900 group-hover:text-mcgill transition-colors mb-1">ECSESS</h3>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Elec & Comp</span>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/mame_mcgill" target="_blank" class="hover-card bg-white p-8 rounded-3xl shadow-soft flex flex-col items-center gap-5 text-center group">
+                        <img src="img/getinvolved/mame.jpg" class="w-24 h-24 rounded-full object-cover shadow-sm group-hover:shadow-md">
+                        <div>
+                            <h3 class="font-black text-2xl text-gray-900 group-hover:text-mcgill transition-colors mb-1">MAME</h3>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Mechanical</span>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/meus_herd" target="_blank" class="hover-card bg-white p-8 rounded-3xl shadow-soft flex flex-col items-center gap-5 text-center group">
+                        <img src="img/getinvolved/meus.png" class="w-24 h-24 rounded-full object-cover shadow-sm group-hover:shadow-md">
+                        <div>
+                            <h3 class="font-black text-2xl text-gray-900 group-hover:text-mcgill transition-colors mb-1">MEUS</h3>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Materials</span>
+                        </div>
+                    </a>
+                    <a href="https://www.instagram.com/mcgill.mining" target="_blank" class="hover-card bg-white p-8 rounded-3xl shadow-soft flex flex-col items-center gap-5 text-center group">
+                        <img src="img/getinvolved/cmeus.png" class="w-24 h-24 rounded-full object-cover shadow-sm group-hover:shadow-md">
+                        <div>
+                            <h3 class="font-black text-2xl text-gray-900 group-hover:text-mcgill transition-colors mb-1">CMEUS</h3>
+                            <span class="text-xs font-bold text-gray-400 uppercase tracking-wider">Mining</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-slateDark section-reveal relative overflow-hidden">
+             <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-cobalt/10 blur-[150px] rounded-full pointer-events-none"></div>
+             <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-mcgill/10 blur-[150px] rounded-full pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-6 relative z-10">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+                    <div>
+                        <span class="text-xs font-black uppercase tracking-widest text-cobalt mb-3 block">Technical Excellence</span>
+                        <h2 class="text-4xl md:text-6xl font-black tracking-tight text-white">Design Teams</h2>
+                    </div>
+                    <p class="text-slate-400 text-lg max-w-md text-left md:text-right leading-relaxed">
+                        Apply classroom knowledge to real-world challenges. Build rockets, race cars, and concrete canoes.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+                    <a href="https://www.instagram.com/mcgillbiodesign" target="_blank" class="hover-card-dark bg-white/5 border border-white/10 p-6 rounded-3xl flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/biodesign.jpg" class="w-16 h-16 rounded-full object-cover shadow-lg">
+                        <span class="text-sm font-bold text-gray-200 group-hover:text-white uppercase tracking-wider">Biodesign</span>
+                    </a>
+                    <a href="https://www.instagram.com/mcgill_rocket_team" target="_blank" class="hover-card-dark bg-white/5 border border-white/10 p-6 rounded-3xl flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/rocket.jpg" class="w-16 h-16 rounded-full object-cover shadow-lg">
+                        <span class="text-sm font-bold text-gray-200 group-hover:text-white uppercase tracking-wider">Rocket</span>
+                    </a>
+                    <a href="https://www.instagram.com/mcgillformulaelectric" target="_blank" class="hover-card-dark bg-white/5 border border-white/10 p-6 rounded-3xl flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/mfe.jpg" class="w-16 h-16 rounded-full object-cover shadow-lg">
+                        <span class="text-sm font-bold text-gray-200 group-hover:text-white uppercase tracking-wider">Formula</span>
+                    </a>
+                    <a href="https://www.instagram.com/mcgillrobotics" target="_blank" class="hover-card-dark bg-white/5 border border-white/10 p-6 rounded-3xl flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/robotics.png" class="w-16 h-16 rounded-full object-cover shadow-lg">
+                        <span class="text-sm font-bold text-gray-200 group-hover:text-white uppercase tracking-wider">Robotics</span>
+                    </a>
+                    <a href="https://www.instagram.com/mcgillconcretecanoe" target="_blank" class="hover-card-dark bg-white/5 border border-white/10 p-6 rounded-3xl flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/concretecanoe.jpg" class="w-16 h-16 rounded-full object-cover shadow-lg">
+                        <span class="text-sm font-bold text-gray-200 group-hover:text-white uppercase tracking-wider">Canoe</span>
+                    </a>
+                    <a href="https://www.instagram.com/mcgill.chemecar" target="_blank" class="hover-card-dark bg-white/5 border border-white/10 p-6 rounded-3xl flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/chemecar.jpg" class="w-16 h-16 rounded-full object-cover shadow-lg">
+                        <span class="text-sm font-bold text-gray-200 group-hover:text-white uppercase tracking-wider">Chem-E</span>
+                    </a>
+                    <a href="https://www.instagram.com/mcgill_baja" target="_blank" class="hover-card-dark bg-white/5 border border-white/10 p-6 rounded-3xl flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/baja.jpg" class="w-16 h-16 rounded-full object-cover shadow-lg">
+                        <span class="text-sm font-bold text-gray-200 group-hover:text-white uppercase tracking-wider">Baja</span>
+                    </a>
+                    <a href="https://www.instagram.com/bridgebuildingmcgill" target="_blank" class="hover-card-dark bg-white/5 border border-white/10 p-6 rounded-3xl flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/bridgebuilding.jpg" class="w-16 h-16 rounded-full object-cover shadow-lg">
+                        <span class="text-sm font-bold text-gray-200 group-hover:text-white uppercase tracking-wider">Bridge</span>
+                    </a>
+                    <a href="https://www.instagram.com/mcgill_mdvfs" target="_blank" class="hover-card-dark bg-white/5 border border-white/10 p-6 rounded-3xl flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/mdvfs.jpg" class="w-16 h-16 rounded-full object-cover shadow-lg">
+                        <span class="text-sm font-bold text-gray-200 group-hover:text-white uppercase tracking-wider">MDVFS</span>
+                    </a>
+                    <a href="https://www.instagram.com/igem.mcgill" target="_blank" class="hover-card-dark bg-white/5 border border-white/10 p-6 rounded-3xl flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/igem.jpg" class="w-16 h-16 rounded-full object-cover shadow-lg">
+                        <span class="text-sm font-bold text-gray-200 group-hover:text-white uppercase tracking-wider">iGEM</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-orange-50/30 section-reveal">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 bg-white rounded-2xl flex items-center justify-center text-tangerine text-2xl shadow-sm">
+                            <i class="fa-solid fa-puzzle-piece"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl md:text-4xl font-black tracking-tight text-gray-900">Clubs & Interests</h2>
+                             <p class="text-tangerine font-bold text-xs uppercase tracking-widest mt-1">Hobbies & Passions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-500 font-medium max-w-md text-left md:text-right">Pursue your passions, find new hobbies, and meet people outside of your major.</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-5 gap-6">
+                    <a href="https://www.instagram.com/mcgillbrewingclub" class="hover-card bg-white p-6 rounded-3xl shadow-soft flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/brewing.png" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-sm text-gray-800 group-hover:text-tangerine uppercase tracking-wider">Brewing</span>
+                    </a>
+                    <a href="https://www.instagram.com/mcgill.engineersinaction" class="hover-card bg-white p-6 rounded-3xl shadow-soft flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/enginaction.jpg" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-sm text-gray-800 group-hover:text-tangerine uppercase tracking-wider">Eng In Action</span>
+                    </a>
+                    <a href="https://www.instagram.com/gamedevmcgill" class="hover-card bg-white p-6 rounded-3xl shadow-soft flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/gamedev.jpg" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-sm text-gray-800 group-hover:text-tangerine uppercase tracking-wider">Game Dev</span>
+                    </a>
+                    <a href="https://www.instagram.com/nobe.mcgill" class="hover-card bg-white p-6 rounded-3xl shadow-soft flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/nobe.jpg" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-sm text-gray-800 group-hover:text-tangerine uppercase tracking-wider">NOBE</span>
+                    </a>
+                    <a href="https://www.instagram.com/nsbemcgill" class="hover-card bg-white p-6 rounded-3xl shadow-soft flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/nsbe.png" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-sm text-gray-800 group-hover:text-tangerine uppercase tracking-wider">NSBE</span>
+                    </a>
+                    <a href="https://www.instagram.com/powemcgill" class="hover-card bg-white p-6 rounded-3xl shadow-soft flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/powe.png" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-sm text-gray-800 group-hover:text-tangerine uppercase tracking-wider">POWE</span>
+                    </a>
+                    <a href="https://www.instagram.com/queerengineermcgill" class="hover-card bg-white p-6 rounded-3xl shadow-soft flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/queer.jpg" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-sm text-gray-800 group-hover:text-tangerine uppercase tracking-wider">Queer Eng</span>
+                    </a>
+                    <a href="https://www.instagram.com/reboot_mcgill" class="hover-card bg-white p-6 rounded-3xl shadow-soft flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/reboot.jpg" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-sm text-gray-800 group-hover:text-tangerine uppercase tracking-wider">Reboot</span>
+                    </a>
+                    <a href="https://www.instagram.com/mcgillflyingclub" class="hover-card bg-white p-6 rounded-3xl shadow-soft flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/flyingclub.png" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-sm text-gray-800 group-hover:text-tangerine uppercase tracking-wider">Flying Club</span>
+                    </a>
+                    <a href="https://www.instagram.com/mtsc_mcgill" class="hover-card bg-white p-6 rounded-3xl shadow-soft flex flex-col items-center text-center gap-4 group">
+                        <img src="img/getinvolved/mtsc.jpg" class="w-16 h-16 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-sm text-gray-800 group-hover:text-tangerine uppercase tracking-wider">MTSC</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 section-reveal">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                    <div class="flex items-center gap-4">
+                         <div class="w-14 h-14 bg-indigo-50 rounded-2xl flex items-center justify-center text-indigo-600 text-2xl shadow-sm">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl md:text-4xl font-black tracking-tight text-gray-900">Committees</h2>
+                             <p class="text-indigo-600 font-bold text-xs uppercase tracking-widest mt-1">Governance & Student Life</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-6 gap-4">
+                     <a href="https://www.instagram.com/ieeemcgill" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/ieee.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">IEEE</span>
+                    </a>
+                    <a href="https://www.instagram.com/thefactory_mcgill" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/thefactory.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">The Factory</span>
+                    </a>
+                    <a href="https://www.instagram.com/mcgillcodejam" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/codejam.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">CodeJam</span>
+                    </a>
+                    <a href="https://www.instagram.com/mame_fishbowl" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/fishbowl.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">Fishbowl</span>
+                    </a>
+                    <a href="https://www.instagram.com/cscemcgill" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/csce.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">CSCE</span>
+                    </a>
+                    <a href="https://www.instagram.com/mcgill.bluespub" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/blues.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">Blues Pub</span>
+                    </a>
+                     <a href="https://www.instagram.com/eline.mcgill" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/eline.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">ELINE</span>
+                    </a>
+                     <a href="https://www.instagram.com/eng_adventures" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/eac.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">Eng Adventures</span>
+                    </a>
+                     <a href="https://www.instagram.com/mcgill.enggames" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/enggames.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">Eng Games</span>
+                    </a>
+                     <a href="https://www.instagram.com/esc_mcgill" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/esc.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">ESC</span>
+                    </a>
+                     <a href="https://www.instagram.com/electionseus" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/elections.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">Elections</span>
+                    </a>
+                     <a href="https://www.instagram.com/eusequityandmh" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/equity.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">Equity</span>
+                    </a>
+                     <a href="https://www.instagram.com/eus_sports" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/sports.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">Sports</span>
+                    </a>
+                     <a href="https://www.instagram.com/eusgradcomm" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/gradcomm.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">Grad Comm</span>
+                    </a>
+                     <a href="https://www.instagram.com/eusjuniorcouncil" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/jc.png" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">Jr Council</span>
+                    </a>
+                     <a href="https://www.instagram.com/eusmentalwellness" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/mwc.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">Mental Wellness</span>
+                    </a>
+                     <a href="https://www.instagram.com/openairpub" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/oap.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">OAP</span>
+                    </a>
+                     <a href="https://www.instagram.com/psd_mcgill" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/psd.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">PSD</span>
+                    </a>
+                     <a href="https://www.instagram.com/seam_mcgill" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/seam.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">SEAM</span>
+                    </a>
+                     <a href="https://www.instagram.com/pnu.mcgill" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/pnu.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">PNU</span>
+                    </a>
+                     <a href="https://www.instagram.com/eus_ppu" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/ppu.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">PPU</span>
+                    </a>
+                     <a href="https://www.instagram.com/eus_yearbook" class="hover-card bg-white p-4 rounded-2xl shadow-soft flex flex-col items-center text-center gap-3 group">
+                        <img src="img/getinvolved/yearbook.jpg" class="w-12 h-12 rounded-full object-cover shadow-sm">
+                        <span class="font-bold text-xs text-gray-800 group-hover:text-indigo-600">Yearbook</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 mb-12 section-reveal">
+             <div class="max-w-7xl mx-auto px-6">
+                <div class="flex items-center gap-4 mb-8">
+                    <div class="w-12 h-12 bg-amber-50 rounded-2xl flex items-center justify-center text-amber-500 text-xl shadow-sm">
+                        <i class="fa-solid fa-newspaper"></i>
+                    </div>
+                    <h2 class="text-2xl font-black tracking-tight text-gray-900">Publications</h2>
+                </div>
+
+                <div class="flex">
+                     <a href="https://www.instagram.com/plumbersfaucet" class="hover-card bg-white p-6 rounded-3xl shadow-soft flex items-center gap-5 group">
+                        <img src="img/getinvolved/faucet.jpg" class="w-16 h-16 rounded-full object-cover shadow-md">
+                        <span class="font-bold text-lg text-gray-800 group-hover:text-amber-600">Plumber's Faucet</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+  <footer class="pt-20 pb-12 px-6 border-t border-gray-100 bg-white/50">
+    <div class="max-w-7xl mx-auto">
+        
+        <div class="flex flex-col md:flex-row justify-between items-start gap-10">
+            
+            <div class="flex items-center gap-4">
+                <img src="img/eus_logo.png" class="h-10 grayscale opacity-30" alt="EUS Logo">
+                <div class="text-[9px] font-black uppercase tracking-[0.3em] text-gray-400">
+                    McGill Engineering <br> Undergraduate Society
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-12 text-[10px] font-black uppercase tracking-[0.3em] text-gray-400 leading-relaxed">
+                
+                <div>
+                    <div class="text-mcgill mb-2 opacity-100">Location</div>
+                    <address class="not-italic">
+                        McConnell Engineering<br>
+                        Building, Room 7<br>
+                        3480 University Street<br>
+                        Montreal, QC H3A 0E9
+                    </address>
+                </div>
+
+                <div>
+                    <div class="text-mcgill mb-2 opacity-100">Contact</div>
+                    <a href="tel:+15143984396" class="hover:text-mcgill transition-colors">
+                        (514) 398-4396
+                    </a>
+                </div>
+
+                <div>
+                    <div class="text-mcgill mb-2 opacity-100">Social</div>
+                    <div class="flex gap-4 text-base mt-2">
+                        <a href="https://www.instagram.com/mcgilleus/" class="hover:text-mcgill transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/mcgilleus/" class="hover:text-blue-600 transition-colors">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-gray-100 text-center">
+            <p class="text-[9px] font-black uppercase tracking-[0.3em] text-gray-300">
+                Made with <i class="fa-solid fa-heart text-red-400 mx-1"></i> by students, for students
+            </p>
+        </div>
+
+    </div>
+</footer>
+
+    <script>
+        // Menu Mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('translate-x-full');
+            document.body.classList.toggle('overflow-hidden');
+        }
+
+        if (mobileMenuBtn && closeMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+        }
+
+        // Scroll Animation updated for sections
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section-reveal').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>
