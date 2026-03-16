@@ -36,6 +36,7 @@ navbar {
   height: 100%;
   background-color: red;
   color: white;
+  border-radius: 10px;
 }
 
 .carousel-inner img {
