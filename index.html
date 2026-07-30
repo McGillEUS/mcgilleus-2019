@@ -1,135 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!--favicon-->
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
-    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>McGill Engineering Undergraduate Society</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-    <link href="style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home | McGill EUS</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.17/dist/lenis.css">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pliant:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link href="contact.css" rel="stylesheet">
+  <link href="resources.css" rel="stylesheet">
+  <link href="involved.css" rel="stylesheet">
 </head>
-<body>
+<body data-barba="wrapper">
+  <div data-transition-wrap class="transition">
+    <div data-transition-panel class="transition__panel">
+      <div data-transition-col class="transition__col">
+        <div data-transition-pixel class="transition__pixel"></div>
+      </div>
+    </div>
+  </div>
 
-<!-- Navigation -->
-<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+  <div class="eus-loader is--loading" aria-hidden="true">
+    <div class="eus-loader__brand">
+      <span class="eus-loader__mcgill">McGill</span>
+      <div class="eus-loader__slot" data-loader-slot>
+        <img data-loader-shot src="img/getinvolved/rocket.jpg" alt="" loading="eager">
+        <img data-loader-shot src="img/getinvolved/baja.jpg" alt="" loading="eager">
+        <img data-loader-shot src="img/getinvolved/enggames.jpg" alt="" loading="eager">
+        <img data-loader-shot src="img/getinvolved/concretecanoe.jpg" alt="" loading="eager">
+        <img data-loader-shot src="img/getinvolved/robotics.png" alt="" loading="eager">
+        <img data-loader-shot data-loader-final src="img/background_trottier.jpg" alt="" loading="eager">
+      </div>
+      <span class="eus-loader__eus">EUS</span>
+    </div>
+  </div>
+  <!-- Sibling of loader so hiding the white shell never blanks the photo -->
+  <div class="eus-loader__bleed" data-loader-bleed hidden>
+    <img src="img/background_trottier.jpg" alt="" class="eus-loader__bleed-img" loading="eager">
+    <div class="eus-loader__bleed-scrim" aria-hidden="true"></div>
+    <div class="eus-loader__bleed-grain" aria-hidden="true"></div>
+  </div>
+  <script>
+    (function () {
+      var el = document.querySelector(".eus-loader");
+      var bleed = document.querySelector("[data-loader-bleed]");
+      if (!el) return;
+      var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      var seen = false;
+      try { seen = sessionStorage.getItem("eus-intro-played") === "1"; } catch (e) {}
+      if (reduce || seen) {
+        el.setAttribute("hidden", "");
+        el.classList.remove("is--loading");
+        el.classList.add("is--done");
+        if (bleed) bleed.setAttribute("hidden", "");
+      } else {
+        document.documentElement.classList.add("eus-loader-active");
+        document.body.classList.add("eus-loader-active");
+      }
+    })();
+  </script>
+
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" data-theme-nav>
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-            <img src = "img/eus_logo.png" style = "width: 125px;height:90px;" class= "responsive">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                data-target="#navbarResponsive">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" href="index.html">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Getting%20Involved.html">Get Involved</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="resources.html">Resources</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Contact%20Us.html">Contact Us</a>
-                </li>
-                <li class="nav-item">
-                    <a href="https://roombookings.mcgilleus.ca" target="_blank"><button class="roombooking-button">Book a Room</button></a>
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="index.html" data-barba-update data-site-brand-link>
+        <img src="img/eus_logo.png" alt="McGill EUS" class="navbar-logo" data-site-brand-logo>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto" data-site-nav>
+          <li class="nav-item"><a class="nav-link active" href="index.html" data-barba-update aria-current="page">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="getting-involved.html" data-barba-update>Get Involved</a></li>
+          <li class="nav-item"><a class="nav-link" href="resources.html" data-barba-update>Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact-us.html" data-barba-update>Contact Us</a></li>
+          <li class="nav-item">
+            <a class="nav-link roombooking-button" href="https://roombookings.mcgilleus.ca" target="_blank" rel="noopener noreferrer" data-barba-update>Book a Room</a>
+          </li>
+        </ul>
+      </div>
     </div>
-</nav>
+  </nav>
 
-<!--- Image Slider -->
-<div id="slides" class="carousel slide carousel-top" data-ride="carousel">
-    <ul class="carousel-indicators">
-        <li data-target="#slides" data-slide-to="0" class = "active"> </li>
-        <li data-target="#slides" data-slide-to="1"></li>
-        <li data-target="#slides" data-slide-to="2"></li>
-    </ul>
-
-    <div class="carousel-inner" >
-
-        <div class="carousel-item active">
-            <img class ="black-white" src = "img/background_trottier.jpg" alt="The glorious trottier">
+  <div data-barba="container" data-barba-namespace="home" data-page-theme="light" class="page-shell home-page">
+    <header class="home-hero">
+      <div class="home-hero__media" aria-hidden="true">
+        <img src="img/background_trottier.jpg" alt="" class="home-hero__img">
+        <div class="home-hero__grain"></div>
+      </div>
+      <div class="home-hero__scrim" aria-hidden="true"></div>
+      <div class="home-hero__copy">
+        <p class="home-hero__eyebrow" data-home-animate>McGill University</p>
+        <h1 class="home-hero__title" data-home-animate>Engineering Undergraduate Society</h1>
+        <p class="home-hero__lead" data-home-animate>
+          The official representative body of undergraduate engineering students at McGill. A student-run, not-for-profit organization financially independent from the university.
+        </p>
+        <div class="home-hero__actions" data-home-animate>
+          <a class="home-hero__cta" href="getting-involved.html" data-barba-update>Get Involved</a>
+          <a class="home-hero__cta home-hero__cta--ghost" href="resources.html" data-barba-update>Resources</a>
+          <a class="home-hero__cta home-hero__cta--ghost" href="contact-us.html" data-barba-update>Contact Us</a>
+          <a class="home-hero__cta home-hero__cta--ghost" href="https://roombookings.mcgilleus.ca" target="_blank" rel="noopener noreferrer">Book a Room</a>
         </div>
+      </div>
+    </header>
 
-    </div>
-</div>
-
-<!--- Welcome Section -->
-<div class="container-fluid padding">
-    <div class="row welcome text-center">
-        <div class="col-12">
-            <h1 class="display-4"> Engineering Undergraduate Society </h1>
-        </div>
-        <hr>
-        <div class="col-12">
-            <p class="lead">The Engineering Undergraduate Society (EUS) is the representative body of the undergraduate students of engineering at McGill University. The EUS is a full-fledged not-for-profit organization that is financially independent from McGill.</p>
-        </div>
-    </div>
-
-</div>
-
-<!--- Three Column Section -->
-<!--        -->
-<!--        <div class="container-fluid padding">-->
-<!--            <div class="row text-center padding">-->
-<!--                <div class= "col-xs-12 col-sm-6 col-md-4">		-->
-<!--                    <h3> <b> Column 1</b> </h3>-->
-<!--                    <p>Column 1 Information</p>-->
-<!--                </div>-->
-<!--                <div class="col-xs-12 col-sm-6 col-md-4">-->
-<!--                    <h3> <b> Column 2 </b></h3>-->
-<!--                    <p> Column 2 Information</p>-->
-<!--                </div>-->
-<!--                <div class="col-xs-12 col-sm-6 col-md-4">-->
-<!--                    <h3> <b> Column 3 </b></h3>-->
-<!--                    <p> Column 2 Information</p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--            <hr class="my-4">-->
-<!--        </div>-->
-
-<!--- Connect -->
-<div class="container-fluid padding">
-    <div class="row text-center padding">
-        <div class="col-12">
-            <h2 style="margin-top:30px;"> Our Social Media Platforms </h2>
-        </div>
-        <div class="col-12 social padding">
-            <a href="https://www.facebook.com/mcgilleus/"> <i class="fab fa-facebook"></i> </a>
-            <a href="https://www.instagram.com/mcgilleus/"> <i class="fab fa-instagram"></i> </a>
-        </div>
-    </div>
-</div>
-
-<!--- Footer -->
-<footer>
-    <div class="container-fluid padding">
-        <div class="row text-center">
-            <div class="col-md-12">
-                <img src="img/eus_logo.png" width="10%" height="auto">
-
-                <hr class="light">
-                <p></p>
-                <p>McConnell Engineering Building, Room 7</p>
-                <p>3480 University Street</p>
-                <p>H3A 0E9 Montreal, Quebec</p>
-                <p>(514) 398-4396</p>
+    <div data-footer-parallax class="footer-wrap">
+      <footer data-footer-parallax-inner class="site-footer">
+        <div class="site-footer__links-row">
+          <div class="site-footer__col site-footer__col--logo">
+            <a class="site-footer__brand" href="index.html" data-site-brand-link>
+              <img src="img/eus_logo.png" alt="McGill EUS" class="site-footer__logo" data-site-brand-logo>
+            </a>
+          </div>
+          <div class="site-footer__main">
+            <div class="site-footer__col">
+              <p class="site-footer__eyebrow">Pages</p>
+              <div class="site-footer__links" data-site-footer-pages>
+                <a class="site-footer__a" href="index.html">Home</a>
+                <a class="site-footer__a" href="getting-involved.html">Get Involved</a>
+                <a class="site-footer__a" href="resources.html">Resources</a>
+                <a class="site-footer__a" href="contact-us.html">Contact Us</a>
+              </div>
             </div>
+            <div class="site-footer__col">
+              <p class="site-footer__eyebrow">Socials</p>
+              <div class="site-footer__links" data-site-footer-socials>
+                <a class="site-footer__a" href="https://www.facebook.com/mcgilleus/" target="_blank" rel="noopener noreferrer">Facebook</a>
+                <a class="site-footer__a" href="https://www.instagram.com/mcgilleus/" target="_blank" rel="noopener noreferrer">Instagram</a>
+              </div>
+            </div>
+            <div class="site-footer__col">
+              <p class="site-footer__eyebrow">Visit</p>
+              <div data-site-footer-visit><p class="site-footer__muted">McConnell Engineering Building, Room 7<br>3480 University Street<br>H3A 0E9 Montreal, Quebec</p>
+              <div class="site-footer__links">
+                <a class="site-footer__a" href="tel:+15143984396">(514) 398-4396</a>
+              </div></div>
+            </div>
+          </div>
         </div>
-</footer>
+      </footer>
+      <div data-footer-parallax-dark class="footer-wrap__dark"></div>
+    </div>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.3/dist/barba.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.17/dist/lenis.min.js"></script>
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
+  <script src="js/vendor/InertiaPlugin.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/momentum-hover.js"></script>
+  <script src="js/opening-hours.js"></script>
+  <script src="js/hours-public.js"></script>
+  <script src="js/contacts-public.js"></script>
+  <script src="js/office-map.js"></script>
+  <script src="js/footer-parallax.js"></script>
+  <script src="js/radial-slider.js"></script>
+  <script src="js/accordion-css.js"></script>
+  <script src="js/interactive-collage.js"></script>
+  <script src="js/groups-public.js"></script>
+  <script src="js/groups-quiz.js"></script>
+  <script src="js/content-public.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/eus-loader.js"></script>
+  <script src="js/page-transition.js"></script>
 </body>
 </html>

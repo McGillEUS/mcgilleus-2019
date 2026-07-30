@@ -1,0 +1,1104 @@
+[
+  {
+    "id": "asa",
+    "name": "ASA",
+    "category": "Departmental Societies",
+    "logo": "img/getinvolved/asa.jpg",
+    "description": "As a team council, the Architecture Students’ Association (ASA) represents all undergraduate architecture students at McGill. We serve as your voice within the Engineering Undergraduate Society (EUS), across the wider McGill community, and even within the broader architecture industry. Our goal is to advocate for your academic, social,\nand professional needs, while helping to create a supportive, inspiring, and engaging environment throughout your degree. Each year, we organize a variety of events that bring our community together, whether at Architecture Frosh, at a bagel breakfast in the cellar,\nunwinding at après-studio socials, or attending insightful lectures from leading architects and alumni. We’re here to make sure you not only succeed in your studies but also enjoy the full experience of being part of such a fun and creative community. We work closely with faculty and the school administration to make sure your academic concerns are heard, and your well-being is prioritized. Through your elected class representatives (elections happen this September!), we stay connected with every cohort to bring forward ideas and push for meaningful improvements.",
+    "photos": [],
+    "links": {
+      "website": "https://asa.mcgilleus.ca",
+      "instagram": "https://www.instagram.com/mcgill.asa",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "academic",
+      "creative",
+      "social",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 1
+  },
+  {
+    "id": "buss",
+    "name": "BUSS",
+    "category": "Departmental Societies",
+    "logo": "img/getinvolved/buss.png",
+    "description": "The Bioengineering Undergraduate Student Society (BUSS) is all about creating the most valuable student experience for Bioengineers at McGill through social, academic, and professional events. BUSS Council, consisting of 15 student-chosen positions, meets publicly once a week, and is your best connection to the heart of Bioeng! You can find us in McConnell 214, the newly-anointed BUSS Lounge, at many hours of the day (don’t miss our weekly waffles!)\n\nTo get involved, keep your eyes peeled as we recruit every year for our two primary subcommittees and two elected representative positions starting this Fall. Our academic subcommittee covers internal student feedback and concerns about classes, hosting semesterly academic forums to improve Bioengineering classes as well as events to advertise various scholarly opportunities. Our external committee is all about translating your skills to employability in Bioengineering, providing unique opportunities for internships and research positions and helping you create a network in Montreal’s Bioengineering industry. We are recruiting for both U0 and U1 Representative positions, so check out our instagram @buss.mcgill. Finally, join us for our yearly events, like BUSS Ride, our upcoming industry tour in Toronto, our semesterly banquets, to unwind over great food, and Blues Pub, our student bar in the basement of McConnell every Friday night!",
+    "photos": [],
+    "links": {
+      "website": "https://buss.mcgilleus.ca/index.html",
+      "instagram": "https://www.instagram.com/buss.mcgill",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "academic",
+      "research",
+      "career",
+      "social",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 2
+  },
+  {
+    "id": "ceus",
+    "name": "CEUS",
+    "category": "Departmental Societies",
+    "logo": "img/getinvolved/ceus.jpg",
+    "description": "Hi Civil Eng students. I'm Andrew and I'm this year's Civil Engineering Undergraduate Society (CEUS) President. As a council, CEUS represents McGill Civil Eng undergrads within the EUS, the greater McGill community, and beyond. Every year CEUS puts on great social, professional, and academic events for the department, and this year we're striving to make them even better. Through your U Rep (you'll elect one of your peers this September) we hear your needs and concerns and do our best to make positive changes so our department can be the best it can be, both academically and socially.\n\nWhether it's competing for Civil Eng in E-Week, connecting with industry at our annual Colloquium, building professional connections at networking events, or just grabbing a beer with the team, I look forward to seeing you around. Good luck in your studies and don't forget to have fun. Welcome to the department!",
+    "photos": [],
+    "links": {
+      "website": "https://ceus.mcgilleus.ca/",
+      "instagram": "https://www.instagram.com/ceusmcgill",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "academic",
+      "social",
+      "networking",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 3
+  },
+  {
+    "id": "chess",
+    "name": "CHESS",
+    "category": "Departmental Societies",
+    "logo": "img/getinvolved/chess.png",
+    "description": "The Chemical Engineering Students’ Society, or ChESS, is a group of 16 students representing every year of the Chemical Engineering program. ChESS is here to enrich the experiences of Chemical Engineering students academically, professionally, and socially. ChESS hosts academic and networking events, including Wine and Cheese, where students can connect with professors in the department, and Corporate Connect, which provides opportunities to network with industry professionals. Along with our larger social events, ChESS also holds smaller, more frequent events in the Common Room (Wong 1130), including pancake breakfasts, so be sure to follow our social media pages and sign up for our weekly newsletter to stay connected.\n\nThis fall, ChESS will be recruiting a U0 and U1 Representative, First-Year Council members, External and Internal Subcommittee members, and Common Room Managers, so keep an eye on our social media for those opportunities. ChESS also hosts a buddy program that pairs incoming students with upper-year mentors, providing a great way to learn about the program and connect with other students. Feel free to reach out by message or email with any questions, we would love to hear from you!",
+    "photos": [],
+    "links": {
+      "website": "https://chess.mcgilleus.ca/",
+      "instagram": "https://www.instagram.com/chessmcgill",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "academic",
+      "career",
+      "networking",
+      "social",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 4
+  },
+  {
+    "id": "ecsess",
+    "name": "ECSESS",
+    "category": "Departmental Societies",
+    "logo": "img/getinvolved/ecsess.jpg",
+    "description": "What is ECSESS?\n\nECSESS represents over 1,000 students across Electrical, Computer, and Software Engineering at McGill. Our goal is to enrich your degree academically, professionally, socially, and technically.\n\nBy default, every ECSE student is automatically a member of ECSESS, giving you full access to our events, common spaces, and resources. But if you want to take your experience to the next level and help shape student life on campus, we’re always looking for passionate people to join our team!\n\nHere are the key teams that make up the ECSE Community:\n- The Factory: Our Student Hardware Lab packed with technical equipments and 3D printers\n- CodeJam (End November): McGill’s largest engineering hackathon\n- ECSESS Bits: First-Year Council: The premier opportunity for newcomers to organize activities and build lasting connections.\n- ECSE Games (Sept 25th-27th):  A very fun three-day competition where Electrical, Computer, and Software students face off to determine the best departmental at many social events.\n- CS Games (March): A three-day event where a delegation of 22 students represents our department in challenges ranging from cybersecurity to FPGA design",
+    "photos": [],
+    "links": {
+      "website": "https://ecsess.mcgilleus.ca",
+      "instagram": "https://www.instagram.com/mcgill_ecsess",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "academic",
+      "software",
+      "hardware",
+      "social",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 5
+  },
+  {
+    "id": "mame",
+    "name": "MAME",
+    "category": "Departmental Societies",
+    "logo": "img/getinvolved/mame.jpg",
+    "description": "The McGill Association of Mechanical Engineers (MAME) represents all undergraduate Mechanical Engineering students at McGill. Our mission is to enrich your university experience by providing academic, professional, technical, and social opportunities throughout the year. From technical workshops and networking events to social activities and industry panels, MAME aims to complement your education while fostering a strong and welcoming community. We also provide student services, advocate for student interests within the department, and maintain the MAME Lounge (MC120), a space where students can study, relax, and connect with classmates.\n\nFirst-year students are especially encouraged to get involved! You can join one of our subcommittees or run in one of the three special elections held just for first-year each fall.\n\nThe MAME council comprises 16 students and many portfolios, which we like to call the “MAME Empire.” The following five groups are part of the Empire:\n1. The Tinkers: Our manufacturing group that organizes our 3D printing shop, machining training, and workshops\n2. The Outreach Committee: Keeps contact with mechanical engineering companies, introduces engineering to youth by hosting workshops at elementary schools\n3. The Social Committee: Hosts events to add some fun to your week\n4. CAD Madness: Our annual CAD competition, organized by students\n5. First Year Council (FYC): An awesome way for first-year students to join the community\n\nKeep an eye on your inbox and our social media pages for opportunities to participate throughout the year. We look forward to welcoming you to the MAME community!",
+    "photos": [],
+    "links": {
+      "website": "https://mame.mcgilleus.ca",
+      "instagram": "https://www.instagram.com/mame_mcgill",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "academic",
+      "hands-on",
+      "makerspace",
+      "social",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 6
+  },
+  {
+    "id": "meus",
+    "name": "MEUS",
+    "category": "Departmental Societies",
+    "logo": "img/getinvolved/meus.png",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "https://meus.mcgilleus.ca",
+      "instagram": "https://www.instagram.com/meus_herd",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "academic",
+      "social",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 7
+  },
+  {
+    "id": "cmeus",
+    "name": "CMEUS",
+    "category": "Departmental Societies",
+    "logo": "img/getinvolved/cmeus.png",
+    "description": "The Co-Op Mining Engineering Undergraduate Society (CMEUS) is a student-led body responsible for organizing events and fun opportunities for involvement in the mining department, as well as supporting students academically, throughout the year. Our specialty? Showing everyone that McGill Mining is nothing short of a tight-knit family.\nSince we are the smallest engineering department in McGill, you will be able to shine and make a mark in successful networking events, where company representatives look to get to know and hire you, industry speakers and alumni talk directly to us in formal wine and cheese nights, or PDAC, the biggest mining conference in the world in Toronto, which we fully organize the trip to.\nWe know student life can be exhausting, and this is why we also plan many exciting social events throughout the year, some of which you’ll be able to hang out and enjoy some BEvERages, sometimes with people in your year, and others with the whole community coming together. The First-Year Welcome and the highly anticipated Banquet exist for this exact reason! I also cannot recommend participating in E-Week enough, 5 days of competition between all registered engineering students in January, where games and night parties await. Our signature chant goes “WE DRILL. WE BLAST. WE NEVER FINISH LAST.” (or...do we ?). We also like organizing sports activities, and in that regard, check out the intramurals soccer team!\nFirst-year students, I highly encourage you to come chill or work at our mining lounge in FDA 103, we are always excited to welcome new faces and see friendships start in this room. This is where you can also learn more about getting involved, either directly as a council member (we’ll have open positions at the start of the year!), or simply by attending what is prepared for you.",
+    "photos": [],
+    "links": {
+      "website": "https://www.mcgill.ca/mining/undergraduate/student-life",
+      "instagram": "https://www.instagram.com/mcgill.mining",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "academic",
+      "career",
+      "networking",
+      "social",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 8
+  },
+  {
+    "id": "ieee",
+    "name": "IEEE",
+    "category": "Departmental Committees",
+    "logo": "img/getinvolved/ieee.jpg",
+    "description": "Established in April 1968, IEEE McGill is a student chapter of the Institute of Electrical and Electronics Engineers (IEEE) organization at McGill University. Our group is dedicated to the development of professional skills of electrical & computer engineering students and the larger academic community.\n\nOur group is composed of undergraduate and graduate ECSE & CS students who want to have a great time, create a friendly community, and most importantly learn about research and new innovations. We offer a welcoming club for networking, volunteerism, teamwork, soft skills, leadership, and recognition. We are under the tutelage of the larger IEEE organization and organize events and activities such as talks, workshops, competitions, company tours etc. for the benefit of all ECSE and CS students.",
+    "photos": [],
+    "links": {
+      "website": "https://ieee.mcgilleus.ca",
+      "instagram": "https://www.instagram.com/ieeemcgill",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "academic",
+      "hardware",
+      "software",
+      "hands-on",
+      "career"
+    ],
+    "active": true,
+    "sort_order": 9
+  },
+  {
+    "id": "the-factory",
+    "name": "The Factory",
+    "category": "Departmental Committees",
+    "logo": "img/getinvolved/thefactory.jpg",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/thefactory_mcgill",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "hands-on",
+      "hardware",
+      "makerspace",
+      "design"
+    ],
+    "active": true,
+    "sort_order": 10
+  },
+  {
+    "id": "codejam",
+    "name": "CodeJam",
+    "category": "Departmental Committees",
+    "logo": "img/getinvolved/codejam.jpg",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/mcgillcodejam",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "software",
+      "competitive",
+      "hands-on",
+      "gaming"
+    ],
+    "active": true,
+    "sort_order": 11
+  },
+  {
+    "id": "fishbowl",
+    "name": "Fishbowl",
+    "category": "Departmental Committees",
+    "logo": "img/getinvolved/fishbowl.jpg",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/mame_fishbowl",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "hands-on",
+      "makerspace",
+      "social"
+    ],
+    "active": true,
+    "sort_order": 12
+  },
+  {
+    "id": "csce",
+    "name": "CSCE",
+    "category": "Departmental Committees",
+    "logo": "img/getinvolved/csce.jpg",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/cscemcgill",
+      "form": ""
+    },
+    "tags": [
+      "department",
+      "academic",
+      "career",
+      "networking"
+    ],
+    "active": true,
+    "sort_order": 13
+  },
+  {
+    "id": "brewing-club",
+    "name": "Brewing Club",
+    "category": "Clubs",
+    "logo": "img/getinvolved/brewing.png",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/mcgillbrewingclub",
+      "form": ""
+    },
+    "tags": [
+      "social",
+      "campus",
+      "creative"
+    ],
+    "active": true,
+    "sort_order": 14
+  },
+  {
+    "id": "engineers-in-action",
+    "name": "Engineers in Action",
+    "category": "Clubs",
+    "logo": "img/getinvolved/enginaction.jpg",
+    "description": "Hey there! We are McGill Engineers in Action, and we’re a group of globally minded students that envision a world free of rural isolation. For people around the world, a river can mean the difference between receiving an education, getting medical attention, and selling goods or not. So, every year, we design a footbridge for rural communities in the country of Bolivia or in the kingdom of Eswatini to help connect them to essential resources such as schools, markets and clinics. Then, in the summer, we send a team of students to our bridge site to live and work alongside the community to construct the footbridge. We’re working to make the world a better place by bridging the gap to opportunity, join us on our mission!",
+    "photos": [],
+    "links": {
+      "website": "http://www.mcgilleia.com/",
+      "instagram": "https://www.instagram.com/mcgill.engineersinaction",
+      "form": ""
+    },
+    "tags": [
+      "service",
+      "hands-on",
+      "advocacy",
+      "campus",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 15
+  },
+  {
+    "id": "gamedev",
+    "name": "GameDev",
+    "category": "Clubs",
+    "logo": "img/getinvolved/gamedev.jpg",
+    "description": "GameDev McGill is McGill University’s student-led game development society, bringing together an interdisciplinary community of students passionate about games and interactive media. Our mission is to foster creativity, collaboration, and growth within McGill’s game development scene.\n\nWhether you're a programmer, artist, designer, or musician, we provide members with the resources they need to develop their skills and grow their social circle. Our flagship event, McGameJam, is a 48-hour game development hackathon held every January, attracting hundreds of participants and backed by industry sponsors. Throughout the year, we host competitions, social events, talks, and workshops all designed to connect students with the industry and each other.\n\nAt GameDev McGill, we’re building a creative and supportive community around the games we develop!",
+    "photos": [],
+    "links": {
+      "website": "https://gamedevmcgill.ca/",
+      "instagram": "https://www.instagram.com/gamedevmcgill",
+      "form": ""
+    },
+    "tags": [
+      "software",
+      "gaming",
+      "creative",
+      "competitive",
+      "hands-on",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 16
+  },
+  {
+    "id": "nobe",
+    "name": "NOBE",
+    "category": "Clubs",
+    "logo": "img/getinvolved/nobe.jpg",
+    "description": "NOBE McGill strives to expose engineering students to possible career paths and opportunities in a variety of business fields such as management consulting, entrepreneurship, investment banking, and marketing strategy. We work to give engineering students a competitive edge by hosting professional development workshops on everything from crafting the perfect resume to acing the interview with industry professionals from top firms. Networking events are also a great way to learn about the different internship opportunities these companies have to offer. If you see yourself at the helm of a start-up, tackling some of the world’s biggest challenges head-on with a consulting firm, or creating revolutionary branding strategies in the marketing world, NOBE McGill is the place to start.",
+    "photos": [],
+    "links": {
+      "website": "https://www.nobemcgill.com",
+      "instagram": "https://www.instagram.com/nobe.mcgill",
+      "form": ""
+    },
+    "tags": [
+      "career",
+      "networking",
+      "leadership",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 17
+  },
+  {
+    "id": "nsbe",
+    "name": "NSBE",
+    "category": "Clubs",
+    "logo": "img/getinvolved/nsbe.png",
+    "description": "The National Society of Black Engineers (NSBE) McGill is dedicated to uplifting Black students in STEM through academic support, professional development, and community engagement. Our mission is to “increase the number of culturally responsible engineers and STEM majors who excel academically, succeed professionally and positively impact the community,” NSBE McGill creates space, opportunity, and belonging for Black students at McGill University.\n\nWe organize events ranging from career-building workshops to mentorship programs and social gatherings which are tailored to foster success and empower its members. One standout initiative is the annual charity event, A Walk For Education (AWFE), which connects McGill design teams with local communities, inspiring young girls and Black youth to explore science and dream of attending McGill.\n\nBeyond campus, NSBE maintains long-standing partnerships with companies like Ubisoft, Intact, Glencore, and CN Rails, working to improve equity and diversity in industry spaces.",
+    "photos": [],
+    "links": {
+      "website": "https://www.nsbemcgill.com/",
+      "instagram": "https://www.instagram.com/nsbemcgill",
+      "form": ""
+    },
+    "tags": [
+      "equity",
+      "advocacy",
+      "career",
+      "networking",
+      "campus",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 18
+  },
+  {
+    "id": "powe",
+    "name": "POWE",
+    "category": "Clubs",
+    "logo": "img/getinvolved/powe.png",
+    "description": "Promoting Opportunities for Women in Engineering (POWE) is an EUS student group dedicated to creating a welcoming, safe space where women and gender minorities can connect, find mentorship, and celebrate their contributions to the field. Our main goals are to encourage young women and gender minorities to pursue engineering, highlight the important roles and achievements of women in the profession, and foster a positive, supportive community for all.\n\nPOWE runs events year-round, including our mentorship programs, professional networking nights, fun community socials, outreach initiatives with youth to inspire future engineers, and our annual conference, SymPOWEsium, featuring panels, hands-on sessions, and industry guests from all engineering disciplines. We also support our community through scholarships, conference travel, and bursary opportunities.\n\nWe’re always looking for new members! Keep an eye on our social media to learn how to get involved: We recruit general members year-round (just join our FB group and come to our events), and a general meeting planning committee each semester. For more direct involvement, we recruit coordinators in September, and executive team members every March. Whether you’re looking for leadership experience, professional growth, or a friendly community, POWE is here to help you make the most of your time in engineering at McGill!",
+    "photos": [],
+    "links": {
+      "website": "https://powe.mcgilleus.ca/",
+      "instagram": "https://www.instagram.com/powemcgill",
+      "form": ""
+    },
+    "tags": [
+      "equity",
+      "advocacy",
+      "career",
+      "networking",
+      "campus",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 19
+  },
+  {
+    "id": "queer-engineer",
+    "name": "Queer Engineer",
+    "category": "Clubs",
+    "logo": "img/getinvolved/queer.jpg",
+    "description": "Think you’re too queer for engineering? Or too engineer for the queers? Queer Engineering says: literally no such thing because we are here for all of it. We host cozy hangouts, karaoke nights, networking events, and more for all STEM queers and allies. Come hang with us on Instagram to meet new people and celebrate every part of you!",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/queerengineermcgill",
+      "form": ""
+    },
+    "tags": [
+      "equity",
+      "advocacy",
+      "social",
+      "campus",
+      "wellness"
+    ],
+    "active": true,
+    "sort_order": 20
+  },
+  {
+    "id": "reboot",
+    "name": "Reboot",
+    "category": "Clubs",
+    "logo": "img/getinvolved/reboot.jpg",
+    "description": "Reboot is a club that refurbishes used computer equipment and distributes it to McGill students for free! We have our own office in the Ferrier building with tons of old computers, and other computer related equipment. We also have our own Xbox and a Catan set!\n\nIf you are interested in computers this is the perfect club for you! You can get involved to help us out, or just come and tinker with the equipment we have in our office. We hold weekly office hours during the semester where you can drop by the office, and you can find our schedule on our website. We hope you visit!\n\nIf you are interested in requesting something you can find the request form on our website or just drop by an office hour. We have desktops, monitors, cables, keyboards, mice, laptops, etc. However since our equipment is received through donations, they are usually a few generations old.",
+    "photos": [],
+    "links": {
+      "website": "https://reboot.mcgilleus.ca",
+      "instagram": "https://www.instagram.com/reboot_mcgill",
+      "form": ""
+    },
+    "tags": [
+      "service",
+      "hardware",
+      "software",
+      "hands-on",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 21
+  },
+  {
+    "id": "flying-club",
+    "name": "Flying Club",
+    "category": "Clubs",
+    "logo": "img/getinvolved/flyingclub.png",
+    "description": "Our mission is to make aviation accessible to everyone by providing affordable flight training, fostering a community of passionate aviators, and inspiring the next generation of pilots. Through education, shared resources, and a love of flight, we break down barriers so that more people can experience the freedom and joy of flying.",
+    "photos": [],
+    "links": {
+      "website": "https://mcgillflyingclub.com/",
+      "instagram": "https://www.instagram.com/mcgillflyingclub",
+      "form": ""
+    },
+    "tags": [
+      "aviation",
+      "campus",
+      "hands-on",
+      "social"
+    ],
+    "active": true,
+    "sort_order": 22
+  },
+  {
+    "id": "mtsc",
+    "name": "MTSC",
+    "category": "Clubs",
+    "logo": "img/getinvolved/mtsc.jpg",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/mtsc_mcgill",
+      "form": ""
+    },
+    "tags": [
+      "campus",
+      "social",
+      "events"
+    ],
+    "active": true,
+    "sort_order": 23
+  },
+  {
+    "id": "blues-pub",
+    "name": "Blues Pub",
+    "category": "Committees",
+    "logo": "img/getinvolved/blues.jpg",
+    "description": "Blues Pub is a weekly event taking place every Friday in the EUS Common Room, located in the McConnell basement. Engineering students, as well as their friends from other faculties, are all welcome to hang out, bond with their community, and enjoy cheap beverages, legendary grilled cheese sandwiches, including the famous “Plumber’s Pocket.” Each week, a different host (an engineering department, club, or committee) chooses a theme and decorates the EUS Common Room accordingly, offering a fresh experience every time. To get involved, you can follow the Blues Pub Volunteers page (@bluespub.volunteers) to help out, or assist your own department/club/committee when they host! If you’re part of a band interested in performing or a group that would like to table at Blues Pub, contact us at blues.pub@mcgilleus.ca. Interested in becoming a manager? Talk to any of the managers during the event or message us via email or Instagram!",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/blues.pub",
+      "form": ""
+    },
+    "tags": [
+      "events",
+      "social",
+      "music",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 24
+  },
+  {
+    "id": "e-line",
+    "name": "E-Line",
+    "category": "Committees",
+    "logo": "img/getinvolved/eline.jpg",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/eline.mcgill",
+      "form": ""
+    },
+    "tags": [
+      "events",
+      "social",
+      "campus",
+      "first-year"
+    ],
+    "active": true,
+    "sort_order": 25
+  },
+  {
+    "id": "engineering-adventures",
+    "name": "Engineering Adventures",
+    "category": "Committees",
+    "logo": "img/getinvolved/eac.jpg",
+    "description": "The Engineering Adventure Committee (EAC) is a group dedicated to sharing all the exciting things Montreal has to offer to students of McGill: La Ronde, axe throwing, Laser Quest, and more. There’s no better way to decompress than trying out a new activity in this fine city. EAC works towards providing affordable events of all kinds throughout the school year.",
+    "photos": [],
+    "links": {
+      "website": "https://www.facebook.com/EngAdventures/",
+      "instagram": "https://www.instagram.com/eng_adventures",
+      "form": ""
+    },
+    "tags": [
+      "events",
+      "social",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 26
+  },
+  {
+    "id": "enggames",
+    "name": "EngGames",
+    "category": "Committees",
+    "logo": "img/getinvolved/enggames.jpg",
+    "description": "The Engineering Games committee is dedicated to bringing you closer to your fellow engineers from other universities! Each year, we bring a delegation of ambitious engineering students to the Québec-wide Jeux de Génie (Engineering Games) competition. For five days,\nyour quest is to make McGill proud as you partake in a variety of competitions, ranging from academics to athletics, improvisation to debates, and the much-anticipated machine design and entrepreneurial competition. When you aren't busy putting your skills to the test with the McGill team behind you, there are always new people to get to know! The Games are an irreplaceable opportunity to meet engineers from all corners of Québec, with a metric ton of social events at the Games themselves, as well as throughout the semester leading up to the Games. Even if you aren't sold on being part of the final delegation yet, there are plenty of chances throughout first semester to test the waters of the Engineering Games. You can always spot us at Blues Pub or any engineering event with our Jean Jackets, so feel free to come ask us questions!",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/mcgillenggames",
+      "form": ""
+    },
+    "tags": [
+      "competitive",
+      "sports",
+      "social",
+      "events",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 27
+  },
+  {
+    "id": "esc",
+    "name": "ESC",
+    "category": "Committees",
+    "logo": "img/getinvolved/esc.jpg",
+    "description": "The Engineering Socials Committee is an EUS committee commissioned to provide the engineering community with fun social events throughout the year! We aim to bring fun times and good vibes! Stay tuned for events and committee position opportunities :)",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/esc_mcgill",
+      "form": ""
+    },
+    "tags": [
+      "events",
+      "social",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 28
+  },
+  {
+    "id": "elections",
+    "name": "Elections",
+    "category": "Committees",
+    "logo": "img/getinvolved/elections.jpg",
+    "description": "Elections EUS oversees all elections and referenda that take place within the EUS. The Chief Returning Officer (CRO) manages the Faculty-wide aspects, and Deputy Returning Officers (DROs) are appointed to manage each Departmental student society, with the oversight of the CRO. Electoral Coordinators assist the CRO in promoting elections and improving voter turnout. If you are passionate about democracy and student advocacy, apply to be an Electoral Coordinator or DRO! Applications for Coordinators will be posted on the EUS Instagram and Facebook pages. To apply for the position of DRO contact your departmental student society president.",
+    "photos": [],
+    "links": {
+      "website": "https://ssmu.simplyvoting.com",
+      "instagram": "https://www.instagram.com/electionseus",
+      "form": ""
+    },
+    "tags": [
+      "governance",
+      "leadership",
+      "advocacy",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 29
+  },
+  {
+    "id": "equity",
+    "name": "Equity",
+    "category": "Committees",
+    "logo": "img/getinvolved/equity.jpg",
+    "description": "McGill’s EUS Equity & Mental Health (E&M) Committee fosters a culture of equity and inclusivity with a focus on mental well-being within the EUS community. Made up of departmental representatives, E&M creates a collaborative space to discuss issues impacting engineering and architecture students. The committee organizes wholesome interdepartmental events, facilitates equity workshops for EUS groups, and promotes resources both on and off campus. E&M also works with the Faculty to coordinate efforts to increase diversity and accessibility in engineering at McGill. E&M is open to all – email us to learn more!",
+    "photos": [],
+    "links": {
+      "website": "https://wiki.mcgilleus.ca/wellness/",
+      "instagram": "https://www.instagram.com/eus_equity",
+      "form": ""
+    },
+    "tags": [
+      "equity",
+      "advocacy",
+      "wellness",
+      "campus",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 30
+  },
+  {
+    "id": "sports",
+    "name": "Sports",
+    "category": "Committees",
+    "logo": "img/getinvolved/sports.jpg",
+    "description": "EUS Sports is a committee which runs sports leagues and day sporting events throughout the year. Sign yourself and friends up for dodgeball, spike ball, soccer, and broomball (our biggest league of the year!). Participating in our events is a great way to meet fellow  engineers, stay active during the year, and to have fun. We manage facilities such as the Iron Rink, a seasonal rink located on lower field in the colder months, and equipment rentals.\nYou can also join as a sports commissioner! As a commissioner you help organize the leagues - from scheduling, coordinating with captains, managing finances, and much more there is a place for you here! EUS Sports is a small committee, which means you’ll play a  crucial role and it’s a perfect stepping stone to the rest of the EUS.\nSee you out there!",
+    "photos": [],
+    "links": {
+      "website": "https://linktr.ee/eus_sports",
+      "instagram": "https://www.instagram.com/eus_sports",
+      "form": ""
+    },
+    "tags": [
+      "sports",
+      "social",
+      "events",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 31
+  },
+  {
+    "id": "grad-committee",
+    "name": "Grad Committee",
+    "category": "Committees",
+    "logo": "img/getinvolved/gradcomm.jpg",
+    "description": "The Graduation Committee is an event-based committee. It is responsible for organizing the Fall and Winter Iron Ring Ceremonies and Plumber’s Ball, a formal gala for graduating students. This is an excellent committee to join if you want to get a better look at event planning for 200-500 people or have any interest in design, event layout, acquiring permits, sponsorship, organizing volunteers and more!",
+    "photos": [],
+    "links": {
+      "website": "https://linktr.ee/eusgradcomm",
+      "instagram": "https://www.instagram.com/eusgradcomm",
+      "form": ""
+    },
+    "tags": [
+      "events",
+      "social",
+      "campus",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 32
+  },
+  {
+    "id": "junior-council",
+    "name": "Junior Council",
+    "category": "Committees",
+    "logo": "img/getinvolved/jc.png",
+    "description": "Junior Council is a committee consisting of around 20 first year students in engineering and architecture. It is made up of one representative for each departmental society, an EUS U0 representative, a mental health and equity representative, a SEAM representative, a number of specific vice president and portfolio positions, and two second year co-presidents. The council works together to build a strong, welcoming first year community by organizing social and academic events.\n\nAttend JC events throughout the year to make friends, meet people, and have the best time you can in your first year. Join JC to be involved in engineering student life, organize events, and work with a team of the coolest people ever. Every position (except for co-president) is open at the beginning of the year for all first year students to apply. Applications open in mid-August, interviews take place in early September, and Junior Council meets for the first time shortly after.\n\nTo learn more about JC keep an eye on our Instagram account. Feel free to reach out to us either at our email address or through our Instagram or Facebook accounts.\nWelcome to your first year at McGill, we’ll make it a good one!",
+    "photos": [],
+    "links": {
+      "website": "https://eus.wiki/Junior_Council",
+      "instagram": "https://www.instagram.com/eusjuniorcouncil",
+      "form": ""
+    },
+    "tags": [
+      "first-year",
+      "social",
+      "events",
+      "leadership",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 33
+  },
+  {
+    "id": "mental-wellness",
+    "name": "Mental Wellness",
+    "category": "Committees",
+    "logo": "img/getinvolved/mwc.jpg",
+    "description": "The Engineering Mental Wellness Committee is a student-run group dedicated to promoting and organizing mental wellness events. Some notable events include finals care packages, art workshops, mental health walks, yoga, bracelet-making, and therapy dogs. These events provide a break from studying and a chance for you to meet many interesting people! If you are passionate about mental wellness, join our amazing group to support students' mental well-being. Check out our Instagram & Facebook for applications or email us to get involved!",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/eusmentalwellness",
+      "form": ""
+    },
+    "tags": [
+      "wellness",
+      "social",
+      "campus",
+      "advocacy"
+    ],
+    "active": true,
+    "sort_order": 34
+  },
+  {
+    "id": "open-air-pub",
+    "name": "Open Air Pub",
+    "category": "Committees",
+    "logo": "img/getinvolved/oap.jpg",
+    "description": "Twice every year, McGill campus’s Lower West Field transforms into OAP: an open air pub, music festival and barbecue. OAP is run entirely by student volunteers, with all profits going back to the McGill Engineering Undergraduate Society (EUS).\n\nOAP runs for two weeks in the fall and for a few days at the end of April. We would love to see you there!\n\nIf you are interested in volunteering instead, once you are inside the field, come to the volunteer entrance south of the food tent and a friendly manager will get you started! You can follow our volunteer Instagram @openairpub_volunteers for more details.",
+    "photos": [],
+    "links": {
+      "website": "https://www.openairpub.com",
+      "instagram": "https://www.instagram.com/openairpub",
+      "form": ""
+    },
+    "tags": [
+      "events",
+      "social",
+      "music",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 35
+  },
+  {
+    "id": "psd",
+    "name": "PSD",
+    "category": "Committees",
+    "logo": "img/getinvolved/psd.jpg",
+    "description": "Plumbers’ Student Design (.PSD) is a student-run service that offers innovative (and free!) graphic design solutions for EUS groups. Our committee is composed of talented and creative student designers, working together to bring ideas to life through visual design. We create everything from logos, posters, sponsorship packages, business cards, and letterheads to stickers and merchandise designs. We also love taking on large design projects like painting murals! In addition to our design services, .PSD hosts workshops and events to share skills, foster creativity, and engage with the engineering community. To submit a project request or learn more, visit our website. Interested in joining the team or attending our events? Follow us on Instagram to stay in the loop! You can also reach out to us by email; we’d love to hear from you and work together!",
+    "photos": [],
+    "links": {
+      "website": "https://psd.mcgilleus.ca/",
+      "instagram": "https://www.instagram.com/psd_mcgill",
+      "form": ""
+    },
+    "tags": [
+      "creative",
+      "design",
+      "media",
+      "service",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 36
+  },
+  {
+    "id": "seam",
+    "name": "SEAM",
+    "category": "Committees",
+    "logo": "img/getinvolved/seam.jpg",
+    "description": "SEAM is dedicated to empowering engineering students to be more sustainable in their engineering work and their communities. Over the past few years, our committee and impact have grown significantly and we’re continuing to drive engagement and meaningful change on campus. Our main focus areas are:\n1. Hosting professional, social, and academic events focused on sustainability.\n2. Spearheading on-campus sustainability projects.\n3. Consulting with EUS groups to reduce their environmental footprint.\n4. Providing resources & information to everyone at McGill.\nWe’re always looking for new ideas and passionate individuals to join our team. Find us\nand we’d love to chat!",
+    "photos": [],
+    "links": {
+      "website": "https://seam.mcgilleus.ca/",
+      "instagram": "https://www.instagram.com/seam_mcgill",
+      "form": ""
+    },
+    "tags": [
+      "sustainability",
+      "advocacy",
+      "campus",
+      "leadership"
+    ],
+    "active": true,
+    "sort_order": 37
+  },
+  {
+    "id": "pnu",
+    "name": "PNU",
+    "category": "Committees",
+    "logo": "img/getinvolved/pnu.jpg",
+    "description": "Get ready to wear an iconic piece of McGill Engineering gear: the Plumbers Noble Uniform, or PNU! These aren’t just any overalls—they’re the one-of-a-kind symbol of your engineering pride and community spirit. These iconic white overalls are super comfortable, with pockets galore for all your gadgets and gizmos, and a prime spot on the back for your ASS stamp (Amazing Student Symbol of course)!\nThe fun kicks off with an unforgettable ceremony where you’ll earn your ASS stamp on the golden ASS throne, followed by splattering on paint in your department’s colour to christen your PNU. But it doesn’t stop there! Throughout your time at McGill you’ll collect patches to proudly adorn your PNU, each one a symbol of your involvement and achievements.\nThe Plumber’s Noble Uniform isn’t just overalls—it’s a canvas for your journey through McGill Engineering. So, suit up, show off, and join the ranks of those who wear their engineering identity with pride.\nRemember: There’s no PNU without U!",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/pnu.mcgill",
+      "form": ""
+    },
+    "tags": [
+      "social",
+      "events",
+      "campus",
+      "creative"
+    ],
+    "active": true,
+    "sort_order": 38
+  },
+  {
+    "id": "ppu",
+    "name": "PPU",
+    "category": "Committees",
+    "logo": "img/getinvolved/ppu.jpg",
+    "description": "The Plumber Photographers' Union is the committee behind all things photography-related within the EUS. Whether you need an event immortalized in pictures, some headshots for your council, or simply want to join a community of photo enthusiasts, the PPU has you covered! We run a team of event photographers to capture the magic of McGill Engineering and organize various photowalks, workshops, exhibitions, & etc. for the photographer community.",
+    "photos": [],
+    "links": {
+      "website": "https://ppu.mcgilleus.ca/",
+      "instagram": "https://www.instagram.com/eus_ppu",
+      "form": ""
+    },
+    "tags": [
+      "photography",
+      "creative",
+      "media",
+      "events",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 39
+  },
+  {
+    "id": "yearbook",
+    "name": "Yearbook",
+    "category": "Committees",
+    "logo": "img/getinvolved/yearbook.jpg",
+    "description": "Every year, the EUS prints and sells yearbooks commemorating the year that has passed. Available to all years of engineering, it serves as a memento of our time as engineering students. The committee works with the EUS VP Comms and the Yearbook Editor to bring this publication to life. This team is a fun, low-commitment way to get involved and get to know the various opportunities within the EUS. The committee will begin hiring in the winter semester, so keep your eyes peeled for applications!",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/eus_yearbook",
+      "form": ""
+    },
+    "tags": [
+      "media",
+      "creative",
+      "publications",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 40
+  },
+  {
+    "id": "biodesign",
+    "name": "BioDesign",
+    "category": "Design Teams",
+    "logo": "img/getinvolved/biodesign.jpg",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/mcgillbiodesign",
+      "form": ""
+    },
+    "tags": [
+      "design",
+      "hands-on",
+      "research",
+      "competitive",
+      "hardware"
+    ],
+    "active": true,
+    "sort_order": 41
+  },
+  {
+    "id": "rocket-team",
+    "name": "Rocket Team",
+    "category": "Design Teams",
+    "logo": "img/getinvolved/rocket.jpg",
+    "description": "The McGill Rocket Team is a big bunch of students messing around and finding out while trying to make a rocket. We are a team of about 275 members divided in groups of speciality & interests! Our goal is really just to make a rocket that goes upwards while trying to touch grass along the way. Rocket science isn’t just about the thermodynamics and fluid mechanics, we have something for everyone! If you join us you'll have the chance to get your hands dirty with things like PCBs, carbon fibre parts, parachutes, a big big steel tower, biological experiments or rocket engine tests depending on what you’re interested in! If you love space, anything that flies, or really just want to hang out with a bunch of nerds, we have a spot for you! And remember you dont have to be an engineer to do rocket science >:)",
+    "photos": [],
+    "links": {
+      "website": "https://mcgillrocketteam.com/",
+      "instagram": "https://www.instagram.com/mcgill_rocket_team",
+      "form": ""
+    },
+    "tags": [
+      "design",
+      "hands-on",
+      "aerospace",
+      "competitive",
+      "hardware"
+    ],
+    "active": true,
+    "sort_order": 42
+  },
+  {
+    "id": "chem-e-car",
+    "name": "Chem-E-Car",
+    "category": "Design Teams",
+    "logo": "img/getinvolved/chemecar.jpg",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/mcgill.chemecar",
+      "form": ""
+    },
+    "tags": [
+      "design",
+      "hands-on",
+      "competitive",
+      "racing"
+    ],
+    "active": true,
+    "sort_order": 43
+  },
+  {
+    "id": "concrete-canoe",
+    "name": "Concrete Canoe",
+    "category": "Design Teams",
+    "logo": "img/getinvolved/concretecanoe.jpg",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/mcgillconcretecanoe",
+      "form": ""
+    },
+    "tags": [
+      "design",
+      "hands-on",
+      "competitive"
+    ],
+    "active": true,
+    "sort_order": 44
+  },
+  {
+    "id": "formula-electric",
+    "name": "Formula Electric",
+    "category": "Design Teams",
+    "logo": "img/getinvolved/mfe.jpg",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/mcgillformulaelectric",
+      "form": ""
+    },
+    "tags": [
+      "design",
+      "hands-on",
+      "racing",
+      "competitive",
+      "hardware"
+    ],
+    "active": true,
+    "sort_order": 45
+  },
+  {
+    "id": "robotics",
+    "name": "Robotics",
+    "category": "Design Teams",
+    "logo": "img/getinvolved/robotics.png",
+    "description": "McGill Robotics is an interdisciplinary engineering design team that strives for excellence and promotes learning. Each year we design, manufacture, and test several robots, competing in international competitions. For the past several years, these robots have been an Autonomous Underwater Vehicle (AUV), a Mars Rover, and a VTOL Autonomous Drone. Each robot presents unique challenges associated with mechanical, electrical, and software design. Working alongside the main projects, is the business team who oversee Outreach, Marketing & Design, and Sponsorship & Finance. McGill Robotics encourages people from all backgrounds to join -- whether you want to gain practical experience in the field you are studying, or branch out and develop skills in another discipline, everyone who shares a passion for robotics is welcome!",
+    "photos": [],
+    "links": {
+      "website": "https://mcgillrobotics.com/",
+      "instagram": "https://www.instagram.com/mcgillrobotics",
+      "form": ""
+    },
+    "tags": [
+      "design",
+      "hands-on",
+      "hardware",
+      "software",
+      "competitive"
+    ],
+    "active": true,
+    "sort_order": 46
+  },
+  {
+    "id": "bridge-building",
+    "name": "Bridge Building",
+    "category": "Design Teams",
+    "logo": "img/getinvolved/bridgebuilding.jpg",
+    "description": "",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/mcgillbridgebuilding",
+      "form": ""
+    },
+    "tags": [
+      "design",
+      "hands-on",
+      "competitive"
+    ],
+    "active": true,
+    "sort_order": 47
+  },
+  {
+    "id": "mdvfs",
+    "name": "MDVFS",
+    "category": "Design Teams",
+    "logo": "img/getinvolved/mdvfs.jpg",
+    "description": "We’re a group passionate about the best kind of robots - the autonomous flying kind. Each year we design and build a 15kg drone from the ground up to both tackle our competition scenario and push the status quo of what drones can do. Even if we crash, all 130 of us had fun attempting to make a flying wing that can hover. Our day to day ranges from load testing carbon fiber wings at an airfield to designing a custom flight computer to troubleshooting a stubborn AI camera system. If any of this sounds interesting to you - we have a spot, no matter your major or background. Check out our website/Instagram or come talk to us to learn more!",
+    "photos": [],
+    "links": {
+      "website": "https://mdvfs.ca",
+      "instagram": "https://www.instagram.com/mcgill_mdvfs",
+      "form": ""
+    },
+    "tags": [
+      "design",
+      "hands-on",
+      "aerospace",
+      "hardware",
+      "software",
+      "competitive"
+    ],
+    "active": true,
+    "sort_order": 48
+  },
+  {
+    "id": "baja",
+    "name": "Baja",
+    "category": "Design Teams",
+    "logo": "img/getinvolved/baja.jpg",
+    "description": "Are you ready to have fun while getting a bit muddy in the process? At McGill Baja, we are a team of passionate students building an off-road vehicle from scratch every year - starting with just a lawnmower engine. Every year, we design, manufacture, and compete with our car against over 100 other schools on dirt racetracks across North America, packed with jumps, sharp turns, and brutal obstacles… all without flipping over (but hey, no promises).\nIf you’re in mech, civil, electrical, chem, finance, history, or any other major at McGill, then Baja is perfect for you! In our team, you will find a welcoming community where people from all backgrounds come together to learn, grow, and tackle exciting challenges side by side.\nWhether you’re an experienced gearhead or have never picked up a wrench in your life, there’s a place for you here. You will gain real, hands-on skills in design, fabrication, project management, and teamwork that go far beyond the classroom, and have a blast doing it.\nSo, if you're ready to learn, to push your limits, and to have the time of your life, come join Baja, the craziest team on earth. Take the dirt road home!",
+    "photos": [],
+    "links": {
+      "website": "https://baja.mcgilleus.ca/",
+      "instagram": "https://www.instagram.com/mcgill_baja",
+      "form": ""
+    },
+    "tags": [
+      "design",
+      "hands-on",
+      "racing",
+      "competitive",
+      "hardware"
+    ],
+    "active": true,
+    "sort_order": 49
+  },
+  {
+    "id": "igem",
+    "name": "iGEM",
+    "category": "Design Teams",
+    "logo": "img/getinvolved/igem.jpg",
+    "description": "McGill iGEM is an EUS Design Team and undergraduate student competitive research group in Synthetic Biology, competing for accolades at the International Genetically Engineered Machine (iGEM) Competition every year in Paris, France. We support approximately 30 students a year in a high-level wet lab and dry lab research project, as well as hosting other initiatives such as the OnTheVerge annual Montreal biotech conference, a community art gallery, student workshops, and more. Our team is composed of two primary wet lab and dry lab teams as well as six subteams covering Education, Human Practices, Media, Finance, Entrepreneurship, Outreach, and Inclusivity. We recruit from all engineering every year in later September & Early October, design our project and complete literature review during the school year, and execute our project to completion over the following summer.\n\nJoin us if you like engineering life, repurposing microbes for the world's challenges, and solving problems with biology! We're looking for dedicated people, ready to challenge themselves and enjoy.",
+    "photos": [],
+    "links": {
+      "website": "https://igem.org.mcgill.ca",
+      "instagram": "https://www.instagram.com/igem.mcgill",
+      "form": ""
+    },
+    "tags": [
+      "design",
+      "hands-on",
+      "research",
+      "competitive"
+    ],
+    "active": true,
+    "sort_order": 50
+  },
+  {
+    "id": "plumber-s-faucet",
+    "name": "Plumber's Faucet",
+    "category": "Publications",
+    "logo": "img/getinvolved/faucet.jpg",
+    "description": "The Plumber's Faucet is the EUS's humorous and satirical magazine, released two to three times a semester. Intended to put a laugh in people's hearts, we publish various articles and encourage you to submit to our magazine! If you're curious about our past issues, stop by the EUS Office and ask to see a copy! We're always looking for contributors and people to join our team, so don't hesitate to reach out.",
+    "photos": [],
+    "links": {
+      "website": "",
+      "instagram": "https://www.instagram.com/plumbersfaucet",
+      "form": ""
+    },
+    "tags": [
+      "media",
+      "creative",
+      "publications",
+      "campus"
+    ],
+    "active": true,
+    "sort_order": 51
+  }
+]

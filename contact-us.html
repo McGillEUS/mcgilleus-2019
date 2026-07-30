@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Get Involved | McGill EUS</title>
+  <title>Contact Us | McGill EUS</title>
   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
   <link rel="shortcut icon" href="img/favicon/favicon.ico">
@@ -41,9 +41,9 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto" data-site-nav>
           <li class="nav-item"><a class="nav-link" href="index.html" data-barba-update>Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="getting-involved.html" data-barba-update aria-current="page">Get Involved</a></li>
+          <li class="nav-item"><a class="nav-link" href="getting-involved.html" data-barba-update>Get Involved</a></li>
           <li class="nav-item"><a class="nav-link" href="resources.html" data-barba-update>Resources</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact-us.html" data-barba-update>Contact Us</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact-us.html" data-barba-update aria-current="page">Contact Us</a></li>
           <li class="nav-item">
             <a class="nav-link roombooking-button" href="https://roombookings.mcgilleus.ca" target="_blank" rel="noopener noreferrer" data-barba-update>Book a Room</a>
           </li>
@@ -52,26 +52,75 @@
     </div>
   </nav>
 
-  <div data-barba="container" data-barba-namespace="involved" data-page-theme="light" class="page-shell involved-page">
-  <header class="involved-hero">
-    <div class="involved-hero__collage" id="involved-collage" aria-label="Featured groups"></div>
-    <div class="involved-hero__copy">
-      <h1>Get Involved</h1>
-      <p class="involved-hero__lead">Explore EUS societies, clubs, committees, and design teams — or take a quick quiz to find your fit.</p>
-      <button type="button" class="involved-hero__cta" data-open-groups-quiz>Find a group for you</button>
+  <div data-barba="container" data-barba-namespace="contact" data-page-theme="light" class="page-shell contact-page">
+  <header class="contact-hero">
+    <div class="contact-hero__inner">
+      <h1 data-contact-hero-title>Contact Us</h1>
     </div>
   </header>
 
-  <main class="involved-main" id="all-groups">
-    <h2 class="involved-main__title">All groups</h2>
-    <div id="involved-navigator"></div>
-  </main>
+  <p id="contact-status" class="contact-status" hidden></p>
 
-  <div id="involved-quiz" class="involved-quiz" hidden></div>
+  <main class="contact-main">
+    <div class="contact-layout">
+      <h2 class="contact-layout__heading" data-contact-exec-heading>Executive Team</h2>
+
+      <div data-momentum-hover-init class="contact-layout__cards">
+        <section class="contact-section">
+          <div id="executive-grid" class="section-resource__list executive-grid"></div>
+        </section>
+
+        <section class="contact-section contact-section--representation">
+          <h2 data-contact-rep-heading>Representation</h2>
+          <div id="representation-grid" class="section-resource__list representation-grid"></div>
+        </section>
+      </div>
+
+      <aside class="contact-layout__aside">
+        <div id="office-hours" class="office-hours-mount" aria-live="polite"></div>
+
+        <div data-locator-init class="office-map">
+          <div class="office-map__header">
+            <p class="office-map__label" data-contact-map-label>EUS Office</p>
+            <p data-locator-address class="office-map__address"></p>
+          </div>
+          <div class="office-map__frame">
+            <div data-locator-map class="office-map__canvas"></div>
+            <span class="office-map__pin" aria-hidden="true"></span>
+            <div data-locator-marker-template class="office-map__marker" aria-hidden="true">
+              <span class="office-map__pin"></span>
+            </div>
+          </div>
+          <a data-locator-maps-link class="office-map__btn" href="#" target="_blank" rel="noopener noreferrer">Open in Google Maps →</a>
+        </div>
+      </aside>
+    </div>
+
+    <section id="past-executives" class="past-executives" hidden></section>
+
+    <section class="contact-directory">
+      <h2 data-contact-directory-title>Full EUS Directory</h2>
+      <p data-contact-directory-body>
+        Looking for someone beyond the executive team? The EUS Directory spreadsheet lists officers,
+        committee leads, club and design team contacts, and other useful emails across the society.
+        Use it when you need to reach the right person for funding questions, event collaboration,
+        room bookings follow-ups, or general group outreach.
+      </p>
+      <a
+        class="contact-directory__link"
+        data-contact-directory-link
+        href="https://docs.google.com/spreadsheets/d/1YczvuhQejIeToEK2JygVukWCEzYc7dhWq8V60VIK0Ww/edit?gid=0#gid=0"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Open the EUS Directory
+      </a>
+    </section>
+  </main>
 
   <div data-footer-parallax class="footer-wrap">
     <footer data-footer-parallax-inner class="site-footer">
-            <div class="site-footer__links-row">
+      <div class="site-footer__links-row">
         <div class="site-footer__col site-footer__col--logo">
           <a class="site-footer__brand" href="index.html" data-site-brand-link>
             <img src="img/eus_logo.png" alt="McGill EUS" class="site-footer__logo" data-site-brand-logo>
@@ -96,12 +145,10 @@
           </div>
           <div class="site-footer__col">
             <p class="site-footer__eyebrow">Visit</p>
-            <div data-site-footer-visit>
-            <p class="site-footer__muted">McConnell Engineering Building, Room 7<br>3480 University Street<br>H3A 0E9 Montreal, Quebec</p>
+            <div data-site-footer-visit><p class="site-footer__muted">McConnell Engineering Building, Room 7<br>3480 University Street<br>H3A 0E9 Montreal, Quebec</p>
             <div class="site-footer__links">
               <a class="site-footer__a" href="tel:+15143984396">(514) 398-4396</a>
-            </div>
-            </div>
+            </div></div>
           </div>
         </div>
       </div>

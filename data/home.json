@@ -1,0 +1,46 @@
+{
+  "hero": {
+    "image": "img/background_trottier.jpg",
+    "eyebrow": "McGill University",
+    "title": "Engineering Undergraduate Society",
+    "lead": "The official representative body of undergraduate engineering students at McGill. A student-run, not-for-profit organization financially independent from the university.",
+    "ctas": [
+      {
+        "label": "Get Involved",
+        "href": "getting-involved.html",
+        "external": false,
+        "style": "primary"
+      },
+      {
+        "label": "Resources",
+        "href": "resources.html",
+        "external": false,
+        "style": "ghost"
+      },
+      {
+        "label": "Contact Us",
+        "href": "contact-us.html",
+        "external": false,
+        "style": "ghost"
+      },
+      {
+        "label": "Book a Room",
+        "href": "https://roombookings.mcgilleus.ca",
+        "external": true,
+        "style": "ghost"
+      }
+    ]
+  },
+  "loader": {
+    "shots": [
+      "img/getinvolved/rocket.jpg",
+      "img/getinvolved/baja.jpg",
+      "img/getinvolved/enggames.jpg",
+      "img/getinvolved/concretecanoe.jpg",
+      "img/getinvolved/robotics.png"
+    ],
+    "finalImage": "img/background_trottier.jpg",
+    "brandLeft": "McGill",
+    "brandRight": "EUS"
+  }
+}

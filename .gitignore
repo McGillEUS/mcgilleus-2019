@@ -2,6 +2,11 @@
 node_modules
 /dist
 
+# local secrets and uploaded contact photos (keep placeholder)
+config.local.json
+img/contacts/*
+!img/contacts/placeholder.svg
+img/uploads/*
 
 # local env files
 .env

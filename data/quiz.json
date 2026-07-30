@@ -1,0 +1,486 @@
+{
+  "startId": "start",
+  "pathDepth": 3,
+  "whyLabels": {
+    "design": "design & building",
+    "hands-on": "hands-on work",
+    "competitive": "competition",
+    "equity": "equity & inclusion",
+    "advocacy": "advocacy",
+    "social": "social community",
+    "events": "events",
+    "creative": "creative work",
+    "media": "media",
+    "career": "career development",
+    "networking": "networking",
+    "service": "service & impact",
+    "wellness": "wellness",
+    "sports": "sports",
+    "software": "software",
+    "hardware": "hardware",
+    "gaming": "games",
+    "research": "research",
+    "makerspace": "makerspaces",
+    "photography": "photography",
+    "publications": "publications",
+    "sustainability": "sustainability",
+    "racing": "racing",
+    "aerospace": "aerospace",
+    "aviation": "aviation",
+    "music": "music & nightlife",
+    "first-year": "first-year community",
+    "leadership": "leadership",
+    "campus": "campus life",
+    "academic": "academic life"
+  },
+  "questions": {
+    "start": {
+      "prompt": "What are you most drawn to?",
+      "options": [
+        {
+          "label": "Building robots, cars, rockets…",
+          "why": "hands-on design & competition",
+          "boost": {
+            "design": 4,
+            "hands-on": 3,
+            "competitive": 2,
+            "hardware": 2
+          },
+          "preferCategories": [
+            "Design Teams"
+          ],
+          "avoidCategories": [],
+          "next": "build"
+        },
+        {
+          "label": "Hackathons, labs & makerspaces",
+          "why": "makerspaces & tech projects",
+          "boost": {
+            "makerspace": 4,
+            "hands-on": 3,
+            "software": 2,
+            "hardware": 2
+          },
+          "preferCategories": [
+            "Departmental Committees",
+            "Clubs"
+          ],
+          "avoidCategories": [],
+          "next": "make"
+        },
+        {
+          "label": "Clubs, identity & advocacy",
+          "why": "community & advocacy",
+          "boost": {
+            "equity": 3,
+            "advocacy": 3,
+            "social": 2
+          },
+          "preferCategories": [
+            "Clubs"
+          ],
+          "avoidCategories": [],
+          "next": "community"
+        },
+        {
+          "label": "Events, pubs & student life",
+          "why": "events & student life",
+          "boost": {
+            "events": 4,
+            "social": 3,
+            "campus": 1
+          },
+          "preferCategories": [
+            "Committees"
+          ],
+          "avoidCategories": [],
+          "next": "events"
+        },
+        {
+          "label": "Design, media & creative work",
+          "why": "creative & media",
+          "boost": {
+            "creative": 4,
+            "media": 3,
+            "design": 1
+          },
+          "preferCategories": [
+            "Publications",
+            "Committees"
+          ],
+          "avoidCategories": [],
+          "next": "create"
+        }
+      ]
+    },
+    "build": {
+      "prompt": "On a design team, what sounds best?",
+      "options": [
+        {
+          "label": "Racing / vehicles",
+          "why": "racing & vehicles",
+          "boost": {
+            "racing": 4,
+            "competitive": 3,
+            "hardware": 2,
+            "design": 2
+          },
+          "preferCategories": [
+            "Design Teams"
+          ],
+          "avoidCategories": [],
+          "next": "pace"
+        },
+        {
+          "label": "Aerospace / rockets / planes",
+          "why": "aerospace & aviation",
+          "boost": {
+            "aerospace": 4,
+            "aviation": 3,
+            "competitive": 2,
+            "design": 2,
+            "hardware": 2
+          },
+          "preferCategories": [
+            "Design Teams"
+          ],
+          "avoidCategories": [],
+          "next": "pace"
+        },
+        {
+          "label": "Robots, hardware & fabrication",
+          "why": "robots & hardware",
+          "boost": {
+            "hardware": 4,
+            "hands-on": 3,
+            "design": 2,
+            "competitive": 2
+          },
+          "preferCategories": [
+            "Design Teams"
+          ],
+          "avoidCategories": [],
+          "next": "pace"
+        },
+        {
+          "label": "Software / controls / electronics",
+          "why": "software & controls",
+          "boost": {
+            "software": 4,
+            "hardware": 2,
+            "design": 2,
+            "competitive": 1
+          },
+          "preferCategories": [
+            "Design Teams"
+          ],
+          "avoidCategories": [],
+          "next": "pace"
+        }
+      ]
+    },
+    "make": {
+      "prompt": "Which makerspace vibe fits you?",
+      "options": [
+        {
+          "label": "Build physical things in a shop",
+          "why": "hands-on makerspace",
+          "boost": {
+            "hands-on": 4,
+            "makerspace": 3,
+            "hardware": 3,
+            "design": 1
+          },
+          "preferCategories": [],
+          "avoidCategories": [],
+          "next": "pace"
+        },
+        {
+          "label": "Code, games, or digital projects",
+          "why": "software & games",
+          "boost": {
+            "software": 4,
+            "gaming": 3,
+            "creative": 2,
+            "makerspace": 1
+          },
+          "preferCategories": [
+            "Clubs"
+          ],
+          "avoidCategories": [],
+          "next": "pace"
+        },
+        {
+          "label": "Career fairs, research & networking",
+          "why": "career & research",
+          "boost": {
+            "career": 4,
+            "networking": 3,
+            "research": 2,
+            "academic": 1
+          },
+          "preferCategories": [
+            "Departmental Committees"
+          ],
+          "avoidCategories": [],
+          "next": "vibe"
+        }
+      ]
+    },
+    "community": {
+      "prompt": "What kind of community?",
+      "options": [
+        {
+          "label": "Equity, identity & advocacy",
+          "why": "equity & advocacy",
+          "boost": {
+            "equity": 4,
+            "advocacy": 4,
+            "social": 1
+          },
+          "preferCategories": [
+            "Clubs"
+          ],
+          "avoidCategories": [],
+          "next": "vibe"
+        },
+        {
+          "label": "Friends, sports & chill hangouts",
+          "why": "social community",
+          "boost": {
+            "social": 4,
+            "sports": 2,
+            "wellness": 2,
+            "events": 1
+          },
+          "preferCategories": [
+            "Clubs",
+            "Committees"
+          ],
+          "avoidCategories": [],
+          "next": "vibe"
+        },
+        {
+          "label": "Volunteering & campus impact",
+          "why": "service & impact",
+          "boost": {
+            "service": 4,
+            "advocacy": 2,
+            "sustainability": 2,
+            "campus": 1
+          },
+          "preferCategories": [
+            "Clubs",
+            "Committees"
+          ],
+          "avoidCategories": [],
+          "next": "vibe"
+        }
+      ]
+    },
+    "events": {
+      "prompt": "How do you want to show up?",
+      "options": [
+        {
+          "label": "Help run the big nights",
+          "why": "organizing events",
+          "boost": {
+            "events": 4,
+            "leadership": 3,
+            "music": 2,
+            "campus": 1
+          },
+          "preferCategories": [
+            "Committees"
+          ],
+          "avoidCategories": [],
+          "next": "vibe"
+        },
+        {
+          "label": "Show up for vibes & socials",
+          "why": "social events",
+          "boost": {
+            "social": 4,
+            "events": 3,
+            "music": 2,
+            "first-year": 1
+          },
+          "preferCategories": [
+            "Committees",
+            "Clubs"
+          ],
+          "avoidCategories": [],
+          "next": "vibe"
+        },
+        {
+          "label": "Sports, music, or nightlife",
+          "why": "sports & nightlife",
+          "boost": {
+            "sports": 3,
+            "music": 3,
+            "events": 2,
+            "social": 2
+          },
+          "preferCategories": [
+            "Committees",
+            "Clubs"
+          ],
+          "avoidCategories": [],
+          "next": "vibe"
+        }
+      ]
+    },
+    "create": {
+      "prompt": "What’s your creative lane?",
+      "options": [
+        {
+          "label": "Photos, graphics & media",
+          "why": "media & photography",
+          "boost": {
+            "media": 4,
+            "photography": 3,
+            "creative": 3
+          },
+          "preferCategories": [
+            "Committees",
+            "Publications"
+          ],
+          "avoidCategories": [],
+          "next": "vibe"
+        },
+        {
+          "label": "Writing, yearbook & publications",
+          "why": "publications",
+          "boost": {
+            "publications": 4,
+            "media": 2,
+            "creative": 2
+          },
+          "preferCategories": [
+            "Publications"
+          ],
+          "avoidCategories": [],
+          "next": "vibe"
+        },
+        {
+          "label": "Design systems, branding & visuals",
+          "why": "creative design",
+          "boost": {
+            "creative": 4,
+            "design": 2,
+            "media": 2
+          },
+          "preferCategories": [
+            "Committees",
+            "Publications"
+          ],
+          "avoidCategories": [],
+          "next": "vibe"
+        }
+      ]
+    },
+    "pace": {
+      "prompt": "How do you want to be involved?",
+      "options": [
+        {
+          "label": "Compete hard — competitions & deadlines",
+          "why": "competitive teams",
+          "boost": {
+            "competitive": 4,
+            "design": 2,
+            "racing": 1,
+            "hands-on": 1
+          },
+          "preferCategories": [
+            "Design Teams"
+          ],
+          "avoidCategories": []
+        },
+        {
+          "label": "Learn by building on a real project",
+          "why": "hands-on project work",
+          "boost": {
+            "hands-on": 3,
+            "design": 2,
+            "hardware": 1,
+            "software": 1,
+            "makerspace": 1
+          },
+          "preferCategories": [
+            "Design Teams",
+            "Departmental Committees"
+          ],
+          "avoidCategories": []
+        },
+        {
+          "label": "Keep it flexible — try things out",
+          "why": "flexible exploring",
+          "boost": {
+            "social": 2,
+            "makerspace": 2,
+            "creative": 1,
+            "campus": 1
+          },
+          "penalize": {
+            "competitive": 2
+          },
+          "preferCategories": [
+            "Clubs",
+            "Departmental Committees"
+          ],
+          "avoidCategories": []
+        }
+      ]
+    },
+    "vibe": {
+      "prompt": "What do you mainly want out of it?",
+      "options": [
+        {
+          "label": "Skills I can put on a resume",
+          "why": "skills & resume",
+          "boost": {
+            "career": 3,
+            "hands-on": 2,
+            "networking": 2,
+            "leadership": 1
+          },
+          "preferCategories": [],
+          "avoidCategories": []
+        },
+        {
+          "label": "Friends and a community",
+          "why": "community & friends",
+          "boost": {
+            "social": 4,
+            "events": 2,
+            "first-year": 2,
+            "wellness": 1
+          },
+          "preferCategories": [
+            "Clubs",
+            "Committees"
+          ],
+          "avoidCategories": []
+        },
+        {
+          "label": "Just vibes — fun is the point",
+          "why": "fun first",
+          "boost": {
+            "social": 3,
+            "events": 3,
+            "music": 2,
+            "creative": 1
+          },
+          "penalize": {
+            "competitive": 1
+          },
+          "preferCategories": [
+            "Committees",
+            "Clubs"
+          ],
+          "avoidCategories": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "brand": {
+    "name": "McGill EUS",
+    "logo": "img/eus_logo.png",
+    "homeHref": "index.html"
+  },
+  "nav": [
+    {
+      "label": "Home",
+      "href": "index.html",
+      "external": false,
+      "className": ""
+    },
+    {
+      "label": "Get Involved",
+      "href": "getting-involved.html",
+      "external": false,
+      "className": ""
+    },
+    {
+      "label": "Resources",
+      "href": "resources.html",
+      "external": false,
+      "className": ""
+    },
+    {
+      "label": "Contact Us",
+      "href": "contact-us.html",
+      "external": false,
+      "className": ""
+    },
+    {
+      "label": "Book a Room",
+      "href": "https://roombookings.mcgilleus.ca",
+      "external": true,
+      "className": "roombooking-button"
+    }
+  ],
+  "footer": {
+    "pageLinks": [
+      {
+        "label": "Home",
+        "href": "index.html"
+      },
+      {
+        "label": "Get Involved",
+        "href": "getting-involved.html"
+      },
+      {
+        "label": "Resources",
+        "href": "resources.html"
+      },
+      {
+        "label": "Contact Us",
+        "href": "contact-us.html"
+      }
+    ],
+    "socials": [
+      {
+        "label": "Facebook",
+        "href": "https://www.facebook.com/mcgilleus/"
+      },
+      {
+        "label": "Instagram",
+        "href": "https://www.instagram.com/mcgilleus/"
+      }
+    ],
+    "visit": {
+      "lines": [
+        "McConnell Engineering Building, Room 7",
+        "3480 University Street",
+        "H3A 0E9 Montreal, Quebec"
+      ],
+      "phone": "(514) 398-4396",
+      "phoneHref": "tel:+15143984396"
+    }
+  }
+}

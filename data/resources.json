@@ -1,0 +1,262 @@
+{
+  "hero": {
+    "title": "Resources",
+    "lead": "From wellness to tutoring, services and tools to complement your student experience."
+  },
+  "featured": {
+    "ariaLabel": "Services and wiki",
+    "items": [
+      {
+        "id": "epts",
+        "logo": "img/Epts-logo.png",
+        "title": "Engineering Peer Tutoring Service",
+        "text": "Free tutoring for U0 and U1 engineering courses, weekly drop-in hours in FDA 6B, plus midterm and final review sessions.",
+        "ctaLabel": "Visit website →",
+        "href": "https://epts.mcgilleus.ca/"
+      },
+      {
+        "id": "frostbite",
+        "logo": "img/Frostbite_logo.png",
+        "title": "Frostbite",
+        "text": "Student-run ice cream in the McConnell EUS Mall — hype tracks, great staff, and excellent scoops.",
+        "ctaLabel": "Visit website →",
+        "href": "https://frostbite.mcgilleus.ca"
+      },
+      {
+        "id": "copieus",
+        "logo": "img/copieus_logo.png",
+        "title": "copiEUS",
+        "text": "Printing, plotters, binding, coursepacks, lamination, and more in the EUS Mall (everything except 3D printing).",
+        "ctaLabel": "Visit website →",
+        "href": "https://www.copieus.mcgilleus.ca/"
+      },
+      {
+        "id": "gstore",
+        "logo": "img/Gstore_logo.jpg",
+        "title": "The G-Store",
+        "text": "Student must-haves — from coffee to notebooks — at a reasonable price on downtown campus.",
+        "ctaLabel": "Open Instagram →",
+        "href": "https://www.instagram.com/eusgstore/"
+      },
+      {
+        "id": "wiki",
+        "logo": "img/wiki_logo.png",
+        "title": "The EUS Wiki",
+        "text": "Navigate the EUS, learn some cool history, and explore opportunities for engineering students at McGill.",
+        "ctaLabel": "Open wiki →",
+        "href": "https://euswiki.mcgilleus.ca/"
+      }
+    ]
+  },
+  "directory": {
+    "title": "Forms & documents",
+    "intro": "Official forms, governance docs, finance tools, and career links.",
+    "categories": [
+      {
+        "id": "forms",
+        "title": "Forms & submissions",
+        "links": [
+          {
+            "name": "Incident Response Form",
+            "desc": "Report incidents or concerns to the EUS. You may remain anonymous.",
+            "href": "https://ir.mcgilleus.ca"
+          },
+          {
+            "name": "Pipeline Submission Form",
+            "desc": "Submit articles for The Pipeline. Weekly deadline: Saturday 5:00 P.M.",
+            "href": "https://pipeline.mcgilleus.ca"
+          },
+          {
+            "name": "Directory",
+            "desc": "Find EUS officers, contacts, and executives.",
+            "href": "https://directory.mcgilleus.ca"
+          }
+        ]
+      },
+      {
+        "id": "governance",
+        "title": "Governance & minutes",
+        "links": [
+          {
+            "name": "Governance Documents",
+            "desc": "Official EUS policies, bylaws, and structure.",
+            "href": "https://governance.mcgilleus.ca"
+          },
+          {
+            "name": "Board of Governors Meeting Minutes",
+            "desc": "Archived minutes from Board of Governors meetings.",
+            "href": "https://board.mcgilleus.ca"
+          },
+          {
+            "name": "EUS Council Meeting Minutes",
+            "desc": "Discussions, agendas, and motions from Council.",
+            "href": "https://council.mcgilleus.ca"
+          },
+          {
+            "name": "General Assembly Minutes",
+            "desc": "Recorded motions and reports from General Assemblies.",
+            "href": "https://generalassembly.mcgilleus.ca"
+          },
+          {
+            "name": "Document of Stances",
+            "desc": "Official EUS stances and opinions.",
+            "href": "https://stances.mcgilleus.ca"
+          }
+        ]
+      },
+      {
+        "id": "finance",
+        "title": "Finance",
+        "links": [
+          {
+            "name": "Float Request Form",
+            "desc": "Request a cash float for events (at least one week ahead).",
+            "href": "https://float.mcgilleus.ca"
+          },
+          {
+            "name": "Budgets",
+            "desc": "View EUS annual and departmental budgets.",
+            "href": "https://budgets.mcgilleus.ca"
+          }
+        ]
+      },
+      {
+        "id": "elections",
+        "title": "Elections",
+        "links": [
+          {
+            "name": "Election Info",
+            "desc": "Nominees, campaign requirements, and results.",
+            "href": "https://elections.mcgilleus.ca"
+          }
+        ]
+      },
+      {
+        "id": "career",
+        "title": "Career",
+        "links": [
+          {
+            "name": "Engineering Career Center",
+            "desc": "Internships, employer connections, career paths, and job-search skills.",
+            "href": "https://www.mcgill.ca/careers4engineers/"
+          }
+        ]
+      }
+    ]
+  },
+  "shortLinks": {
+    "title": "All short links",
+    "items": [
+      {
+        "label": "Beverage Request Form",
+        "href": "https://beverages.mcgilleus.ca",
+        "hostLabel": "beverages.mcgilleus.ca"
+      },
+      {
+        "label": "BoG Documents",
+        "href": "https://bog.mcgilleus.ca",
+        "hostLabel": "bog.mcgilleus.ca"
+      },
+      {
+        "label": "EUS Budget",
+        "href": "https://budgets.mcgilleus.ca",
+        "hostLabel": "budgets.mcgilleus.ca"
+      },
+      {
+        "label": "EUS Bylaws",
+        "href": "https://bylaws.mcgilleus.ca",
+        "hostLabel": "bylaws.mcgilleus.ca"
+      },
+      {
+        "label": "EUS Calendar",
+        "href": "https://calendar.mcgilleus.ca",
+        "hostLabel": "calendar.mcgilleus.ca"
+      },
+      {
+        "label": "Chantbook",
+        "href": "https://chants.mcgilleus.ca",
+        "hostLabel": "chants.mcgilleus.ca"
+      },
+      {
+        "label": "Council Documents",
+        "href": "https://council.mcgilleus.ca",
+        "hostLabel": "council.mcgilleus.ca"
+      },
+      {
+        "label": "EUS Directory",
+        "href": "https://directory.mcgilleus.ca",
+        "hostLabel": "directory.mcgilleus.ca"
+      },
+      {
+        "label": "Float Form",
+        "href": "https://floats.mcgilleus.ca",
+        "hostLabel": "floats.mcgilleus.ca"
+      },
+      {
+        "label": "GA Documents",
+        "href": "https://ga.mcgilleus.ca",
+        "hostLabel": "ga.mcgilleus.ca"
+      },
+      {
+        "label": "Governance Documents",
+        "href": "https://governance.mcgilleus.ca",
+        "hostLabel": "governance.mcgilleus.ca"
+      },
+      {
+        "label": "Incident Response Form",
+        "href": "https://ir.mcgilleus.ca",
+        "hostLabel": "ir.mcgilleus.ca"
+      },
+      {
+        "label": "Pipeline Submission Form",
+        "href": "https://pipeline.mcgilleus.ca",
+        "hostLabel": "pipeline.mcgilleus.ca"
+      },
+      {
+        "label": "Policies Folder",
+        "href": "https://policies.mcgilleus.ca",
+        "hostLabel": "policies.mcgilleus.ca"
+      },
+      {
+        "label": "Printouts Folder",
+        "href": "https://printouts.mcgilleus.ca",
+        "hostLabel": "printouts.mcgilleus.ca"
+      },
+      {
+        "label": "Room Booking Link",
+        "href": "https://rooms.mcgilleus.ca",
+        "hostLabel": "rooms.mcgilleus.ca"
+      },
+      {
+        "label": "EUSF Information",
+        "href": "https://eusf.mcgilleus.ca",
+        "hostLabel": "eusf.mcgilleus.ca"
+      },
+      {
+        "label": "EUS Election Information",
+        "href": "https://elections.mcgilleus.ca",
+        "hostLabel": "elections.mcgilleus.ca"
+      },
+      {
+        "label": "EUS Stances",
+        "href": "https://stances.mcgilleus.ca",
+        "hostLabel": "stances.mcgilleus.ca"
+      },
+      {
+        "label": "Capital Fund Form",
+        "href": "https://cf.mcgilleus.ca",
+        "hostLabel": "cf.mcgilleus.ca"
+      },
+      {
+        "label": "Financial Guidebook",
+        "href": "https://guidebook.mcgilleus.ca",
+        "hostLabel": "guidebook.mcgilleus.ca"
+      },
+      {
+        "label": "Zeffy Request Form",
+        "href": "https://zeffy.mcgilleus.ca",
+        "hostLabel": "zeffy.mcgilleus.ca"
+      }
+    ]
+  }
+}

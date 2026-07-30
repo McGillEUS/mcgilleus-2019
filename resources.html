@@ -1,543 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <link rel="icon" type="image/png" sizes="32x32" href="/img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/img/favicon/favicon-16x16.png">
-    <link rel="shortcut icon" href="/img/favicon/favicon.ico">
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>McGill Engineering Undergraduate Society</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-
-    <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
-
-
-    <link href="style.css" rel="stylesheet">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resources | McGill EUS</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="shortcut icon" href="img/favicon/favicon.ico">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.17/dist/lenis.css">
+  <link href="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pliant:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+  <link href="contact.css" rel="stylesheet">
+  <link href="resources.css" rel="stylesheet">
+  <link href="involved.css" rel="stylesheet">
 </head>
-
-<body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="img/eus_logo.png" style="width:125px; height:90px;" class="responsive">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Getting%20Involved.html">Get Involved</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="resources.html">Resources</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Contact%20Us.html">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="https://roombookings.mcgilleus.ca" target="_blank">
-                            <button class="roombooking-button">Book a Room</button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Main Content -->
-    <div class="container-fluid padding">
-        <div class="row welcome text-center">
-            <div class="col-md-12 col-lg-12">
-                <h1>Resources</h1>
-                <p>From wellness to tutoring, we run a variety of services to complement your student experience.</p>
-            </div>
-        </div>
+<body data-barba="wrapper">
+  <div data-transition-wrap class="transition">
+    <div data-transition-panel class="transition__panel">
+      <div data-transition-col class="transition__col">
+        <div data-transition-pixel class="transition__pixel"></div>
+      </div>
     </div>
+  </div>
 
-    <hr>
-
-    <!-- The EUS Wiki -->
-    <div class="fluid-container">
-        <h2 style="padding:5px">The EUS Wiki</h2>
-        <div class="row">
-            <div class="col-md-2 col-xs-4">
-                <img src="./img/wiki_logo.png" alt="The EUS Wiki" class="img-responsive"
-                    style="height:4cm; width:4.3cm; border-radius:50%;" />
-            </div>
-            <div class="information col-md-10 col-xs-8">
-                <p>This site is dedicated to helping you better navigate the EUS, learn some cool history,
-                    and trace the near-boundless opportunities for you as a student here at McGill.</p>
-                <a href="https://euswiki.mcgilleus.ca/">Website</a>
-            </div>
-        </div>
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" data-theme-nav>
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html" data-barba-update data-site-brand-link>
+        <img src="img/eus_logo.png" alt="McGill EUS" class="navbar-logo" data-site-brand-logo>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto" data-site-nav>
+          <li class="nav-item"><a class="nav-link" href="index.html" data-barba-update>Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="getting-involved.html" data-barba-update>Get Involved</a></li>
+          <li class="nav-item"><a class="nav-link active" href="resources.html" data-barba-update aria-current="page">Resources</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact-us.html" data-barba-update>Contact Us</a></li>
+          <li class="nav-item">
+            <a class="nav-link roombooking-button" href="https://roombookings.mcgilleus.ca" target="_blank" rel="noopener noreferrer" data-barba-update>Book a Room</a>
+          </li>
+        </ul>
+      </div>
     </div>
+  </nav>
 
-    <hr>
-
-    <div class="container-fluid padding">
-        <div class="row welcome text-center">
-            <div class="col-md-12 col-lg-12">
-                <h1>Services</h1>
-                <p>The EUS offers four services, which can be found in the EUS Mall
-                    with the exception of EPTS, which is located in FDA room 6B.</p>
-            </div>
-        </div>
+  <div data-barba="container" data-barba-namespace="resources" data-page-theme="light" class="page-shell resources-page">
+  <header class="resources-hero">
+    <div class="resources-hero__inner">
+      <h1>Resources</h1>
+      <p class="resources-hero__lead">From wellness to tutoring, services and tools to complement your student experience.</p>
     </div>
+  </header>
 
-    <hr>
-
-    <!-- EPTS -->
-    <div class="fluid-container">
-        <h2 style="padding:5px">Engineering Peer Tutoring Service</h2>
-        <div class="row">
-            <div class="epts-image col-md-2 col-xs-4">
-                <img src="./img/Epts-logo.png" alt="EUS logo" class="img-responsive" style="height:4cm; width:4.3cm;" />
-            </div>
-            <div class="information col-md-10 col-xs-8">
-                <p>The Engineering Peer Tutoring Service, or EPTS, offers free tutoring of U0 and U1 classes
-                    for engineering students. Our tutors go through a rigorous selection process and are able
-                    to provide students with the help that they need. All of our tutors are undergraduate
-                    students that have taken the courses they are tutoring. We hold weekly drop-in hours
-                    in FDA 6B as well as midterm and final exam review sessions.</p>
-                <a href="https://epts.mcgilleus.ca/">Website</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Frostbite -->
-    <div class="fluid-container">
-        <h2 style="padding:5px">Frostbite</h2>
-        <div class="row">
-            <div class="col-md-2 col-xs-4">
-                <img src="img/Frostbite_logo.png" alt="Frostbite" class="img-responsive"
-                    style="height:4cm; width:4.3cm;" />
-            </div>
-            <div class="information col-md-10 col-xs-8">
-                <p>Frostbite is a student-run ice cream store at McGill University in Montreal, Canada.
-                    We are known for our hype tracks, dope employees, and of course, our delicious ice cream.
-                    Frostbite can be found in the McConnell Engineering Building, inside the EUS Mall.</p>
-                <a href="http://frostbite.mcgilleus.ca">Website</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- copiEUS -->
-    <div class="fluid-container">
-        <h2 style="padding:5px">copiEUS</h2>
-        <div class="row">
-            <div class="col-md-2 col-xs-4">
-                <img src="img/copieus_logo.png" alt="copiEUS" class="img-responsive" style="height:4cm; width:4.3cm;" />
-            </div>
-            <div class="information col-md-10 col-xs-8">
-                <p>CopiEUS is your one-stop shop for anything related to printing (except for 3D Printing).
-                    Located in the EUS Mall in McConnell Engineering, CopiEUS is one of four major services
-                    offered by the EUS. CopiEUS has two black and white laser printers, one color laser printer,
-                    and two HP plotters for large-format printing. In addition, it offers coil binding services,
-                    coursepacks for McGill classes, blank notebooks, lamination, faxes, and employees who are
-                    able and willing to work with you to best determine how to meet your printing needs.</p>
-                <a href="https://www.copieus.mcgilleus.ca/">Website</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- G-Store -->
-    <div class="fluid-container">
-        <h2 style="padding:5px">The G-Store</h2>
-        <div class="row">
-            <div class="col-md-2 col-xs-4">
-                <img src="img/Gstore_logo.jpg" alt="GStore" class="img-responsive" style="height:4cm; width:4.3cm;" />
-            </div>
-            <div class="information col-md-10 col-xs-8">
-                <p>The General Store, better known as the G-Store, is the foremost storefront for students
-                    and staff on McGill's downtown campus. You can buy a range of student must-haves—from
-                    coffee to notebooks—at a reasonable price. Visit the wiki for more info!</p>
-                <a href="https://www.instagram.com/eusgstore/">Website</a>
-            </div>
-        </div>
-    </div>
-
-    <hr>
-
-    <!-- "Other Resources" Title & Intro -->
-    <div class="container-fluid padding">
-        <div class="row welcome text-center">
-            <div class="col-md-12 col-lg-12">
-                <h1>Other Resources</h1>
-                <p>There are various other resources in the EUS, listed below.</p>
-            </div>
-        </div>
-    </div>
-    <hr>
-
-    <!-- BEGIN: Grouped "Other Resources" as an Accordion -->
-    <div class="container-fluid padding">
-        <div class="row">
-            <div class="col-12">
-                <div id="accordion"><!-- Accordion START -->
-
-                    <!-- Forms & Submissions -->
-                    <div class="card">
-                        <div class="card-header" id="headingForms">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseForms"
-                                    aria-expanded="true" aria-controls="collapseForms">
-                                    <i class="bi bi-file-earmark-text"></i> Forms & Submissions
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseForms" class="collapse show" aria-labelledby="headingForms"
-                            data-parent="#accordion">
-                            <div class="card-body">
-                                <ul>
-                                    <li>
-                                        <i class="bi bi-exclamation-triangle"></i>
-                                        <strong>Incident Response Form:</strong> Use this form to report any incidents
-                                        or concerns to the EUS. You may choose to remain anonymous. <br>
-                                        <a href="https://ir.mcgilleus.ca" target="_blank">ir.mcgilleus.ca</a>
-                                    </li>
-                                    <li>
-                                        <i class="bi bi-envelope"></i>
-                                        <strong>Pipeline Submission Form:</strong> Submit articles for The Pipeline
-                                        newsletter. The deadline each week is Saturday 5:00 P.M! <br>
-                                        <a href="https://pipeline.mcgilleus.ca"
-                                            target="_blank">pipeline.mcgilleus.ca</a>
-                                    </li>
-                                    <li>
-                                        <i class="bi bi-folder"></i>
-                                        <strong>Directory:</strong> Explore the EUS directory to find EUS officers,
-                                        contacts, and executives. <br>
-                                        <a href="https://directory.mcgilleus.ca"
-                                            target="_blank">directory.mcgilleus.ca</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Meeting Minutes, Governance & Official Documents -->
-                    <div class="card">
-                        <div class="card-header" id="headingMinutes">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse"
-                                    data-target="#collapseMinutes" aria-expanded="false"
-                                    aria-controls="collapseMinutes">
-                                    <i class="bi bi-journal-text"></i> Meeting Minutes, Governance &amp; Official
-                                    Documents
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseMinutes" class="collapse" aria-labelledby="headingMinutes"
-                            data-parent="#accordion">
-                            <div class="card-body">
-                                <ul>
-                                    <li>
-                                        <i class="bi bi-file-earmark-ruled"></i>
-                                        <strong>Governance Documents:</strong> Official EUS policies, bylaws, and
-                                        structure. <br>
-                                        <a href="https://governance.mcgilleus.ca"
-                                            target="_blank">governance.mcgilleus.ca</a>
-                                    </li>
-                                    <li>
-                                        <i class="bi bi-journal-check"></i>
-                                        <strong>Board of Governors Meeting Minutes:</strong> Archived minutes from Board
-                                        of Governors meetings. <br>
-                                        <a href="https://board.mcgilleus.ca" target="_blank">board.mcgilleus.ca</a>
-                                    </li>
-                                    <li>
-                                        <i class="bi bi-journal"></i>
-                                        <strong>EUS Council Meeting Minutes:</strong> Discussions, agendas, and motions
-                                        from the EUS Council. <br>
-                                        <a href="https://council.mcgilleus.ca" target="_blank">council.mcgilleus.ca</a>
-                                    </li>
-                                    <li>
-                                        <i class="bi bi-journal"></i>
-                                        <strong>General Assembly Minutes:</strong> Recorded motions and reports from EUS
-                                        General Assemblies. <br>
-                                        <a href="https://generalassembly.mcgilleus.ca"
-                                            target="_blank">generalassembly.mcgilleus.ca</a>
-                                    </li>
-                                    <li>
-                                        <i class="bi bi-file-earmark-ruled"></i>
-                                        <strong>Document of Stances:</strong> Official EUS stances and opinions. <br>
-                                        <a href="https://stances.mcgilleus.ca" target="_blank">stances.mcgilleus.ca</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Financial Resources -->
-                    <div class="card">
-                        <div class="card-header" id="headingFinance">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse"
-                                    data-target="#collapseFinance" aria-expanded="false"
-                                    aria-controls="collapseFinance">
-                                    <i class="bi bi-cash-stack"></i> Financial Resources
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseFinance" class="collapse" aria-labelledby="headingFinance"
-                            data-parent="#accordion">
-                            <div class="card-body">
-                                <ul>
-                                    <li>
-                                        <i class="bi bi-cash"></i>
-                                        <strong>Float Request Form:</strong> Need a cash float for events? Request it
-                                        here. Requests must be submitted at least a week before. <br>
-                                        <a href="https://float.mcgilleus.ca" target="_blank">float.mcgilleus.ca</a>
-                                    </li>
-                                    <li>
-                                        <i class="bi bi-coin"></i>
-                                        <strong>Budgets:</strong> View EUS annual and departmental budgets, organized
-                                        and navigable. <br>
-                                        <a href="https://budgets.mcgilleus.ca" target="_blank">budgets.mcgilleus.ca</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Election Information -->
-                    <div class="card">
-                        <div class="card-header" id="headingElections">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse"
-                                    data-target="#collapseElections" aria-expanded="false"
-                                    aria-controls="collapseElections">
-                                    <i class="bi bi-bar-chart"></i> Election Information
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseElections" class="collapse" aria-labelledby="headingElections"
-                            data-parent="#accordion">
-                            <div class="card-body">
-                                <ul>
-                                    <li>
-                                        <i class="bi bi-archive"></i>
-                                        <strong>Election Info:</strong> Find nominees, campaign requirements, and
-                                        results here. <br>
-                                        <a href="https://elections.mcgilleus.ca"
-                                            target="_blank">elections.mcgilleus.ca</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Career Resources -->
-                    <div class="card">
-                        <div class="card-header" id="headingCareer">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse"
-                                    data-target="#collapseCareer" aria-expanded="false" aria-controls="collapseCareer">
-                                    <i class="bi bi-briefcase"></i> Career Resources
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseCareer" class="collapse" aria-labelledby="headingCareer"
-                            data-parent="#accordion">
-                            <div class="card-body">
-                                <ul>
-                                    <li>
-                                        <i class="bi bi-people-fill"></i>
-                                        <strong>Engineering Career Center:</strong> Provides students with opportunities
-                                        to gain career-related experience (Engineering Internship Program), connect with
-                                        employers, learn about various career paths, and develop job search skills. <br>
-                                        <a href="https://www.mcgill.ca/careers4engineers/" target="_blank">
-                                            www.mcgill.ca/careers4engineers
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Redirects -->
-                    <div class="card">
-                        <div class="card-header" id="headingCareer">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link collapsed" data-toggle="collapse"
-                                    data-target="#collapseRedirects" aria-expanded="false"
-                                    aria-controls="collapseCareer">
-                                    <i class="bi bi-link-45deg"></i> List of All Redirects
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseRedirects" class="collapse" aria-labelledby="headingCareer"
-                            data-parent="#accordion">
-                            <div class="card-body">
-                                <ul>
-                                    <ul>
-                                        <li>
-                                            <strong>Beverage Request Form:</strong><br>
-                                            <a href="https://beverages.mcgilleus.ca"
-                                                target="_blank">beverages.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>BoG Documents:</strong><br>
-                                            <a href="https://bog.mcgilleus.ca" target="_blank">bog.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>EUS Budget:</strong><br>
-                                            <a href="https://budgets.mcgilleus.ca"
-                                                target="_blank">budgets.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>EUS Bylaws:</strong><br>
-                                            <a href="https://bylaws.mcgilleus.ca"
-                                                target="_blank">bylaws.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>EUS Calendar:</strong><br>
-                                            <a href="https://calendar.mcgilleus.ca"
-                                                target="_blank">calendar.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Chantbook:</strong><br>
-                                            <a href="https://chants.mcgilleus.ca"
-                                                target="_blank">chants.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Council Documents:</strong><br>
-                                            <a href="https://council.mcgilleus.ca"
-                                                target="_blank">council.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>EUS Directory:</strong><br>
-                                            <a href="https://directory.mcgilleus.ca"
-                                                target="_blank">directory.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Float Form:</strong><br>
-                                            <a href="https://floats.mcgilleus.ca"
-                                                target="_blank">floats.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>GA Documents:</strong><br>
-                                            <a href="https://ga.mcgilleus.ca" target="_blank">ga.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Governance Documents:</strong><br>
-                                            <a href="https://governance.mcgilleus.ca"
-                                                target="_blank">governance.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Incident Response Form:</strong><br>
-                                            <a href="https://ir.mcgilleus.ca" target="_blank">ir.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Pipeline Submission Form:</strong><br>
-                                            <a href="https://pipeline.mcgilleus.ca"
-                                                target="_blank">pipeline.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Policies Folder:</strong><br>
-                                            <a href="https://policies.mcgilleus.ca"
-                                                target="_blank">policies.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Printouts Folder:</strong><br>
-                                            <a href="https://printouts.mcgilleus.ca"
-                                                target="_blank">printouts.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Room Booking Link:</strong><br>
-                                            <a href="https://rooms.mcgilleus.ca" target="_blank">rooms.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>EUSF Information:</strong><br>
-                                            <a href="https://eusf.mcgilleus.ca" target="_blank">eusf.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>EUS Election Information:</strong><br>
-                                            <a href="https://elections.mcgilleus.ca"
-                                                target="_blank">elections.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>EUS Stances:</strong><br>
-                                            <a href="https://stances.mcgilleus.ca"
-                                                target="_blank">stances.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Capital Fund Form:</strong><br>
-                                            <a href="https://cf.mcgilleus.ca" target="_blank">cf.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Financial Guidebook:</strong><br>
-                                            <a href="https://guidebook.mcgilleus.ca"
-                                                target="_blank">guidebook.mcgilleus.ca</a>
-                                        </li>
-
-                                        <li>
-                                            <strong>Zeffy Request Form:</strong><br>
-                                            <a href="https://zeffy.mcgilleus.ca" target="_blank">zeffy.mcgilleus.ca</a>
-                                        </li>
-                                    </ul>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div><!-- Accordion END -->
-            </div>
-        </div>
-    </div>
-    <!-- END: Grouped "Other Resources" -->
-
-    <hr>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container-fluid padding">
-            <div class="row text-center">
-                <div class="col-md-12">
-                    <img src="img/eus_logo.png" width="10%" height="auto" style="filter:grayscale(100%);">
-                    <hr class="light">
-                    <p></p>
-                    <p>McConnell Engineering Building, Room 7</p>
-                    <p>3480 University Street</p>
-                    <p>H3A 0E9 Montreal, Quebec</p>
-                    <p>(514) 398-4396</p>
+  <main class="resources-main">
+    <section class="resources-section resources-section--slider" aria-label="Services and wiki">
+      <div data-radial-slider-drag-status="grab" data-radial-slider-init class="radial-gsap-slider" aria-label="Services and wiki">
+        <div data-radial-slider-collection class="radial-gsap-slider__collection">
+          <div data-radial-slider-list class="radial-gsap-slider__list">
+            <div data-radial-slider-item-status="active" data-radial-slider-item class="radial-gsap-slider__item">
+              <article class="resources-card">
+                <div class="resources-card__media">
+                  <img src="img/Epts-logo.png" alt="" class="resources-card__logo">
                 </div>
+                <div class="resources-card__info">
+                  <h3 class="resources-card__title">Engineering Peer Tutoring Service</h3>
+                  <p class="resources-card__text">Free tutoring for U0 and U1 engineering courses, weekly drop-in hours in FDA 6B, plus midterm and final review sessions.</p>
+                  <a class="resources-card__cta" href="https://epts.mcgilleus.ca/" target="_blank" rel="noopener noreferrer">Visit website →</a>
+                </div>
+              </article>
             </div>
+            <div data-radial-slider-item-status="inview" data-radial-slider-item class="radial-gsap-slider__item">
+              <article class="resources-card">
+                <div class="resources-card__media">
+                  <img src="img/Frostbite_logo.png" alt="" class="resources-card__logo">
+                </div>
+                <div class="resources-card__info">
+                  <h3 class="resources-card__title">Frostbite</h3>
+                  <p class="resources-card__text">Student-run ice cream in the McConnell EUS Mall — hype tracks, great staff, and excellent scoops.</p>
+                  <a class="resources-card__cta" href="https://frostbite.mcgilleus.ca" target="_blank" rel="noopener noreferrer">Visit website →</a>
+                </div>
+              </article>
+            </div>
+            <div data-radial-slider-item-status="inview" data-radial-slider-item class="radial-gsap-slider__item">
+              <article class="resources-card">
+                <div class="resources-card__media">
+                  <img src="img/copieus_logo.png" alt="" class="resources-card__logo">
+                </div>
+                <div class="resources-card__info">
+                  <h3 class="resources-card__title">copiEUS</h3>
+                  <p class="resources-card__text">Printing, plotters, binding, coursepacks, lamination, and more in the EUS Mall (everything except 3D printing).</p>
+                  <a class="resources-card__cta" href="https://www.copieus.mcgilleus.ca/" target="_blank" rel="noopener noreferrer">Visit website →</a>
+                </div>
+              </article>
+            </div>
+            <div data-radial-slider-item-status="inview" data-radial-slider-item class="radial-gsap-slider__item">
+              <article class="resources-card">
+                <div class="resources-card__media">
+                  <img src="img/Gstore_logo.jpg" alt="" class="resources-card__logo">
+                </div>
+                <div class="resources-card__info">
+                  <h3 class="resources-card__title">The G-Store</h3>
+                  <p class="resources-card__text">Student must-haves — from coffee to notebooks — at a reasonable price on downtown campus.</p>
+                  <a class="resources-card__cta" href="https://www.instagram.com/eusgstore/" target="_blank" rel="noopener noreferrer">Open Instagram →</a>
+                </div>
+              </article>
+            </div>
+            <div data-radial-slider-item-status="inview" data-radial-slider-item class="radial-gsap-slider__item">
+              <article class="resources-card">
+                <div class="resources-card__media">
+                  <img src="img/wiki_logo.png" alt="" class="resources-card__logo">
+                </div>
+                <div class="resources-card__info">
+                  <h3 class="resources-card__title">The EUS Wiki</h3>
+                  <p class="resources-card__text">Navigate the EUS, learn some cool history, and explore opportunities for engineering students at McGill.</p>
+                  <a class="resources-card__cta" href="https://euswiki.mcgilleus.ca/" target="_blank" rel="noopener noreferrer">Open wiki →</a>
+                </div>
+              </article>
+            </div>
+          </div>
         </div>
+
+        <div class="radial-gsap-slider__meta">
+          <p class="radial-gsap-slider__count">
+            <span data-radial-slider-active-slide>01</span>
+            <span aria-hidden="true">/</span>
+            <span data-radial-slider-total-slide>05</span>
+          </p>
+          <p class="radial-gsap-slider__label" data-radial-active-label>Engineering Peer Tutoring Service</p>
+        </div>
+
+        <div class="radial-gsap-slider__controls">
+          <button type="button" data-radial-slider-control="prev" class="radial-gsap-slider__control-btn">Prev</button>
+          <div data-radial-slider-generate-dots class="radial-gsap-slider__dots">
+            <button type="button" data-radial-slider-control="1" data-radial-slider-control-status="active" class="radial-gsap-slider__control-dot"></button>
+          </div>
+          <button type="button" data-radial-slider-control="next" class="radial-gsap-slider__control-btn is--next">Next</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="resources-section" aria-labelledby="directory-heading">
+      <div class="resources-section__head">
+        <h2 id="directory-heading" class="resources-section__title">Forms &amp; documents</h2>
+        <p class="resources-section__intro">Official forms, governance docs, finance tools, and career links.</p>
+      </div>
+
+      <div data-accordion-close-siblings="true" data-accordion-css-init class="accordion-css">
+        <ul class="accordion-css__list">
+          <li data-accordion-status="not-active" class="accordion-css__item">
+            <button type="button" data-accordion-toggle class="accordion-css__item-top">
+              <span class="accordion-css__item-h3">Forms &amp; submissions</span>
+              <span class="accordion-css__item-icon" aria-hidden="true">
+                <svg class="accordion-css__item-icon-svg" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 36 36" fill="none"><path d="M28.5 22.5L18 12L7.5 22.5" stroke="currentColor" stroke-width="3" stroke-miterlimit="10"></path></svg>
+              </span>
+            </button>
+            <div class="accordion-css__item-bottom">
+              <div class="accordion-css__item-bottom-wrap">
+                <div class="accordion-css__item-bottom-content">
+                  <ul class="resources-dir__list">
+                    <li>
+                      <a href="https://ir.mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">Incident Response Form</span>
+                        <span class="resources-dir__desc">Report incidents or concerns to the EUS. You may remain anonymous.</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://pipeline.mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">Pipeline Submission Form</span>
+                        <span class="resources-dir__desc">Submit articles for The Pipeline. Weekly deadline: Saturday 5:00 P.M.</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://directory.mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">Directory</span>
+                        <span class="resources-dir__desc">Find EUS officers, contacts, and executives.</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li data-accordion-status="not-active" class="accordion-css__item">
+            <button type="button" data-accordion-toggle class="accordion-css__item-top">
+              <span class="accordion-css__item-h3">Governance &amp; minutes</span>
+              <span class="accordion-css__item-icon" aria-hidden="true">
+                <svg class="accordion-css__item-icon-svg" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 36 36" fill="none"><path d="M28.5 22.5L18 12L7.5 22.5" stroke="currentColor" stroke-width="3" stroke-miterlimit="10"></path></svg>
+              </span>
+            </button>
+            <div class="accordion-css__item-bottom">
+              <div class="accordion-css__item-bottom-wrap">
+                <div class="accordion-css__item-bottom-content">
+                  <ul class="resources-dir__list">
+                    <li>
+                      <a href="https://governance.mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">Governance Documents</span>
+                        <span class="resources-dir__desc">Official EUS policies, bylaws, and structure.</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://board.mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">Board of Governors Meeting Minutes</span>
+                        <span class="resources-dir__desc">Archived minutes from Board of Governors meetings.</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://council.mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">EUS Council Meeting Minutes</span>
+                        <span class="resources-dir__desc">Discussions, agendas, and motions from Council.</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://generalassembly.mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">General Assembly Minutes</span>
+                        <span class="resources-dir__desc">Recorded motions and reports from General Assemblies.</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://stances.mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">Document of Stances</span>
+                        <span class="resources-dir__desc">Official EUS stances and opinions.</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li data-accordion-status="not-active" class="accordion-css__item">
+            <button type="button" data-accordion-toggle class="accordion-css__item-top">
+              <span class="accordion-css__item-h3">Finance</span>
+              <span class="accordion-css__item-icon" aria-hidden="true">
+                <svg class="accordion-css__item-icon-svg" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 36 36" fill="none"><path d="M28.5 22.5L18 12L7.5 22.5" stroke="currentColor" stroke-width="3" stroke-miterlimit="10"></path></svg>
+              </span>
+            </button>
+            <div class="accordion-css__item-bottom">
+              <div class="accordion-css__item-bottom-wrap">
+                <div class="accordion-css__item-bottom-content">
+                  <ul class="resources-dir__list">
+                    <li>
+                      <a href="https://float.mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">Float Request Form</span>
+                        <span class="resources-dir__desc">Request a cash float for events (at least one week ahead).</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://budgets.mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">Budgets</span>
+                        <span class="resources-dir__desc">View EUS annual and departmental budgets.</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li data-accordion-status="not-active" class="accordion-css__item">
+            <button type="button" data-accordion-toggle class="accordion-css__item-top">
+              <span class="accordion-css__item-h3">Elections</span>
+              <span class="accordion-css__item-icon" aria-hidden="true">
+                <svg class="accordion-css__item-icon-svg" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 36 36" fill="none"><path d="M28.5 22.5L18 12L7.5 22.5" stroke="currentColor" stroke-width="3" stroke-miterlimit="10"></path></svg>
+              </span>
+            </button>
+            <div class="accordion-css__item-bottom">
+              <div class="accordion-css__item-bottom-wrap">
+                <div class="accordion-css__item-bottom-content">
+                  <ul class="resources-dir__list">
+                    <li>
+                      <a href="https://elections.mcgilleus.ca" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">Election Info</span>
+                        <span class="resources-dir__desc">Nominees, campaign requirements, and results.</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li data-accordion-status="not-active" class="accordion-css__item">
+            <button type="button" data-accordion-toggle class="accordion-css__item-top">
+              <span class="accordion-css__item-h3">Career</span>
+              <span class="accordion-css__item-icon" aria-hidden="true">
+                <svg class="accordion-css__item-icon-svg" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 36 36" fill="none"><path d="M28.5 22.5L18 12L7.5 22.5" stroke="currentColor" stroke-width="3" stroke-miterlimit="10"></path></svg>
+              </span>
+            </button>
+            <div class="accordion-css__item-bottom">
+              <div class="accordion-css__item-bottom-wrap">
+                <div class="accordion-css__item-bottom-content">
+                  <ul class="resources-dir__list">
+                    <li>
+                      <a href="https://www.mcgill.ca/careers4engineers/" target="_blank" rel="noopener noreferrer">
+                        <span class="resources-dir__name">Engineering Career Center</span>
+                        <span class="resources-dir__desc">Internships, employer connections, career paths, and job-search skills.</span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="resources-section" aria-labelledby="links-heading">
+      <div class="resources-section__head">
+        <h2 id="links-heading" class="resources-section__title">All short links</h2>
+      </div>
+      <ul class="resources-links">
+        <li><a href="https://beverages.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Beverage Request Form</span><span>beverages.mcgilleus.ca</span></a></li>
+        <li><a href="https://bog.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>BoG Documents</span><span>bog.mcgilleus.ca</span></a></li>
+        <li><a href="https://budgets.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>EUS Budget</span><span>budgets.mcgilleus.ca</span></a></li>
+        <li><a href="https://bylaws.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>EUS Bylaws</span><span>bylaws.mcgilleus.ca</span></a></li>
+        <li><a href="https://calendar.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>EUS Calendar</span><span>calendar.mcgilleus.ca</span></a></li>
+        <li><a href="https://chants.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Chantbook</span><span>chants.mcgilleus.ca</span></a></li>
+        <li><a href="https://council.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Council Documents</span><span>council.mcgilleus.ca</span></a></li>
+        <li><a href="https://directory.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>EUS Directory</span><span>directory.mcgilleus.ca</span></a></li>
+        <li><a href="https://floats.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Float Form</span><span>floats.mcgilleus.ca</span></a></li>
+        <li><a href="https://ga.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>GA Documents</span><span>ga.mcgilleus.ca</span></a></li>
+        <li><a href="https://governance.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Governance Documents</span><span>governance.mcgilleus.ca</span></a></li>
+        <li><a href="https://ir.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Incident Response Form</span><span>ir.mcgilleus.ca</span></a></li>
+        <li><a href="https://pipeline.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Pipeline Submission Form</span><span>pipeline.mcgilleus.ca</span></a></li>
+        <li><a href="https://policies.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Policies Folder</span><span>policies.mcgilleus.ca</span></a></li>
+        <li><a href="https://printouts.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Printouts Folder</span><span>printouts.mcgilleus.ca</span></a></li>
+        <li><a href="https://rooms.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Room Booking Link</span><span>rooms.mcgilleus.ca</span></a></li>
+        <li><a href="https://eusf.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>EUSF Information</span><span>eusf.mcgilleus.ca</span></a></li>
+        <li><a href="https://elections.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>EUS Election Information</span><span>elections.mcgilleus.ca</span></a></li>
+        <li><a href="https://stances.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>EUS Stances</span><span>stances.mcgilleus.ca</span></a></li>
+        <li><a href="https://cf.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Capital Fund Form</span><span>cf.mcgilleus.ca</span></a></li>
+        <li><a href="https://guidebook.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Financial Guidebook</span><span>guidebook.mcgilleus.ca</span></a></li>
+        <li><a href="https://zeffy.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span>Zeffy Request Form</span><span>zeffy.mcgilleus.ca</span></a></li>
+      </ul>
+    </section>
+  </main>
+
+  <div data-footer-parallax class="footer-wrap">
+    <footer data-footer-parallax-inner class="site-footer">
+            <div class="site-footer__links-row">
+        <div class="site-footer__col site-footer__col--logo">
+          <a class="site-footer__brand" href="index.html" data-site-brand-link>
+            <img src="img/eus_logo.png" alt="McGill EUS" class="site-footer__logo" data-site-brand-logo>
+          </a>
+        </div>
+        <div class="site-footer__main">
+          <div class="site-footer__col">
+            <p class="site-footer__eyebrow">Pages</p>
+            <div class="site-footer__links" data-site-footer-pages>
+              <a class="site-footer__a" href="index.html">Home</a>
+              <a class="site-footer__a" href="getting-involved.html">Get Involved</a>
+              <a class="site-footer__a" href="resources.html">Resources</a>
+              <a class="site-footer__a" href="contact-us.html">Contact Us</a>
+            </div>
+          </div>
+          <div class="site-footer__col">
+            <p class="site-footer__eyebrow">Socials</p>
+            <div class="site-footer__links" data-site-footer-socials>
+              <a class="site-footer__a" href="https://www.facebook.com/mcgilleus/" target="_blank" rel="noopener noreferrer">Facebook</a>
+              <a class="site-footer__a" href="https://www.instagram.com/mcgilleus/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+          </div>
+          <div class="site-footer__col">
+            <p class="site-footer__eyebrow">Visit</p>
+            <div data-site-footer-visit><p class="site-footer__muted">McConnell Engineering Building, Room 7<br>3480 University Street<br>H3A 0E9 Montreal, Quebec</p>
+            <div class="site-footer__links">
+              <a class="site-footer__a" href="tel:+15143984396">(514) 398-4396</a>
+            </div></div>
+          </div>
+        </div>
+      </div>
     </footer>
+    <div data-footer-parallax-dark class="footer-wrap__dark"></div>
+  </div>
+  </div>
 
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.3/dist/barba.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.17/dist/lenis.min.js"></script>
+  <script src="js/vendor/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/CustomEase.min.js"></script>
+  <script src="js/vendor/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Draggable.min.js"></script>
+  <script src="js/vendor/InertiaPlugin.min.js"></script>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v3.20.0/mapbox-gl.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="js/momentum-hover.js"></script>
+  <script src="js/opening-hours.js"></script>
+  <script src="js/hours-public.js"></script>
+  <script src="js/contacts-public.js"></script>
+  <script src="js/office-map.js"></script>
+  <script src="js/footer-parallax.js"></script>
+  <script src="js/radial-slider.js"></script>
+  <script src="js/accordion-css.js"></script>
+  <script src="js/interactive-collage.js"></script>
+  <script src="js/groups-public.js"></script>
+  <script src="js/groups-quiz.js"></script>
+  <script src="js/content-public.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/eus-loader.js"></script>
+  <script src="js/page-transition.js"></script>
 </body>
-
 </html>

@@ -1,0 +1,29 @@
+{
+  "name": "mcgilleus-2019",
+  "version": "1.0.0",
+  "description": "Static website for the McGill Engineering Undergraduate Society.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/McGillEUS/mcgilleus-2019.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/McGillEUS/mcgilleus-2019/issues"
+  },
+  "homepage": "https://github.com/McGillEUS/mcgilleus-2019#readme",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "express": "^5.2.1",
+    "express-session": "^1.19.0",
+    "gsap": "^3.15.0",
+    "multer": "^2.2.0"
+  }
+}

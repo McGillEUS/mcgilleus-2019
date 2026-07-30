@@ -1,0 +1,222 @@
+[
+  {
+    "id": "exec-president",
+    "name": "Emile Lalonde",
+    "role": "EUS President",
+    "email": "president@mcgilleus.ca",
+    "section": "executive",
+    "sort_order": 1,
+    "photo_path": "",
+    "active": true,
+    "year": ""
+  },
+  {
+    "id": "exec-vp-academic",
+    "name": "Ollie Ghiaur",
+    "role": "EUS VP Academic",
+    "email": "vpacademic@mcgilleus.ca",
+    "section": "executive",
+    "sort_order": 2,
+    "photo_path": "",
+    "active": true,
+    "year": ""
+  },
+  {
+    "id": "exec-vp-comm",
+    "name": "Célestin Lapointe",
+    "role": "EUS VP Communications",
+    "email": "vpcomm@mcgilleus.ca",
+    "section": "executive",
+    "sort_order": 3,
+    "photo_path": "",
+    "active": true,
+    "year": ""
+  },
+  {
+    "id": "exec-vp-events",
+    "name": "Isabella Hensley",
+    "role": "EUS VP Events",
+    "email": "vpevents@mcgilleus.ca",
+    "section": "executive",
+    "sort_order": 4,
+    "photo_path": "",
+    "active": true,
+    "year": ""
+  },
+  {
+    "id": "exec-vp-external",
+    "name": "Gaspard Boulard",
+    "role": "EUS VP External",
+    "email": "vpexternal@mcgilleus.ca",
+    "section": "executive",
+    "sort_order": 5,
+    "photo_path": "",
+    "active": true,
+    "year": ""
+  },
+  {
+    "id": "exec-vp-finance",
+    "name": "Simon Ngassam",
+    "role": "EUS VP Finance",
+    "email": "vpfinance@mcgilleus.ca",
+    "section": "executive",
+    "sort_order": 6,
+    "photo_path": "",
+    "active": true,
+    "year": ""
+  },
+  {
+    "id": "exec-vp-internal",
+    "name": "Hannah Lilles",
+    "role": "EUS VP Internal",
+    "email": "vpinternal@mcgilleus.ca",
+    "section": "executive",
+    "sort_order": 7,
+    "photo_path": "",
+    "active": true,
+    "year": ""
+  },
+  {
+    "id": "exec-vp-services",
+    "name": "Rachel Bunsick",
+    "role": "EUS VP Services",
+    "email": "vpservices@mcgilleus.ca",
+    "section": "executive",
+    "sort_order": 8,
+    "photo_path": "",
+    "active": true,
+    "year": ""
+  },
+  {
+    "id": "exec-vp-student-life",
+    "name": "Uri Sarfati-Magill",
+    "role": "EUS VP Student Life",
+    "email": "vpstudentlife@mcgilleus.ca",
+    "section": "executive",
+    "sort_order": 9,
+    "photo_path": "",
+    "active": true,
+    "year": ""
+  },
+  {
+    "id": "rep-ssmu",
+    "name": "TBD",
+    "role": "SSMU Representative",
+    "email": "ssmu.rep@mcgilleus.ca",
+    "section": "representation",
+    "sort_order": 1,
+    "photo_path": "",
+    "active": true,
+    "year": ""
+  },
+  {
+    "id": "rep-senator",
+    "name": "TBD",
+    "role": "Engineering Senator",
+    "email": "senator@mcgilleus.ca",
+    "section": "representation",
+    "sort_order": 2,
+    "photo_path": "",
+    "active": true,
+    "year": ""
+  },
+  {
+    "id": "past-2025-president",
+    "name": "Donovan Burt",
+    "role": "EUS President",
+    "email": "",
+    "section": "executive",
+    "sort_order": 1,
+    "photo_path": "",
+    "active": false,
+    "year": "2025–26"
+  },
+  {
+    "id": "past-2025-vp-academic",
+    "name": "Xander Gott",
+    "role": "EUS VP Academic",
+    "email": "",
+    "section": "executive",
+    "sort_order": 2,
+    "photo_path": "",
+    "active": false,
+    "year": "2025–26"
+  },
+  {
+    "id": "past-2025-vp-comm",
+    "name": "Octavia Francis",
+    "role": "EUS VP Communications",
+    "email": "",
+    "section": "executive",
+    "sort_order": 3,
+    "photo_path": "",
+    "active": false,
+    "year": "2025–26"
+  },
+  {
+    "id": "past-2025-vp-events",
+    "name": "Hannah Lilles",
+    "role": "EUS VP Events",
+    "email": "",
+    "section": "executive",
+    "sort_order": 4,
+    "photo_path": "",
+    "active": false,
+    "year": "2025–26"
+  },
+  {
+    "id": "past-2025-vp-external",
+    "name": "Nicolas El Murr",
+    "role": "EUS VP External",
+    "email": "",
+    "section": "executive",
+    "sort_order": 5,
+    "photo_path": "",
+    "active": false,
+    "year": "2025–26"
+  },
+  {
+    "id": "past-2025-vp-finance",
+    "name": "Emile Lalonde",
+    "role": "EUS VP Finance",
+    "email": "",
+    "section": "executive",
+    "sort_order": 6,
+    "photo_path": "",
+    "active": false,
+    "year": "2025–26"
+  },
+  {
+    "id": "past-2025-vp-internal",
+    "name": "Sophie Smithson",
+    "role": "EUS VP Internal",
+    "email": "",
+    "section": "executive",
+    "sort_order": 7,
+    "photo_path": "",
+    "active": false,
+    "year": "2025–26"
+  },
+  {
+    "id": "past-2025-vp-services",
+    "name": "Claire Levasseur",
+    "role": "EUS VP Services",
+    "email": "",
+    "section": "executive",
+    "sort_order": 8,
+    "photo_path": "",
+    "active": false,
+    "year": "2025–26"
+  },
+  {
+    "id": "past-2025-vp-student-life",
+    "name": "Luca Shearer",
+    "role": "EUS VP Student Life",
+    "email": "",
+    "section": "executive",
+    "sort_order": 9,
+    "photo_path": "",
+    "active": false,
+    "year": "2025–26"
+  }
+]

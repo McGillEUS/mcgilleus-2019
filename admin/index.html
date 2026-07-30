@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin | McGill EUS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pliant:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div id="login-view" class="login-screen">
+    <a class="login-brand" href="/index.html">
+      <img src="/img/eus_logo.png" alt="McGill EUS" class="login-brand__logo">
+    </a>
+    <div class="login-panel">
+      <p class="admin-eyebrow">McGill EUS</p>
+      <h1>Site admin</h1>
+      <p class="login-lead">Sign in to edit site content, contacts, groups, hours, and media.</p>
+      <form id="login-form">
+        <label>
+          Username
+          <input type="text" name="username" autocomplete="username" required>
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" autocomplete="current-password" required>
+        </label>
+        <button type="submit">Log in</button>
+        <p id="login-error" class="error" hidden></p>
+      </form>
+      <a class="login-back" href="/index.html">← Back to website</a>
+    </div>
+  </div>
+
+  <div id="admin-view" class="admin-shell" hidden>
+    <header class="admin-topbar">
+      <a class="admin-topbar__brand" href="/index.html" title="McGill EUS home">
+        <img src="/img/eus_logo.png" alt="McGill EUS" class="admin-topbar__logo">
+      </a>
+      <nav class="admin-topbar__links" aria-label="Public site links">
+        <a href="/index.html" target="_blank" rel="noopener noreferrer">Home</a>
+        <a href="/getting-involved.html" target="_blank" rel="noopener noreferrer">Get Involved</a>
+        <a href="/resources.html" target="_blank" rel="noopener noreferrer">Resources</a>
+        <a href="/contact-us.html" target="_blank" rel="noopener noreferrer">Contact</a>
+        <button type="button" id="logout-btn" class="admin-topbar__logout">Log out</button>
+      </nav>
+    </header>
+
+    <div class="admin-hero">
+      <p class="admin-eyebrow">McGill EUS</p>
+      <h1>Site admin</h1>
+      <p class="admin-hero__lead">Edit public page copy, media, contacts, groups, and hours.</p>
+    </div>
+
+    <nav class="admin-tabs" aria-label="Admin sections">
+      <button type="button" class="admin-tab is-active" data-admin-tab="site">Site</button>
+      <button type="button" class="admin-tab" data-admin-tab="home">Home</button>
+      <button type="button" class="admin-tab" data-admin-tab="contact">Contact</button>
+      <button type="button" class="admin-tab" data-admin-tab="involved">Get Involved</button>
+      <button type="button" class="admin-tab" data-admin-tab="resources">Resources</button>
+      <button type="button" class="admin-tab" data-admin-tab="quiz">Quiz</button>
+      <button type="button" class="admin-tab" data-admin-tab="hours">Hours</button>
+      <button type="button" class="admin-tab" data-admin-tab="contacts">Contacts</button>
+      <button type="button" class="admin-tab" data-admin-tab="groups">Groups</button>
+    </nav>
+
+    <div class="admin-main">
+
+    <section class="panel admin-panel is-active" data-admin-panel="site">
+      <h2>Site chrome</h2>
+      <p class="muted">Navbar, footer, and brand used across every page.</p>
+      <form id="site-form" class="cms-form">
+        <fieldset>
+          <legend>Brand</legend>
+          <label>Name <input name="brandName" required></label>
+          <label>Logo path <input name="brandLogo" required></label>
+          <label class="file-row">Upload logo <input type="file" accept="image/*" data-upload-into="brandLogo"></label>
+          <label>Home link <input name="homeHref" required></label>
+        </fieldset>
+        <fieldset>
+          <legend>Navbar links</legend>
+          <div id="site-nav-rows" class="repeat-list"></div>
+          <button type="button" class="secondary" data-add-nav>Add nav link</button>
+        </fieldset>
+        <fieldset>
+          <legend>Footer page links</legend>
+          <div id="site-footer-pages" class="repeat-list"></div>
+          <button type="button" class="secondary" data-add-footer-page>Add page link</button>
+        </fieldset>
+        <fieldset>
+          <legend>Footer socials</legend>
+          <div id="site-footer-socials" class="repeat-list"></div>
+          <button type="button" class="secondary" data-add-footer-social>Add social</button>
+        </fieldset>
+        <fieldset>
+          <legend>Visit</legend>
+          <label>Address lines (one per line) <textarea name="visitLines" rows="3"></textarea></label>
+          <label>Phone <input name="phone"></label>
+          <label>Phone link <input name="phoneHref" placeholder="tel:+15143984396"></label>
+        </fieldset>
+        <button type="submit">Save site chrome</button>
+        <p class="status" data-cms-status="site" hidden></p>
+      </form>
+    </section>
+
+    <section class="panel admin-panel" data-admin-panel="home">
+      <h2>Home page</h2>
+      <p class="muted">Hero copy, CTAs, and intro loader imagery.</p>
+      <form id="home-form" class="cms-form">
+        <fieldset>
+          <legend>Hero</legend>
+          <label>Background image <input name="heroImage" required></label>
+          <label class="file-row">Upload image <input type="file" accept="image/*" data-upload-into="heroImage"></label>
+          <label>Eyebrow <input name="eyebrow"></label>
+          <label>Title <input name="title" required></label>
+          <label>Lead <textarea name="lead" rows="3"></textarea></label>
+        </fieldset>
+        <fieldset>
+          <legend>Hero CTAs</legend>
+          <div id="home-cta-rows" class="repeat-list"></div>
+          <button type="button" class="secondary" data-add-cta>Add CTA</button>
+        </fieldset>
+        <fieldset>
+          <legend>Loader</legend>
+          <label>Shot image paths (one per line) <textarea name="loaderShots" rows="5"></textarea></label>
+          <label>Final image <input name="finalImage"></label>
+          <label class="file-row">Upload final image <input type="file" accept="image/*" data-upload-into="finalImage"></label>
+          <label>Brand left <input name="brandLeft"></label>
+          <label>Brand right <input name="brandRight"></label>
+        </fieldset>
+        <button type="submit">Save home</button>
+        <p class="status" data-cms-status="home" hidden></p>
+      </form>
+    </section>
+
+    <section class="panel admin-panel" data-admin-panel="contact">
+      <h2>Contact page</h2>
+      <p class="muted">Headings, directory blurb, and office map pin. People and hours are under Contacts / Hours.</p>
+      <form id="contact-page-form" class="cms-form">
+        <label>Hero title <input name="heroTitle" required></label>
+        <label>Executive heading <input name="executiveHeading" required></label>
+        <label>Representation heading <input name="representationHeading" required></label>
+        <label>Map label <input name="mapLabel" required></label>
+        <label>Past executives heading <input name="pastHeading" required></label>
+        <label>Directory title <input name="directoryTitle"></label>
+        <label>Directory body <textarea name="directoryBody" rows="4"></textarea></label>
+        <label>Directory link label <input name="directoryLinkLabel"></label>
+        <label>Directory URL <input name="directoryHref" type="url"></label>
+        <button type="submit">Save contact page</button>
+        <p class="status" data-cms-status="contact-page" hidden></p>
+      </form>
+
+      <form id="office-form" class="cms-form" style="margin-top:1.5rem">
+        <h3>Office map</h3>
+        <label>Name <input name="name" required></label>
+        <label>Eyebrow <input name="eyebrow"></label>
+        <label>Short address <input name="shortAddress"></label>
+        <label>Full address <textarea name="address" rows="2"></textarea></label>
+        <label>Latitude <input name="lat" required></label>
+        <label>Longitude <input name="lng" required></label>
+        <label>Phone <input name="phone"></label>
+        <label>Phone link <input name="phoneHref"></label>
+        <label>Google Maps URL <input name="mapsUrl" type="url"></label>
+        <button type="submit">Save office map</button>
+        <p class="status" data-cms-status="office" hidden></p>
+      </form>
+    </section>
+
+    <section class="panel admin-panel" data-admin-panel="involved">
+      <h2>Get Involved page</h2>
+      <p class="muted">Hero copy and quiz UI labels. Groups themselves are under Groups.</p>
+      <form id="involved-form" class="cms-form">
+        <label>Hero title <input name="title" required></label>
+        <label>Hero lead <textarea name="lead" rows="3"></textarea></label>
+        <label>Quiz button label <input name="ctaLabel" required></label>
+        <label>Directory title <input name="mainTitle" required></label>
+        <fieldset>
+          <legend>Quiz UI</legend>
+          <label>Results title <input name="resultsTitle"></label>
+          <label>Empty message <textarea name="emptyMessage" rows="2"></textarea></label>
+          <label>Retake label <input name="retakeLabel"></label>
+          <label>Browse label <input name="browseLabel"></label>
+          <label>Close label <input name="closeLabel"></label>
+          <label>Progress template <input name="progressTemplate" placeholder="Question {n} of {total}"></label>
+        </fieldset>
+        <button type="submit">Save Get Involved</button>
+        <p class="status" data-cms-status="involved" hidden></p>
+      </form>
+    </section>
+
+    <section class="panel admin-panel" data-admin-panel="resources">
+      <h2>Resources page</h2>
+      <p class="muted">Edit the full Resources JSON (featured cards, directory categories, short links). Use Upload below, then paste the returned path into <code>logo</code> fields.</p>
+      <div class="upload-inline">
+        <label>Upload image <input type="file" accept="image/*" id="resources-upload"></label>
+        <p class="muted" id="resources-upload-path" hidden></p>
+      </div>
+      <form id="resources-form" class="cms-form">
+        <label class="full-width">Resources JSON
+          <textarea id="resources-json" class="json-editor" rows="24" spellcheck="false"></textarea>
+        </label>
+        <button type="submit">Save resources</button>
+        <p class="status" data-cms-status="resources" hidden></p>
+      </form>
+    </section>
+
+    <section class="panel admin-panel" data-admin-panel="quiz">
+      <h2>Groups quiz</h2>
+      <p class="muted">Branching quiz graph: questions, options, tag boosts, and <code>next</code> links. Tags must match group tags.</p>
+      <form id="quiz-form" class="cms-form">
+        <label class="full-width">Quiz JSON
+          <textarea id="quiz-json" class="json-editor" rows="24" spellcheck="false"></textarea>
+        </label>
+        <button type="submit">Save quiz</button>
+        <p class="status" data-cms-status="quiz" hidden></p>
+      </form>
+    </section>
+
+    <section class="panel admin-panel" data-admin-panel="hours">
+      <h2>Office hours</h2>
+      <p class="muted">Shown on the Contact Us page. Times use 24-hour <code>HH:MM</code> format.</p>
+      <form id="hours-form" class="hours-form">
+        <label>
+          Title
+          <input name="title" required>
+        </label>
+        <label>
+          Timezone
+          <input name="timezone" required>
+        </label>
+
+        <fieldset class="summer-mode">
+          <legend>Summer mode</legend>
+          <label class="inline summer-mode__toggle">
+            <input type="checkbox" name="summerMode" id="summer-mode-toggle">
+            Enable summer hours notice
+          </label>
+          <p class="muted">When on, Contact Us hides the weekly timetable and points people to Instagram instead.</p>
+          <div id="summer-mode-fields" class="summer-mode__fields" hidden>
+            <label>
+              Message
+              <textarea name="summerMessage" rows="3"></textarea>
+            </label>
+            <label>
+              Instagram URL
+              <input name="instagramUrl" type="url" placeholder="https://www.instagram.com/mcgilleus/">
+            </label>
+            <label>
+              Button label
+              <input name="instagramLabel" placeholder="Check Instagram">
+            </label>
+          </div>
+        </fieldset>
+
+        <div id="hours-days-wrap">
+          <div id="hours-days" class="hours-days"></div>
+        </div>
+        <button type="submit">Save office hours</button>
+        <p id="hours-status" class="status" hidden></p>
+      </form>
+    </section>
+
+    <section class="panel admin-panel" data-admin-panel="contacts">
+      <h2>Add contact</h2>
+      <p class="muted">To archive someone later: set Active to No and add a year (e.g. 2024–25) so they appear under Past Executives.</p>
+      <form id="create-form" class="contact-form">
+        <label>Name <input name="name" required></label>
+        <label>Role <input name="role" required></label>
+        <label>Email <input name="email" type="email" required></label>
+        <label>
+          Section
+          <select name="section">
+            <option value="executive">Executive</option>
+            <option value="representation">Representation</option>
+          </select>
+        </label>
+        <label>Sort order <input name="sort_order" type="number" value="10"></label>
+        <label>
+          Active
+          <select name="active">
+            <option value="true" selected>Yes</option>
+            <option value="false">No (past)</option>
+          </select>
+        </label>
+        <label class="year-field" hidden>
+          Year / term
+          <input name="year" placeholder="2024–25">
+        </label>
+        <button type="submit">Add</button>
+      </form>
+
+      <h2 style="margin-top:1.75rem">Existing contacts</h2>
+      <p class="muted">Set Active to No and add a year to move an executive into Past Executives on Contact Us.</p>
+      <p id="admin-status" class="status" hidden></p>
+      <div id="contacts-list" class="contacts-list"></div>
+    </section>
+
+    <section class="panel admin-panel" data-admin-panel="groups">
+      <h2>Add group</h2>
+      <p class="muted">Groups appear on Get Involved. Tags power the “Find a group for you” quiz.</p>
+      <form id="create-group-form" class="contact-form">
+        <label>Name <input name="name" required></label>
+        <label>
+          Category
+          <select name="category" id="create-group-category"></select>
+        </label>
+        <label>Sort order <input name="sort_order" type="number" value="10"></label>
+        <label>
+          Active
+          <select name="active">
+            <option value="true" selected>Yes</option>
+            <option value="false">No</option>
+          </select>
+        </label>
+        <label>Instagram URL <input name="instagram" type="url" placeholder="https://www.instagram.com/..."></label>
+        <label>Website URL <input name="website" type="url" placeholder="https://..."></label>
+        <label>Form URL <input name="form" type="url" placeholder="https://..."></label>
+        <label class="full-width">Description <textarea name="description" rows="3"></textarea></label>
+        <fieldset class="full-width tags-fieldset">
+          <legend>Tags</legend>
+          <div id="create-group-tags" class="tags-grid"></div>
+        </fieldset>
+        <button type="submit">Add group</button>
+      </form>
+      <p id="groups-status" class="status" hidden></p>
+
+      <h2 style="margin-top:1.75rem">Existing groups</h2>
+      <p class="muted">Upload a logo and optional gallery photos. Inactive groups are hidden on the public page.</p>
+      <div id="groups-list" class="contacts-list"></div>
+    </section>
+    </div>
+  </div>
+
+  <script src="admin.js"></script>
+  <script src="admin-cms.js"></script>
+</body>
+</html>

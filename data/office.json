@@ -1,0 +1,12 @@
+{
+  "id": "eus-office",
+  "name": "EUS Office",
+  "eyebrow": "McGill Campus",
+  "shortAddress": "McConnell Engineering · Room 7",
+  "address": "McConnell Engineering Building, Room 7, 3480 University Street, Montreal, QC H3A 0E9",
+  "lat": 45.50622,
+  "lng": -73.57646,
+  "phone": "(514) 398-4396",
+  "phoneHref": "tel:+15143984396",
+  "mapsUrl": "https://maps.google.com/?q=McConnell+Engineering+Building+Room+7+Montreal"
+}
