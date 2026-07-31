@@ -177,6 +177,23 @@ a:hover {
   background: var(--soft);
 }
 
+.admin-topbar__links .secondary {
+  margin-left: 0.15rem;
+  background: transparent;
+  color: #444;
+  border: 1px solid #e5e5e5;
+  padding: 0.5rem 0.9rem;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.admin-topbar__links .secondary:hover {
+  background: var(--soft);
+  color: #111;
+}
+
 .admin-topbar__logout {
   margin-left: 0.35rem;
   background: var(--accent);

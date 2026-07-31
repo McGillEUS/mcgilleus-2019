@@ -35,18 +35,20 @@ Copy the example config if needed:
 cp config.example.json config.local.json
 ```
 
-Default credentials (change before production):
+Default credentials (local/dev only — change immediately on any shared server):
 
 - Username: `admin`
 - Password: `eus-admin-change-me`
 
-To set a new password hash:
+Admin login is rate-limited, uses httpOnly `SameSite=Strict` sessions, and blocks cross-site mutating requests. On first login with the example password, the UI forces a password change (14+ chars, letters + numbers).
+
+To set a password hash manually:
 
 ```bash
-node -e "console.log(require('bcryptjs').hashSync('YOUR_NEW_PASSWORD', 10))"
+node -e "console.log(require('bcryptjs').hashSync('YOUR_NEW_PASSWORD', 12))"
 ```
 
-Paste the hash into `config.local.json` as `adminPasswordHash`.
+Paste the hash into `config.local.json` as `adminPasswordHash`. Also set a random `sessionSecret` (32+ chars) before deploy.
 
 ## How content editing works
 

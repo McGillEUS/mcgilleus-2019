@@ -4,18 +4,19 @@ const crypto = require("crypto");
 const express = require("express");
 const session = require("express-session");
 const multer = require("multer");
-const bcrypt = require("bcryptjs");
 const { createCms } = require("./cms");
+const { createAdminAuth, resolveConfigPath } = require("./admin-auth");
 
 const ROOT = __dirname;
 const DATA_PATH = path.join(ROOT, "data", "contacts.json");
 const GROUPS_PATH = path.join(ROOT, "data", "groups.json");
 const HOURS_PATH = path.join(ROOT, "data", "hours.json");
 const OFFICE_PATH = path.join(ROOT, "data", "office.json");
+const CONFIG_READ_PATH = resolveConfigPath(ROOT);
 const CONFIG_PATH = path.join(ROOT, "config.local.json");
-const EXAMPLE_CONFIG_PATH = path.join(ROOT, "config.example.json");
 const UPLOAD_DIR = path.join(ROOT, "img", "contacts");
 const GROUPS_UPLOAD_DIR = path.join(ROOT, "img", "getinvolved");
+const IS_PRODUCTION = process.env.NODE_ENV === "production";
 const DAY_ORDER = [
   "monday",
   "tuesday",
@@ -69,8 +70,7 @@ const GROUP_TAGS = [
 ];
 
 function loadConfig() {
-  const configFile = fs.existsSync(CONFIG_PATH) ? CONFIG_PATH : EXAMPLE_CONFIG_PATH;
-  return JSON.parse(fs.readFileSync(configFile, "utf8"));
+  return JSON.parse(fs.readFileSync(CONFIG_READ_PATH, "utf8"));
 }
 
 function readContacts() {
@@ -241,6 +241,23 @@ function requireAuth(req, res, next) {
   return res.status(401).json({ error: "Unauthorized" });
 }
 
+function requireUpdatedPassword(req, res, next) {
+  if (!adminAuth.mustChangePassword()) return next();
+  const pathName = req.path || "";
+  if (
+    pathName === "/password" ||
+    pathName === "/logout" ||
+    pathName === "/session" ||
+    pathName === "/login"
+  ) {
+    return next();
+  }
+  return res.status(403).json({
+    error: "Password change required before using the admin API.",
+    mustChangePassword: true,
+  });
+}
+
 function yearSortKey(year) {
   const match = String(year || "").match(/(\d{4})/);
   return match ? Number.parseInt(match[1], 10) : 0;
@@ -318,20 +335,40 @@ function makeImageUpload(destination) {
 const upload = makeImageUpload(UPLOAD_DIR);
 const uploadGroupImage = makeImageUpload(GROUPS_UPLOAD_DIR);
 
+const adminAuth = createAdminAuth({
+  config,
+  configPath: CONFIG_PATH,
+  isProduction: IS_PRODUCTION,
+});
+
+// Caddy (and similar) terminate TLS in front of Node.
+app.set("trust proxy", 1);
+
+app.use(adminAuth.securityHeaders);
 app.use(express.json({ limit: "2mb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(
   session({
-    secret: config.sessionSecret || "change-me",
+    name: "eus_admin_sid",
+    secret: config.sessionSecret,
     resave: false,
     saveUninitialized: false,
+    rolling: true,
     cookie: {
       httpOnly: true,
-      sameSite: "lax",
-      maxAge: 1000 * 60 * 60 * 8,
+      sameSite: "strict",
+      secure: IS_PRODUCTION ? "auto" : false,
+      maxAge: Number(config.sessionMaxAgeMs) || 1000 * 60 * 60 * 4,
     },
   })
 );
+
+// CSRF mitigation + auth gate for cookie-authenticated admin APIs
+app.use("/api/admin", adminAuth.requireSameOrigin);
+app.use("/api/admin", (req, res, next) => {
+  if (req.path === "/login" || req.path === "/session") return next();
+  requireAuth(req, res, () => requireUpdatedPassword(req, res, next));
+});
 
 app.get("/api/contacts", (_req, res) => {
   const contacts = readContacts()
@@ -387,25 +424,73 @@ app.put("/api/admin/hours", requireAuth, (req, res) => {
 });
 
 app.get("/api/admin/session", (req, res) => {
-  res.json({ authenticated: Boolean(req.session && req.session.authenticated) });
+  const authenticated = Boolean(req.session && req.session.authenticated);
+  res.json({
+    authenticated,
+    mustChangePassword: authenticated ? adminAuth.mustChangePassword() : false,
+  });
 });
 
-app.post("/api/admin/login", (req, res) => {
+app.post("/api/admin/login", async (req, res) => {
+  const ip = adminAuth.clientIp(req);
+  try {
+    adminAuth.limiter.check(ip);
+  } catch (error) {
+    if (error.retryAfterSec) res.setHeader("Retry-After", String(error.retryAfterSec));
+    return res.status(error.status || 429).json({ error: error.message });
+  }
+
   const username = String(req.body.username || "");
   const password = String(req.body.password || "");
-  const userOk = username === config.adminUsername;
-  const passOk = bcrypt.compareSync(password, config.adminPasswordHash || "");
-  if (!userOk || !passOk) {
+
+  try {
+    const ok = await adminAuth.verifyCredentials(username, password);
+    if (!ok) {
+      adminAuth.limiter.fail(ip);
+      return res.status(401).json({ error: "Invalid username or password" });
+    }
+
+    adminAuth.limiter.success(ip);
+    req.session.regenerate((err) => {
+      if (err) {
+        return res.status(500).json({ error: "Could not create session" });
+      }
+      req.session.authenticated = true;
+      req.session.loginAt = Date.now();
+      req.session.user = config.adminUsername;
+      res.json({
+        ok: true,
+        mustChangePassword: adminAuth.mustChangePassword(),
+      });
+    });
+  } catch (_error) {
+    adminAuth.limiter.fail(ip);
     return res.status(401).json({ error: "Invalid username or password" });
   }
-  req.session.authenticated = true;
-  res.json({ ok: true });
 });
 
 app.post("/api/admin/logout", (req, res) => {
   req.session.destroy(() => {
+    res.clearCookie("eus_admin_sid");
     res.json({ ok: true });
   });
+});
+
+app.post("/api/admin/password", requireAuth, async (req, res) => {
+  try {
+    await adminAuth.changePassword(req.body.currentPassword, req.body.newPassword);
+    req.session.regenerate((err) => {
+      if (err) {
+        return res.status(500).json({ error: "Password updated, but session refresh failed. Log in again." });
+      }
+      req.session.authenticated = true;
+      req.session.loginAt = Date.now();
+      req.session.user = config.adminUsername;
+      res.json({ ok: true, mustChangePassword: false });
+    });
+  } catch (error) {
+    res.status(error.status || 400).json({ error: error.message || "Could not change password" });
+  }
 });
 
 app.get("/api/admin/contacts", requireAuth, (_req, res) => {

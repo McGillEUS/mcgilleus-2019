@@ -1,6 +1,7 @@
 {
   "port": 3000,
-  "sessionSecret": "replace-with-a-long-random-string",
+  "sessionSecret": "dev-only-session-secret-replace-before-deploy-xx",
+  "sessionMaxAgeMs": 14400000,
   "adminUsername": "admin",
   "adminPasswordHash": "$2b$10$v3cn8HQEBcWzXqlq18RFGeyUUCGwzSNkxSgaTw4kwPtDgl6HWOtrq",
   "mapboxToken": ""

@@ -1,7 +1,14 @@
 const loginView = document.getElementById("login-view");
 const adminView = document.getElementById("admin-view");
+const passwordView = document.getElementById("password-view");
 const loginForm = document.getElementById("login-form");
 const loginError = document.getElementById("login-error");
+const passwordForm = document.getElementById("password-form");
+const passwordError = document.getElementById("password-error");
+const passwordStatus = document.getElementById("password-status");
+const passwordLead = document.getElementById("password-lead");
+const passwordSkipBtn = document.getElementById("password-skip-btn");
+const changePasswordBtn = document.getElementById("change-password-btn");
 const createForm = document.getElementById("create-form");
 const contactsList = document.getElementById("contacts-list");
 const adminStatus = document.getElementById("admin-status");
@@ -14,6 +21,8 @@ const groupsList = document.getElementById("groups-list");
 const groupsStatus = document.getElementById("groups-status");
 const createGroupCategory = document.getElementById("create-group-category");
 const createGroupTags = document.getElementById("create-group-tags");
+
+let forcePasswordChange = false;
 
 const GROUP_CATEGORIES = [
   "Departmental Societies",
@@ -87,9 +96,34 @@ async function api(url, options = {}) {
 }
 window.api = api;
 
-function setAuthed(isAuthed) {
+function setAuthed(isAuthed, options = {}) {
+  const needsPassword = Boolean(options.mustChangePassword);
+  forcePasswordChange = needsPassword;
   loginView.hidden = isAuthed;
-  adminView.hidden = !isAuthed;
+  if (passwordView) {
+    passwordView.hidden = !isAuthed || (!needsPassword && options.showPassword !== true);
+  }
+  adminView.hidden = !isAuthed || needsPassword || options.showPassword === true;
+  if (passwordSkipBtn) {
+    passwordSkipBtn.hidden = needsPassword;
+  }
+  if (passwordLead && needsPassword) {
+    passwordLead.textContent =
+      "You’re still using the example admin password. Set a unique password before editing the site.";
+  } else if (passwordLead) {
+    passwordLead.textContent =
+      "Choose a strong password (14+ characters, letters and numbers).";
+  }
+}
+
+async function enterAdmin() {
+  initGroupsUi();
+  await Promise.all([
+    loadContacts(),
+    loadHours(),
+    loadGroups(),
+    typeof window.loadAllCms === "function" ? window.loadAllCms() : Promise.resolve(),
+  ]);
 }
 
 function showHoursStatus(message, isError = false) {
@@ -473,15 +507,13 @@ function initGroupsUi() {
 
 async function refreshSession() {
   const session = await api("/api/admin/session");
-  setAuthed(session.authenticated);
-  if (session.authenticated) {
-    initGroupsUi();
-    await Promise.all([
-      loadContacts(),
-      loadHours(),
-      loadGroups(),
-      typeof window.loadAllCms === "function" ? window.loadAllCms() : Promise.resolve(),
-    ]);
+  if (!session.authenticated) {
+    setAuthed(false);
+    return;
+  }
+  setAuthed(true, { mustChangePassword: session.mustChangePassword });
+  if (!session.mustChangePassword) {
+    await enterAdmin();
   }
 }
 
@@ -490,7 +522,7 @@ loginForm.addEventListener("submit", async (event) => {
   loginError.hidden = true;
   const formData = new FormData(loginForm);
   try {
-    await api("/api/admin/login", {
+    const result = await api("/api/admin/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
@@ -499,19 +531,71 @@ loginForm.addEventListener("submit", async (event) => {
       }),
     });
     loginForm.reset();
-    setAuthed(true);
-    initGroupsUi();
-    await Promise.all([
-      loadContacts(),
-      loadHours(),
-      loadGroups(),
-      typeof window.loadAllCms === "function" ? window.loadAllCms() : Promise.resolve(),
-    ]);
+    setAuthed(true, { mustChangePassword: result.mustChangePassword });
+    if (!result.mustChangePassword) {
+      await enterAdmin();
+    }
   } catch (error) {
     loginError.hidden = false;
     loginError.textContent = error.message;
   }
 });
+
+if (passwordForm) {
+  passwordForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    if (passwordError) passwordError.hidden = true;
+    if (passwordStatus) passwordStatus.hidden = true;
+    const formData = new FormData(passwordForm);
+    const next = String(formData.get("newPassword") || "");
+    const confirm = String(formData.get("confirmPassword") || "");
+    if (next !== confirm) {
+      if (passwordError) {
+        passwordError.hidden = false;
+        passwordError.textContent = "New passwords do not match.";
+      }
+      return;
+    }
+    try {
+      await api("/api/admin/password", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          currentPassword: formData.get("currentPassword"),
+          newPassword: next,
+        }),
+      });
+      passwordForm.reset();
+      forcePasswordChange = false;
+      setAuthed(true, { mustChangePassword: false });
+      if (passwordStatus) {
+        passwordStatus.hidden = false;
+        passwordStatus.textContent = "Password updated.";
+        passwordStatus.style.color = "#1f6b3a";
+      }
+      await enterAdmin();
+    } catch (error) {
+      if (passwordError) {
+        passwordError.hidden = false;
+        passwordError.textContent = error.message;
+      }
+    }
+  });
+}
+
+if (changePasswordBtn) {
+  changePasswordBtn.addEventListener("click", () => {
+    setAuthed(true, { showPassword: true, mustChangePassword: forcePasswordChange });
+  });
+}
+
+if (passwordSkipBtn) {
+  passwordSkipBtn.addEventListener("click", async () => {
+    if (forcePasswordChange) return;
+    setAuthed(true, { mustChangePassword: false });
+    await enterAdmin();
+  });
+}
 
 if (createGroupForm) {
   createGroupForm.addEventListener("submit", async (event) => {

@@ -21,16 +21,45 @@
       <form id="login-form">
         <label>
           Username
-          <input type="text" name="username" autocomplete="username" required>
+          <input type="text" name="username" autocomplete="username" required maxlength="120">
         </label>
         <label>
           Password
-          <input type="password" name="password" autocomplete="current-password" required>
+          <input type="password" name="password" autocomplete="current-password" required maxlength="200">
         </label>
         <button type="submit">Log in</button>
         <p id="login-error" class="error" hidden></p>
       </form>
       <a class="login-back" href="/index.html">← Back to website</a>
+    </div>
+  </div>
+
+  <div id="password-view" class="login-screen" hidden>
+    <a class="login-brand" href="/index.html">
+      <img src="/img/eus_logo.png" alt="McGill EUS" class="login-brand__logo">
+    </a>
+    <div class="login-panel">
+      <p class="admin-eyebrow">Security</p>
+      <h1>Change password</h1>
+      <p class="login-lead" id="password-lead">Choose a strong password (14+ characters, letters and numbers).</p>
+      <form id="password-form">
+        <label>
+          Current password
+          <input type="password" name="currentPassword" autocomplete="current-password" required maxlength="200">
+        </label>
+        <label>
+          New password
+          <input type="password" name="newPassword" autocomplete="new-password" required minlength="14" maxlength="200">
+        </label>
+        <label>
+          Confirm new password
+          <input type="password" name="confirmPassword" autocomplete="new-password" required minlength="14" maxlength="200">
+        </label>
+        <button type="submit">Save password</button>
+        <p id="password-error" class="error" hidden></p>
+        <p id="password-status" class="status" hidden></p>
+      </form>
+      <button type="button" class="secondary" id="password-skip-btn" hidden>Continue without changing</button>
     </div>
   </div>
 
@@ -44,6 +73,7 @@
         <a href="/getting-involved.html" target="_blank" rel="noopener noreferrer">Get Involved</a>
         <a href="/resources.html" target="_blank" rel="noopener noreferrer">Resources</a>
         <a href="/contact-us.html" target="_blank" rel="noopener noreferrer">Contact</a>
+        <button type="button" id="change-password-btn" class="secondary">Password</button>
         <button type="button" id="logout-btn" class="admin-topbar__logout">Log out</button>
       </nav>
     </header>
