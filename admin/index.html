@@ -15,9 +15,7 @@
       <img src="/img/eus_logo.png" alt="McGill EUS" class="login-brand__logo">
     </a>
     <div class="login-panel">
-      <p class="admin-eyebrow">McGill EUS</p>
       <h1>Site admin</h1>
-      <p class="login-lead">Sign in to edit site content, contacts, groups, hours, and media.</p>
       <form id="login-form">
         <label>
           Username
@@ -39,13 +37,13 @@
       <img src="/img/eus_logo.png" alt="McGill EUS" class="login-brand__logo">
     </a>
     <div class="login-panel">
-      <p class="admin-eyebrow">Security</p>
-      <h1>Change password</h1>
-      <p class="login-lead" id="password-lead">Choose a strong password (14+ characters, letters and numbers).</p>
+      <p class="admin-eyebrow">Logged in</p>
+      <h1>Set a new password</h1>
+      <p class="login-lead" id="password-lead">You’re signed in. For security, replace the example password before editing the site (14+ characters, with letters and numbers).</p>
       <form id="password-form">
         <label>
           Current password
-          <input type="password" name="currentPassword" autocomplete="current-password" required maxlength="200">
+          <input type="password" name="currentPassword" autocomplete="current-password" required maxlength="200" placeholder="eus-admin-change-me">
         </label>
         <label>
           New password
@@ -79,9 +77,7 @@
     </header>
 
     <div class="admin-hero">
-      <p class="admin-eyebrow">McGill EUS</p>
       <h1>Site admin</h1>
-      <p class="admin-hero__lead">Edit public page copy, media, contacts, groups, and hours.</p>
     </div>
 
     <nav class="admin-tabs" aria-label="Admin sections">
@@ -321,10 +317,19 @@
         <button type="submit">Add</button>
       </form>
 
-      <h2 style="margin-top:1.75rem">Existing contacts</h2>
-      <p class="muted">Set Active to No and add a year to move an executive into Past Executives on Contact Us.</p>
+      <h2 style="margin-top:1.75rem">Current contacts</h2>
+      <p class="muted">Active executives and representation. Set Active to No + a year to archive someone under Past executives.</p>
       <p id="admin-status" class="status" hidden></p>
       <div id="contacts-list" class="contacts-list"></div>
+
+      <details class="past-contacts" id="past-contacts">
+        <summary class="past-contacts__summary">
+          <span>Past executives</span>
+          <span class="past-contacts__count" id="past-contacts-count">0</span>
+        </summary>
+        <p class="muted past-contacts__hint">Archived people (Active = No). Hidden from the main list above; they still appear under Past Executives on Contact Us.</p>
+        <div id="past-contacts-list" class="contacts-list"></div>
+      </details>
     </section>
 
     <section class="panel admin-panel" data-admin-panel="groups">

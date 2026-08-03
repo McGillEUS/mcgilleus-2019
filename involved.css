@@ -64,7 +64,7 @@
   background: #b82610;
 }
 
-/* Right side — no clip box; inset so full logos stay on-screen */
+/* Right side - no clip box; inset so full logos stay on-screen */
 .involved-hero__collage {
   position: absolute;
   top: 1.5rem;
@@ -310,7 +310,7 @@
   color: #8a1f0f;
 }
 
-/* Modal — Osmo basic modal pattern, EUS styling */
+/* Modal - Osmo basic modal pattern, EUS styling */
 .modal.involved-modal,
 .involved-modal {
   z-index: 1300;
@@ -357,6 +357,7 @@
   display: none;
   position: relative;
   flex-direction: column;
+  min-height: 0;
   overflow: hidden;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
   transform: translateY(14px) scale(0.985);
@@ -377,11 +378,14 @@
 
 .modal__content.involved-modal__body,
 .involved-modal__body {
-  display: grid;
-  grid-template-rows: auto minmax(0, 1fr) auto;
+  /* Flex (not grid) so the middle scroll region reliably shrinks under max-height. */
+  display: flex;
+  flex-direction: column;
   flex: 1 1 auto;
-  height: 100%;
-  max-height: min(88vh, 42rem);
+  /* Don't use height:100% here - with only max-height on the card,
+     percentage height collapses and long copy gets clipped with no scroll. */
+  height: auto;
+  max-height: none;
   min-height: 0;
   overflow: hidden;
   padding: 0;
@@ -471,6 +475,7 @@
 }
 
 .involved-modal__scroll {
+  flex: 1 1 auto;
   min-height: 0;
   overflow-x: hidden;
   overflow-y: auto;
@@ -595,7 +600,7 @@ body.is-overlay-scroll-locked {
   overscroll-behavior: none;
 }
 
-/* Native scroll fallback only — Lenis keeps its own scroll position */
+/* Native scroll fallback only - Lenis keeps its own scroll position */
 html.is-overlay-scroll-locked:not(.is-lenis-overlay-lock) body.is-overlay-scroll-locked {
   position: fixed;
   left: 0;
@@ -628,7 +633,8 @@ html.is-lenis-overlay-lock body.is-overlay-scroll-locked {
   }
 }
 
-@media screen and (max-width: 560px) {
+@media screen and (max-width: 767.98px) {
+  /* Explicit sheet height so the description pane can scroll on iOS/Android. */
   .involved-modal {
     padding: 0;
     align-items: end;
@@ -636,7 +642,9 @@ html.is-lenis-overlay-lock body.is-overlay-scroll-locked {
 
   .involved-modal__card {
     width: 100%;
-    max-height: 92vh;
+    max-width: none;
+    height: min(92dvh, 92svh, 92vh);
+    max-height: min(92dvh, 92svh, 92vh);
     transform: translateY(24px);
   }
 
@@ -644,6 +652,28 @@ html.is-lenis-overlay-lock body.is-overlay-scroll-locked {
     transform: none;
   }
 
+  .involved-modal__body {
+    flex: 1 1 0;
+    min-height: 0;
+    height: 100%;
+  }
+
+  .involved-modal__header,
+  .involved-modal__footer {
+    flex: 0 0 auto;
+  }
+
+  .involved-modal__scroll {
+    flex: 1 1 0;
+    min-height: 0;
+    overflow-y: auto;
+    touch-action: pan-y;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+@media screen and (max-width: 560px) {
   .modal__btn-close {
     top: 0.85rem;
     right: 0.85rem;
@@ -659,7 +689,10 @@ html.is-lenis-overlay-lock body.is-overlay-scroll-locked {
     height: 3.75rem;
   }
 
-  .involved-modal__scroll,
+  .involved-modal__scroll {
+    padding: 1.1rem 1.25rem;
+  }
+
   .involved-modal__footer {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
@@ -668,6 +701,14 @@ html.is-lenis-overlay-lock body.is-overlay-scroll-locked {
   .involved-modal__footer .involved-modal__cta {
     flex: 1 1 auto;
     justify-content: center;
+  }
+
+  .involved-modal__layout.has-photos {
+    grid-template-columns: 1fr;
+  }
+
+  .involved-modal__photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
@@ -941,6 +982,8 @@ html.is-lenis-overlay-lock body.is-overlay-scroll-locked {
   font-weight: 600;
   padding: 0.65rem 1rem;
   cursor: pointer;
+  display: inline-flex;
+  align-items: center;
 }
 
 .involved-quiz__btn--ghost {
@@ -952,99 +995,354 @@ html.is-lenis-overlay-lock body.is-overlay-scroll-locked {
   color: var(--involved-muted);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (min-width: 768px) {
   .involved-hero {
     min-height: calc(100svh - 4rem - 6.5rem);
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
     padding: 1.5rem 1.25rem 0.75rem;
+    overflow: hidden;
   }
 
   .involved-hero__copy {
+    order: 1;
     max-width: none;
     width: 100%;
   }
 
+  .involved-hero__copy h1 {
+    font-size: clamp(2.6rem, 10vw, 4rem);
+  }
+
+  .involved-hero__cta {
+    min-height: 44px;
+    padding: 0.8rem 1.15rem;
+  }
+
   .involved-hero__collage {
+    order: 2;
     position: relative;
     left: auto;
     right: auto;
     top: auto;
     bottom: auto;
     width: 100%;
-    height: min(52vh, 28rem);
-    min-height: 18rem;
+    height: min(42vh, 22rem);
+    min-height: 14rem;
     margin-top: 1rem;
-    overflow: visible;
+    overflow: hidden;
   }
 
-  .interactive-collage__item.is--1 { top: 4%; left: 2%; }
-  .interactive-collage__item.is--2 { top: 42%; left: 6%; }
-  .interactive-collage__item.is--3 { top: 12%; left: 28%; }
-  .interactive-collage__item.is--4 { top: 2%; left: 50%; }
-  .interactive-collage__item.is--5 { top: 38%; left: 42%; }
-  .interactive-collage__item.is--6 { top: 10%; left: 66%; }
-  .interactive-collage__item.is--7 { top: 44%; left: 62%; }
-  .interactive-collage__item.is--8 { top: 6%; left: 78%; }
-
-  .involved-collage-card {
-    width: clamp(9rem, 26vw, 14rem);
+  .interactive-collage,
+  .interactive-collage__collection,
+  .interactive-collage__list {
+    overflow: hidden;
   }
 
-  .involved-collage-card.is--landscape {
-    width: clamp(10.5rem, 30vw, 16rem);
-  }
-
-  .involved-collage-card.is--portrait {
-    width: clamp(8rem, 22vw, 12rem);
-  }
-}
-
-@media screen and (max-width: 560px) {
-  .involved-hero {
-    min-height: calc(100svh - 3.5rem - 6rem);
-    padding: 1.25rem 1rem 0.5rem;
-  }
-
-  .involved-main {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
+  .interactive-collage__item.is--1 { top: 6%; left: 4%; }
+  .interactive-collage__item.is--2 { top: 48%; left: 8%; }
+  .interactive-collage__item.is--3 { top: 14%; left: 32%; }
+  .interactive-collage__item.is--4 { top: 4%; left: 56%; }
+  .interactive-collage__item.is--5 { top: 42%; left: 48%; }
+  .interactive-collage__item.is--6 { top: 12%; left: 72%; }
   .interactive-collage__item.is--7,
   .interactive-collage__item.is--8 {
     display: none;
   }
 
+  .involved-collage-card {
+    width: clamp(7.5rem, 22vw, 11rem);
+  }
+
+  .involved-collage-card.is--landscape {
+    width: clamp(9rem, 26vw, 13rem);
+  }
+
+  .involved-collage-card.is--portrait {
+    width: clamp(7rem, 20vw, 10rem);
+  }
+}
+
+/* Phones: stacked hero + tidy logo grid (no overlapping collage) */
+@media screen and (max-width: 767.98px) {
+  .involved-hero {
+    min-height: auto;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 1.25rem 1rem 1.35rem;
+    overflow: visible;
+    background:
+      linear-gradient(180deg, #f7f6f4 0%, #fff 55%);
+  }
+
+  .involved-hero__copy {
+    position: relative;
+    z-index: 2;
+    order: 1;
+    max-width: none;
+    width: 100%;
+  }
+
+  .involved-hero__copy h1 {
+    font-size: clamp(2.45rem, 11vw, 3.4rem);
+    line-height: 0.98;
+  }
+
+  .involved-hero__lead {
+    font-size: 1rem;
+    margin: 0.65rem 0 1rem;
+    max-width: none;
+  }
+
+  .involved-hero__cta {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.85rem 1.15rem;
+    font-size: 1rem;
+  }
+
+  .involved-hero__collage {
+    order: 2;
+    position: relative;
+    inset: auto;
+    left: auto;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    margin-top: 1.35rem;
+    overflow: visible;
+  }
+
+  .involved-hero__collage::before {
+    content: "Featured groups";
+    display: block;
+    margin: 0 0 0.65rem;
+    color: var(--involved-muted);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+
+  .interactive-collage,
+  .interactive-collage__collection,
+  .interactive-collage__list {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+  }
+
+  .interactive-collage__list {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.55rem;
+    width: 100%;
+  }
+
+  .interactive-collage__item,
+  .interactive-collage__item.is--1,
+  .interactive-collage__item.is--2,
+  .interactive-collage__item.is--3,
+  .interactive-collage__item.is--4,
+  .interactive-collage__item.is--5,
+  .interactive-collage__item.is--6,
+  .interactive-collage__item.is--7,
+  .interactive-collage__item.is--8 {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    z-index: 0 !important;
+    display: block !important;
+  }
+
+  .interactive-collage__item-inner {
+    will-change: auto;
+    transform: none !important;
+  }
+
+  .involved-collage-card,
+  .involved-collage-card.is--landscape,
+  .involved-collage-card.is--portrait {
+    width: 100% !important;
+    aspect-ratio: 1 !important;
+    background: #fff;
+    border: 1px solid #ebebeb;
+    overflow: hidden;
+  }
+
+  .involved-collage-card .cover-image,
+  .involved-collage-card.has-white-bg .cover-image {
+    padding: 0.55rem;
+    filter: none;
+    object-fit: contain;
+  }
+
+  .involved-collage-card.has-white-bg {
+    background: #fff;
+  }
+
+  .involved-main {
+    padding: 2rem 1rem 3.5rem;
+  }
+
+  .involved-main__title {
+    font-size: clamp(1.45rem, 6.5vw, 1.9rem);
+    text-align: left;
+  }
+
   .involved-toc {
-    gap: 0.4rem 0.85rem;
-    margin-bottom: 2rem;
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 0.45rem;
+    margin: 0 -1rem 1.75rem;
+    padding: 0 1rem 0.35rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .involved-toc::-webkit-scrollbar {
+    display: none;
+  }
+
+  .involved-toc__link {
+    flex: 0 0 auto;
+    min-height: 40px;
+    align-items: center;
+    padding: 0.45rem 0.75rem;
+    border: 1px solid var(--involved-line);
+    background: #fff;
+    color: var(--involved-ink);
+    font-size: 0.86rem;
+    white-space: nowrap;
+  }
+
+  .involved-toc__link:hover {
+    border-color: #ccc;
+    color: var(--involved-ink);
+  }
+
+  .involved-toc__count {
+    color: var(--involved-muted);
   }
 
   .involved-section__head {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.2rem;
-    margin-bottom: 1.15rem;
+    margin-bottom: 1rem;
+  }
+
+  .involved-section {
+    margin-top: 2.25rem;
+    scroll-margin-top: 5rem;
+  }
+
+  .involved-category {
+    font-size: clamp(1.15rem, 5vw, 1.4rem);
   }
 
   .involved-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.75rem;
+    gap: 0.55rem;
   }
 
   .involved-item {
-    padding: 1.15rem 0.75rem 1.05rem;
-    gap: 0.7rem;
+    padding: 0.85rem 0.55rem 0.8rem;
+    gap: 0.5rem;
+    min-height: 0;
+    background: #fafafa;
+    border: 1px solid #efefef;
   }
 
   .involved-item__logo {
-    width: 4.5rem;
-    height: 4.5rem;
+    width: 3.25rem;
+    height: 3.25rem;
   }
 
   .involved-item__name {
-    font-size: 0.92rem;
+    font-size: 0.84rem;
+    max-width: none;
+    line-height: 1.25;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .involved-hero {
+    padding: 1.1rem 1rem 1.15rem;
+  }
+
+  .interactive-collage__list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+  }
+
+  .interactive-collage__item.is--7,
+  .interactive-collage__item.is--8 {
+    display: none !important;
+  }
+
+  .involved-collage-card .cover-image,
+  .involved-collage-card.has-white-bg .cover-image {
+    padding: 0.65rem;
+  }
+
+  .involved-quiz {
+    padding: 0;
+    place-items: end center;
+  }
+
+  .involved-quiz__panel {
+    width: 100%;
+    height: min(92svh, 40rem);
+    max-height: 92svh;
+    padding: 1.25rem 1rem 1.15rem;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  .involved-quiz__close {
+    top: 0.35rem;
+    right: 0.35rem;
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+  }
+
+  .involved-quiz__progress-track {
+    margin-right: 2.5rem;
+  }
+
+  .involved-quiz__result-meta {
+    white-space: normal;
+  }
+
+  .involved-quiz__actions {
+    gap: 0.5rem;
+  }
+
+  .involved-quiz__btn {
+    flex: 1 1 auto;
+    min-height: 44px;
+    justify-content: center;
+  }
+
+  .modal__btn-close {
+    width: 44px;
+    height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }

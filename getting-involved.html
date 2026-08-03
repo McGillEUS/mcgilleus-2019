@@ -30,24 +30,27 @@
     </div>
   </div>
 
-  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" data-theme-nav>
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" data-theme-nav data-site-nav-root>
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html" data-barba-update data-site-brand-link>
         <img src="img/eus_logo.png" alt="McGill EUS" class="navbar-logo" data-site-brand-logo>
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="nav-toggle" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Open menu" data-nav-toggle>
+        <span class="nav-toggle__bars" aria-hidden="true">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto" data-site-nav>
-          <li class="nav-item"><a class="nav-link" href="index.html" data-barba-update>Home</a></li>
-          <li class="nav-item"><a class="nav-link active" href="getting-involved.html" data-barba-update aria-current="page">Get Involved</a></li>
-          <li class="nav-item"><a class="nav-link" href="resources.html" data-barba-update>Resources</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact-us.html" data-barba-update>Contact Us</a></li>
-          <li class="nav-item">
-            <a class="nav-link roombooking-button" href="https://roombookings.mcgilleus.ca" target="_blank" rel="noopener noreferrer" data-barba-update>Book a Room</a>
-          </li>
-        </ul>
+      <div class="navbar-collapse" id="navbarResponsive" data-nav-panel>
+        <div class="site-nav-sheet">
+          <ul class="navbar-nav ml-auto" data-site-nav>
+            <li class="nav-item" style="--nav-i:0"><a class="nav-link" href="index.html" data-barba-update><span class="nav-link__label">Home</span></a></li>
+            <li class="nav-item" style="--nav-i:1"><a class="nav-link active" href="getting-involved.html" data-barba-update aria-current="page"><span class="nav-link__label">Get Involved</span></a></li>
+            <li class="nav-item" style="--nav-i:2"><a class="nav-link" href="resources.html" data-barba-update><span class="nav-link__label">Resources</span></a></li>
+            <li class="nav-item" style="--nav-i:3"><a class="nav-link" href="contact-us.html" data-barba-update><span class="nav-link__label">Contact Us</span></a></li>
+            <li class="nav-item" style="--nav-i:4"><a class="nav-link roombooking-button" href="https://roombookings.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span class="nav-link__label">Book a Room</span></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -57,7 +60,7 @@
     <div class="involved-hero__collage" id="involved-collage" aria-label="Featured groups"></div>
     <div class="involved-hero__copy">
       <h1>Get Involved</h1>
-      <p class="involved-hero__lead">Explore EUS societies, clubs, committees, and design teams — or take a quick quiz to find your fit.</p>
+      <p class="involved-hero__lead">Explore EUS societies, clubs, committees, and design teams - or take a quick quiz to find your fit.</p>
       <button type="button" class="involved-hero__cta" data-open-groups-quiz>Find a group for you</button>
     </div>
   </header>
@@ -135,6 +138,7 @@
   <script src="js/content-public.js"></script>
   <script src="js/home.js"></script>
   <script src="js/eus-loader.js"></script>
+  <script src="js/site-nav.js"></script>
   <script src="js/page-transition.js"></script>
 </body>
 </html>

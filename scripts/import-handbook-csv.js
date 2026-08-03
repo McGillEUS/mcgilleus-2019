@@ -178,7 +178,7 @@ function findGroup(hbName) {
   }
   let hit = groups.find((g) => norm(g.name) === n);
   if (hit) return hit;
-  // Exact id/slug only for fuzzy leftover — avoid partial name collisions (BRIDGE ≠ Bridge Building)
+  // Exact id/slug only for fuzzy leftover - avoid partial name collisions (BRIDGE ≠ Bridge Building)
   const slug = n.replace(/\s+/g, "-");
   return groups.find((g) => g.id === slug) || null;
 }

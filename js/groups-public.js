@@ -336,7 +336,7 @@
       if (event.deltaMode === 1) delta *= 16;
       else if (event.deltaMode === 2) delta *= el.clientHeight;
 
-      // Trackpads send small deltas often; mice send large ones — normalize a bit
+      // Trackpads send small deltas often; mice send large ones - normalize a bit
       const intensity = Math.abs(delta) > 40 ? 1.05 : 0.95;
       delta *= intensity;
 
@@ -369,17 +369,34 @@
       () => modal.querySelector("[data-modal-scroll]"),
       () => isGroupModalOpen(modal)
     );
+    const coarsePointer =
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(pointer: coarse), (max-width: 767.98px)").matches;
 
-    modal.addEventListener(
-      "wheel",
-      (event) => {
-        if (!isGroupModalOpen(modal)) return;
-        const card = modal.querySelector('[data-modal-name="group-detail"]');
-        if (!card?.contains(event.target)) return;
-        scroller.onWheel(event);
-      },
-      { passive: false, capture: true }
-    );
+    // Custom wheel smoothing fights native touch scrolling on phones - skip it there.
+    if (!coarsePointer) {
+      modal.addEventListener(
+        "wheel",
+        (event) => {
+          if (!isGroupModalOpen(modal)) return;
+          const card = modal.querySelector('[data-modal-name="group-detail"]');
+          if (!card?.contains(event.target)) return;
+          scroller.onWheel(event);
+        },
+        { passive: false, capture: true }
+      );
+    } else {
+      // Keep page-level Lenis/touch handlers from eating vertical drags inside the sheet.
+      modal.addEventListener(
+        "touchmove",
+        (event) => {
+          if (!isGroupModalOpen(modal)) return;
+          const scrollEl = modal.querySelector("[data-modal-scroll]");
+          if (scrollEl?.contains(event.target)) event.stopPropagation();
+        },
+        { passive: true, capture: true }
+      );
+    }
 
     modal._resetModalScroll = scroller.reset;
   }
@@ -495,7 +512,7 @@
       <div class="involved-modal__footer">
         ${
           actions ||
-          `<span class="involved-modal__empty-links">Links coming soon — check back later.</span>`
+          `<span class="involved-modal__empty-links">Links coming soon - check back later.</span>`
         }
       </div>
     `;

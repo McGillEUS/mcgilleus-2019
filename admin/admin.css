@@ -73,7 +73,9 @@ a:hover {
   text-transform: uppercase;
 }
 
-/* Login */
+/* Login
+   Important: author `display` must not override the HTML hidden attribute,
+   or login/password screens stay stuck visible/invisible. */
 .login-screen {
   min-height: 100vh;
   display: grid;
@@ -83,6 +85,12 @@ a:hover {
   background:
     linear-gradient(180deg, rgba(212, 46, 18, 0.04), transparent 42%),
     var(--bg);
+}
+
+.login-screen[hidden],
+.admin-shell[hidden],
+[hidden] {
+  display: none !important;
 }
 
 .login-brand {
@@ -506,6 +514,65 @@ button.danger:hover {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
+}
+
+.past-contacts {
+  margin-top: 2rem;
+  border: 1px solid var(--line);
+  background: var(--soft-2);
+}
+
+.past-contacts__summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.95rem 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #444;
+  user-select: none;
+}
+
+.past-contacts__summary::-webkit-details-marker {
+  display: none;
+}
+
+.past-contacts__summary::after {
+  content: "+";
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: #888;
+}
+
+.past-contacts[open] .past-contacts__summary::after {
+  content: "–";
+}
+
+.past-contacts__summary:hover {
+  color: #111;
+  background: #f0f0f0;
+}
+
+.past-contacts__count {
+  margin-left: auto;
+  margin-right: 0.35rem;
+  color: #888;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.past-contacts__hint {
+  margin: 0;
+  padding: 0 1.15rem 0.85rem;
+}
+
+.past-contacts .contacts-list {
+  padding: 0 1.15rem 1.15rem;
 }
 
 .year-field input {

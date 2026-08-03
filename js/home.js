@@ -26,6 +26,17 @@
     );
   }
 
+  function isMobileViewport() {
+    return (
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(max-width: 767.98px)").matches
+    );
+  }
+
+  function skipHeroAnimation() {
+    return prefersReducedMotion() || isMobileViewport();
+  }
+
   function getHero(root) {
     const scope = root || document;
     return scope.querySelector?.(".home-hero") || document.querySelector(".home-hero");
@@ -68,7 +79,7 @@
   }
 
   /**
-   * Cinematic reveal — intended to run right after the intro loader finishes.
+   * Cinematic reveal - intended to run right after the intro loader finishes.
    */
   function revealHomeHero(root) {
     const hero = getHero(root);
@@ -88,7 +99,7 @@
 
     if (!items.length) return;
 
-    if (prefersReducedMotion()) {
+    if (skipHeroAnimation()) {
       showStatic(hero);
       markPlayed();
       return;
@@ -200,12 +211,12 @@
 
     if (revealing || homeCtx) return;
 
-    if (hasPlayed() || prefersReducedMotion()) {
+    if (hasPlayed() || skipHeroAnimation()) {
       showStatic(hero);
       return;
     }
 
-    // Loader still pending — keep copy hidden; revealHomeHero runs on finish.
+    // Loader still pending - keep copy hidden; revealHomeHero runs on finish.
     if (
       typeof window.shouldPlayEusLoader === "function" &&
       window.shouldPlayEusLoader() &&
@@ -218,7 +229,7 @@
       return;
     }
 
-    // No intro this visit (e.g. returning via Barba) — soft reveal once.
+    // No intro this visit (e.g. returning via Barba) - soft reveal once.
     revealHomeHero(root);
   }
 

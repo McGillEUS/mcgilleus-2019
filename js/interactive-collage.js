@@ -27,12 +27,28 @@
       const list = collageRoot.querySelector("[data-interactive-collage-list]");
       const items = [...collageRoot.querySelectorAll("[data-interactive-collage-item]")];
       const isTouch = !window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      const isCompact = window.matchMedia("(max-width: 767.98px)").matches;
       if (!list || !items.length) return;
 
       const controller = new AbortController();
       const { signal } = controller;
       let activeItem = null;
       const getInner = (item) => item.querySelector("[data-interactive-collage-item-inner]");
+
+      // Phones: plain tap-to-open grid - the hover “push apart” effect doesn’t fit.
+      if (isCompact) {
+        items.forEach((item) => {
+          item.addEventListener(
+            "click",
+            () => {
+              item.dispatchEvent(new CustomEvent("collage-activate", { bubbles: true }));
+            },
+            { signal }
+          );
+        });
+        collageRoot._interactiveCollageAbort = controller;
+        return;
+      }
 
       const getMoveStrength = (distance) => {
         const strength = 1 / (1 + Math.pow(distance - 1, 1.2) * 0.45);

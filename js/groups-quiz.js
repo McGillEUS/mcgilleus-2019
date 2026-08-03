@@ -190,7 +190,7 @@
       prompt: "How do you want to be involved?",
       options: [
         {
-          label: "Compete hard — competitions & deadlines",
+          label: "Compete hard - competitions & deadlines",
           why: "competitive teams",
           boost: { competitive: 4, design: 2, racing: 1, "hands-on": 1 },
           preferCategories: ["Design Teams"],
@@ -202,7 +202,7 @@
           preferCategories: ["Design Teams", "Departmental Committees"],
         },
         {
-          label: "Keep it flexible — try things out",
+          label: "Keep it flexible - try things out",
           why: "flexible exploring",
           boost: { social: 2, makerspace: 2, creative: 1, campus: 1 },
           penalize: { competitive: 2 },
@@ -226,7 +226,7 @@
           preferCategories: ["Clubs", "Committees"],
         },
         {
-          label: "Just vibes — fun is the point",
+          label: "Just vibes - fun is the point",
           why: "fun first",
           boost: { social: 3, events: 3, music: 2, creative: 1 },
           penalize: { competitive: 1 },
@@ -467,7 +467,7 @@
       const ui = quizUi();
       const resultsTitle = ui.resultsTitle || "Your top matches";
       const emptyMessage =
-        ui.emptyMessage || "No strong matches — browse the directory below.";
+        ui.emptyMessage || "No strong matches - browse the directory below.";
       const retakeLabel = ui.retakeLabel || "Retake quiz";
       const browseLabel = ui.browseLabel || "Browse all groups";
       return `
@@ -616,7 +616,9 @@
     return (window.__involvedPageCopy && window.__involvedPageCopy.quizUi) || {};
   }
 
-  async function loadQuizConfig() {
+  let quizConfigPromise = null;
+
+  async function loadQuizConfigUncached() {
     const sources = ["/api/quiz", "data/quiz.json"];
     for (const url of sources) {
       try {
@@ -636,6 +638,16 @@
       }
     }
     return null;
+  }
+
+  function loadQuizConfig() {
+    if (!quizConfigPromise) {
+      quizConfigPromise = loadQuizConfigUncached().catch((error) => {
+        quizConfigPromise = null;
+        throw error;
+      });
+    }
+    return quizConfigPromise;
   }
 
   window.initGroupsQuiz = initGroupsQuiz;

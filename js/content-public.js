@@ -7,7 +7,9 @@
       .replace(/"/g, "&quot;");
   }
 
-  async function fetchDoc(name) {
+  const docCache = new Map();
+
+  async function fetchDocUncached(name) {
     const sources = [`/api/${name}`, `data/${name}.json`];
     for (const url of sources) {
       try {
@@ -19,6 +21,36 @@
       }
     }
     return null;
+  }
+
+  function fetchDoc(name) {
+    if (!docCache.has(name)) {
+      docCache.set(
+        name,
+        fetchDocUncached(name).catch((error) => {
+          docCache.delete(name);
+          throw error;
+        })
+      );
+    }
+    return docCache.get(name);
+  }
+
+  function pageNamespace(root) {
+    return (
+      root?.getAttribute?.("data-barba-namespace") ||
+      document.querySelector('[data-barba="container"]')?.getAttribute("data-barba-namespace") ||
+      ""
+    );
+  }
+
+  function docsForNamespace(ns) {
+    const docs = ["site"];
+    if (!ns || ns === "home") docs.push("home");
+    if (!ns || ns === "involved") docs.push("involved");
+    if (!ns || ns === "contact") docs.push("contact-page");
+    if (!ns || ns === "resources") docs.push("resources");
+    return docs;
   }
 
   function currentPageFile() {
@@ -43,7 +75,7 @@
     if (navList && Array.isArray(site.nav)) {
       const page = currentPageFile();
       navList.innerHTML = site.nav
-        .map((item) => {
+        .map((item, index) => {
           const href = item.href || "#";
           const file = href.split("/").pop()?.split(/[?#]/)[0]?.toLowerCase() || "";
           const active = !item.external && file === page;
@@ -54,9 +86,11 @@
             ? ' target="_blank" rel="noopener noreferrer"'
             : " data-barba-update";
           const current = active ? ' aria-current="page"' : "";
-          return `<li class="nav-item"><a class="${cls}" href="${escapeHtml(href)}"${extra}${current}>${escapeHtml(
+          return `<li class="nav-item" style="--nav-i:${index}"><a class="${cls}" href="${escapeHtml(
+            href
+          )}"${extra}${current}><span class="nav-link__label">${escapeHtml(
             item.label
-          )}</a></li>`;
+          )}</span></a></li>`;
         })
         .join("");
     }
@@ -353,22 +387,27 @@
   }
 
   async function loadSiteContent(root) {
-    const [site, home, involved, contactPage, resources] = await Promise.all([
-      fetchDoc("site"),
-      fetchDoc("home"),
-      fetchDoc("involved"),
-      fetchDoc("contact-page"),
-      fetchDoc("resources"),
-    ]);
+    const ns = pageNamespace(root);
+    const needed = docsForNamespace(ns);
+    const docs = await Promise.all(needed.map((name) => fetchDoc(name)));
+    const byName = Object.fromEntries(needed.map((name, i) => [name, docs[i]]));
+
+    const site = byName.site ?? window.__siteContent?.site ?? null;
+    const home = byName.home ?? window.__siteContent?.home ?? null;
+    const involved = byName.involved ?? window.__siteContent?.involved ?? null;
+    const contactPage = byName["contact-page"] ?? window.__siteContent?.contactPage ?? null;
+    const resources = byName.resources ?? window.__siteContent?.resources ?? null;
 
     applySiteChrome(site, root);
-    applyHome(home, root);
-    applyInvolved(involved, root);
-    applyContactPage(contactPage, root);
-    applyResources(resources, root);
+    if (home) applyHome(home, root);
+    if (involved) applyInvolved(involved, root);
+    if (contactPage) applyContactPage(contactPage, root);
+    if (resources) applyResources(resources, root);
 
+    // Quiz config only matters on involved; prefetch in background elsewhere.
     if (typeof window.loadQuizConfig === "function") {
-      await window.loadQuizConfig();
+      const quizPromise = window.loadQuizConfig();
+      if (ns === "involved") await quizPromise;
     }
 
     window.__siteContent = { site, home, involved, contactPage, resources };

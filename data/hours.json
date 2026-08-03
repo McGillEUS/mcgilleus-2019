@@ -1,17 +1,59 @@
 {
   "timezone": "America/Montreal",
   "title": "Office hours",
-  "summerMode": false,
+  "summerMode": true,
   "summerMessage": "Over the summer, our office hours change often. Check Instagram for the most up-to-date schedule.",
   "instagramUrl": "https://www.instagram.com/mcgilleus/",
   "instagramLabel": "Check Instagram",
   "days": [
-    { "day": "monday", "label": "Monday", "open": "10:00", "close": "17:00", "closed": false },
-    { "day": "tuesday", "label": "Tuesday", "open": "10:00", "close": "17:00", "closed": false },
-    { "day": "wednesday", "label": "Wednesday", "open": "10:00", "close": "17:00", "closed": false },
-    { "day": "thursday", "label": "Thursday", "open": "10:00", "close": "17:00", "closed": false },
-    { "day": "friday", "label": "Friday", "open": "10:00", "close": "17:00", "closed": false },
-    { "day": "saturday", "label": "Saturday", "open": "", "close": "", "closed": true },
-    { "day": "sunday", "label": "Sunday", "open": "", "close": "", "closed": true }
+    {
+      "day": "monday",
+      "label": "Monday",
+      "open": "10:00",
+      "close": "17:00",
+      "closed": false
+    },
+    {
+      "day": "tuesday",
+      "label": "Tuesday",
+      "open": "10:00",
+      "close": "17:00",
+      "closed": false
+    },
+    {
+      "day": "wednesday",
+      "label": "Wednesday",
+      "open": "10:00",
+      "close": "17:00",
+      "closed": false
+    },
+    {
+      "day": "thursday",
+      "label": "Thursday",
+      "open": "10:00",
+      "close": "17:00",
+      "closed": false
+    },
+    {
+      "day": "friday",
+      "label": "Friday",
+      "open": "10:00",
+      "close": "17:00",
+      "closed": false
+    },
+    {
+      "day": "saturday",
+      "label": "Saturday",
+      "open": "",
+      "close": "",
+      "closed": true
+    },
+    {
+      "day": "sunday",
+      "label": "Sunday",
+      "open": "",
+      "close": "",
+      "closed": true
+    }
   ]
 }

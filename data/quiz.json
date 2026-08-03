@@ -383,7 +383,7 @@
       "prompt": "How do you want to be involved?",
       "options": [
         {
-          "label": "Compete hard — competitions & deadlines",
+          "label": "Compete hard - competitions & deadlines",
           "why": "competitive teams",
           "boost": {
             "competitive": 4,
@@ -413,7 +413,7 @@
           "avoidCategories": []
         },
         {
-          "label": "Keep it flexible — try things out",
+          "label": "Keep it flexible - try things out",
           "why": "flexible exploring",
           "boost": {
             "social": 2,
@@ -463,7 +463,7 @@
           "avoidCategories": []
         },
         {
-          "label": "Just vibes — fun is the point",
+          "label": "Just vibes - fun is the point",
           "why": "fun first",
           "boost": {
             "social": 3,

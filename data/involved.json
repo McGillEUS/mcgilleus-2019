@@ -1,13 +1,13 @@
 {
   "hero": {
     "title": "Get Involved",
-    "lead": "Explore EUS societies, clubs, committees, and design teams — or take a quick quiz to find your fit.",
+    "lead": "Explore EUS societies, clubs, committees, and design teams - or take a quick quiz to find your fit.",
     "ctaLabel": "Find a group for you"
   },
   "mainTitle": "All groups",
   "quizUi": {
     "resultsTitle": "Your top matches",
-    "emptyMessage": "No strong matches yet — try different answers, or browse all groups below.",
+    "emptyMessage": "No strong matches yet - try different answers, or browse all groups below.",
     "retakeLabel": "Retake quiz",
     "browseLabel": "Browse all groups",
     "closeLabel": "Close",

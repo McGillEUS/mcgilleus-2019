@@ -11,6 +11,8 @@ const passwordSkipBtn = document.getElementById("password-skip-btn");
 const changePasswordBtn = document.getElementById("change-password-btn");
 const createForm = document.getElementById("create-form");
 const contactsList = document.getElementById("contacts-list");
+const pastContactsList = document.getElementById("past-contacts-list");
+const pastContactsCount = document.getElementById("past-contacts-count");
 const adminStatus = document.getElementById("admin-status");
 const logoutBtn = document.getElementById("logout-btn");
 const hoursForm = document.getElementById("hours-form");
@@ -98,18 +100,19 @@ window.api = api;
 
 function setAuthed(isAuthed, options = {}) {
   const needsPassword = Boolean(options.mustChangePassword);
+  const showPassword = Boolean(needsPassword || options.showPassword === true);
   forcePasswordChange = needsPassword;
-  loginView.hidden = isAuthed;
-  if (passwordView) {
-    passwordView.hidden = !isAuthed || (!needsPassword && options.showPassword !== true);
-  }
-  adminView.hidden = !isAuthed || needsPassword || options.showPassword === true;
+
+  if (loginView) loginView.hidden = Boolean(isAuthed);
+  if (passwordView) passwordView.hidden = !(isAuthed && showPassword);
+  if (adminView) adminView.hidden = !(isAuthed && !showPassword);
+
   if (passwordSkipBtn) {
     passwordSkipBtn.hidden = needsPassword;
   }
   if (passwordLead && needsPassword) {
     passwordLead.textContent =
-      "You’re still using the example admin password. Set a unique password before editing the site.";
+      "You’re signed in. Enter the current example password, then choose a new one (14+ characters, letters and numbers) to open the editor.";
   } else if (passwordLead) {
     passwordLead.textContent =
       "Choose a strong password (14+ characters, letters and numbers).";
@@ -310,8 +313,47 @@ function contactCard(contact) {
 
 async function loadContacts() {
   const contacts = await api("/api/admin/contacts");
-  contactsList.innerHTML = "";
-  contacts.forEach((contact) => contactsList.appendChild(contactCard(contact)));
+  const current = [];
+  const past = [];
+  contacts.forEach((contact) => {
+    if (contact.active === false) past.push(contact);
+    else current.push(contact);
+  });
+
+  const bySort = (a, b) => {
+    if (a.section !== b.section) {
+      return a.section === "executive" ? -1 : 1;
+    }
+    return (a.sort_order || 0) - (b.sort_order || 0);
+  };
+  current.sort(bySort);
+  past.sort((a, b) => {
+    const yearDiff = String(b.year || "").localeCompare(String(a.year || ""));
+    if (yearDiff) return yearDiff;
+    return bySort(a, b);
+  });
+
+  if (contactsList) {
+    contactsList.innerHTML = "";
+    if (!current.length) {
+      contactsList.innerHTML = '<p class="muted">No current contacts yet.</p>';
+    } else {
+      current.forEach((contact) => contactsList.appendChild(contactCard(contact)));
+    }
+  }
+
+  if (pastContactsList) {
+    pastContactsList.innerHTML = "";
+    if (!past.length) {
+      pastContactsList.innerHTML = '<p class="muted">No past executives archived yet.</p>';
+    } else {
+      past.forEach((contact) => pastContactsList.appendChild(contactCard(contact)));
+    }
+  }
+
+  if (pastContactsCount) {
+    pastContactsCount.textContent = String(past.length);
+  }
 }
 
 function showGroupsStatus(message, isError = false) {
@@ -718,6 +760,6 @@ logoutBtn.addEventListener("click", async () => {
 queueMicrotask(() => {
   refreshSession().catch((error) => {
     loginError.hidden = false;
-    loginError.textContent = error.message + " — is the server running (npm start)?";
+    loginError.textContent = error.message + " - is the server running (npm start)?";
   });
 });

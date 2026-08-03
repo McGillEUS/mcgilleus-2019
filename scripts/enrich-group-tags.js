@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-/** Distinctive tags per group — used by the Find-a-group quiz */
+/** Distinctive tags per group - used by the Find-a-group quiz */
 const TAGS_BY_ID = {
   asa: ["department", "academic", "creative", "social", "leadership"],
   buss: ["department", "academic", "research", "career", "social", "leadership"],

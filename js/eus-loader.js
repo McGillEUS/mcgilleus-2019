@@ -5,10 +5,19 @@
   let bleedEl = null;
   let heroEl = null;
 
+  function isMobileViewport() {
+    return (
+      typeof window.matchMedia === "function" &&
+      window.matchMedia("(max-width: 767.98px)").matches
+    );
+  }
+
   function shouldPlay() {
     if (typeof window.matchMedia === "function") {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
     }
+    // Skip the cinematic intro on phones - go straight to content.
+    if (isMobileViewport()) return false;
     try {
       if (sessionStorage.getItem(STORAGE_KEY) === "1") return false;
     } catch (_) {
@@ -39,7 +48,7 @@
   }
 
   function applyBleedRect(el, rect) {
-    // Plain styles — avoid GSAP transforms that can desync on handoff.
+    // Plain styles - avoid GSAP transforms that can desync on handoff.
     // Keep z-index under the hero copy (home-hero.is-intro-bridged is z-index 2)
     // so the photo acts as a background, not a cover over the text.
     el.style.position = "fixed";
@@ -102,7 +111,7 @@
       return;
     }
 
-    // Freeze the photo exactly over the hero — never reparent / never swap layers
+    // Freeze the photo exactly over the hero - never reparent / never swap layers
     gsap.killTweensOf(bleed);
     gsap.set(bleed, { clearProps: "transform,x,y,scale,scaleX,scaleY" });
     applyBleedRect(bleed, heroRect());

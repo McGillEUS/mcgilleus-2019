@@ -6,7 +6,7 @@
     "email": "president@mcgilleus.ca",
     "section": "executive",
     "sort_order": 1,
-    "photo_path": "",
+    "photo_path": "img/contacts/1785521600186-491c370e.jpeg",
     "active": true,
     "year": ""
   },
@@ -28,7 +28,7 @@
     "email": "vpcomm@mcgilleus.ca",
     "section": "executive",
     "sort_order": 3,
-    "photo_path": "",
+    "photo_path": "img/contacts/1785521902331-3d2007d5.jpg",
     "active": true,
     "year": ""
   },
@@ -39,7 +39,7 @@
     "email": "vpevents@mcgilleus.ca",
     "section": "executive",
     "sort_order": 4,
-    "photo_path": "",
+    "photo_path": "img/contacts/1785521926426-6e42783a.jpg",
     "active": true,
     "year": ""
   },
@@ -50,7 +50,7 @@
     "email": "vpexternal@mcgilleus.ca",
     "section": "executive",
     "sort_order": 5,
-    "photo_path": "",
+    "photo_path": "img/contacts/1785521879872-b5e25bfe.png",
     "active": true,
     "year": ""
   },
@@ -83,7 +83,7 @@
     "email": "vpservices@mcgilleus.ca",
     "section": "executive",
     "sort_order": 8,
-    "photo_path": "",
+    "photo_path": "img/contacts/1785521958624-1fcf9a72.jpeg",
     "active": true,
     "year": ""
   },
@@ -100,7 +100,7 @@
   },
   {
     "id": "rep-ssmu",
-    "name": "TBD",
+    "name": "Hector Giraud",
     "role": "SSMU Representative",
     "email": "ssmu.rep@mcgilleus.ca",
     "section": "representation",
@@ -111,7 +111,7 @@
   },
   {
     "id": "rep-senator",
-    "name": "TBD",
+    "name": "Paul Hutu",
     "role": "Engineering Senator",
     "email": "senator@mcgilleus.ca",
     "section": "representation",

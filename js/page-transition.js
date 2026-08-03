@@ -81,23 +81,37 @@ function initBeforeEnterFunctions(next) {
 // Content that should already be in the page while the wipe reveals it
 async function initPageContent(next) {
   nextPage = next || document;
+  const ns = nextPage?.getAttribute?.("data-barba-namespace") || "";
 
-  if (typeof window.loadSiteContent === "function") {
-    await window.loadSiteContent(nextPage);
+  const contentPromise =
+    typeof window.loadSiteContent === "function"
+      ? window.loadSiteContent(nextPage)
+      : Promise.resolve();
+
+  // Resources rebuilds DOM from CMS before the radial wheel mounts - must wait.
+  // Other pages ship usable HTML; CMS hydrate can finish during/after the wipe.
+  const mustAwaitContent = ns === "resources" || has("[data-radial-slider-init]");
+  if (mustAwaitContent) {
+    await contentPromise;
+  } else {
+    void contentPromise;
   }
 
+  const pending = [];
   if (typeof window.loadContacts === "function" && has("#executive-grid")) {
-    window.loadContacts();
+    pending.push(Promise.resolve(window.loadContacts()));
   }
   if (typeof window.loadOfficeHours === "function" && has("#office-hours")) {
-    window.loadOfficeHours();
+    pending.push(Promise.resolve(window.loadOfficeHours()));
   }
+  if (typeof window.loadGroupsPublic === "function" && has("#involved-navigator")) {
+    pending.push(Promise.resolve(window.loadGroupsPublic(nextPage)));
+  }
+  if (pending.length) await Promise.all(pending);
+
   // Build the wheel under the red cover so it isn't empty when the page reveals
   if (typeof window.initRadialCardsSlider === "function" && has("[data-radial-slider-init]")) {
     window.initRadialCardsSlider(nextPage);
-  }
-  if (typeof window.loadGroupsPublic === "function" && has("#involved-navigator")) {
-    window.loadGroupsPublic(nextPage);
   }
 }
 
@@ -106,7 +120,7 @@ function initPageEffects(next) {
   nextPage = next || document;
 
   if (typeof window.initFooterParallax === "function" && has("[data-footer-parallax]")) {
-    window.initFooterParallax();
+    window.initFooterParallax(nextPage);
   }
   if (typeof window.initOfficeLocator === "function" && has("[data-locator-init]")) {
     window.initOfficeLocator();
@@ -371,7 +385,7 @@ function pauseSiteScroll() {
   document.documentElement.style.setProperty("--overlay-nav-offset", `${navHeight}px`);
 
   if (lenis && typeof lenis.stop === "function") {
-    // Lenis owns scroll — freeze it in place. Avoid body position:fixed
+    // Lenis owns scroll - freeze it in place. Avoid body position:fixed
     // (that zeros window.scrollY and sent people back to the top on close).
     lenis.stop();
     document.documentElement.classList.add("is-overlay-scroll-locked", "is-lenis-overlay-lock");
@@ -481,6 +495,10 @@ function initBarbaNavUpdate(data) {
 }
 
 function closeMobileNav() {
+  if (typeof window.closeSiteNav === "function") {
+    window.closeSiteNav();
+    return;
+  }
   if (typeof window.jQuery === "undefined") return;
   window.jQuery(".navbar-collapse").collapse("hide");
 }

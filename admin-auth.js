@@ -125,7 +125,7 @@ function createAdminAuth({ config, configPath, isProduction }) {
     if (isProduction) {
       throw new Error("config.sessionSecret is still a placeholder. Set a random secret before production.");
     }
-    console.warn("[security] Using a placeholder session secret — fine for local dev only.");
+    console.warn("[security] Using a placeholder session secret - fine for local dev only.");
   }
   if (!config.adminPasswordHash) {
     throw new Error("config.adminPasswordHash is missing.");

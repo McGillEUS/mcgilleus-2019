@@ -35,7 +35,7 @@ Copy the example config if needed:
 cp config.example.json config.local.json
 ```
 
-Default credentials (local/dev only — change immediately on any shared server):
+Default credentials (local/dev only - change immediately on any shared server):
 
 - Username: `admin`
 - Password: `eus-admin-change-me`

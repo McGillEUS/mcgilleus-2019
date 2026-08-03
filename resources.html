@@ -30,24 +30,27 @@
     </div>
   </div>
 
-  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" data-theme-nav>
+  <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top" data-theme-nav data-site-nav-root>
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html" data-barba-update data-site-brand-link>
         <img src="img/eus_logo.png" alt="McGill EUS" class="navbar-logo" data-site-brand-logo>
       </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <button class="nav-toggle" type="button" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Open menu" data-nav-toggle>
+        <span class="nav-toggle__bars" aria-hidden="true">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto" data-site-nav>
-          <li class="nav-item"><a class="nav-link" href="index.html" data-barba-update>Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="getting-involved.html" data-barba-update>Get Involved</a></li>
-          <li class="nav-item"><a class="nav-link active" href="resources.html" data-barba-update aria-current="page">Resources</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact-us.html" data-barba-update>Contact Us</a></li>
-          <li class="nav-item">
-            <a class="nav-link roombooking-button" href="https://roombookings.mcgilleus.ca" target="_blank" rel="noopener noreferrer" data-barba-update>Book a Room</a>
-          </li>
-        </ul>
+      <div class="navbar-collapse" id="navbarResponsive" data-nav-panel>
+        <div class="site-nav-sheet">
+          <ul class="navbar-nav ml-auto" data-site-nav>
+            <li class="nav-item" style="--nav-i:0"><a class="nav-link" href="index.html" data-barba-update><span class="nav-link__label">Home</span></a></li>
+            <li class="nav-item" style="--nav-i:1"><a class="nav-link" href="getting-involved.html" data-barba-update><span class="nav-link__label">Get Involved</span></a></li>
+            <li class="nav-item" style="--nav-i:2"><a class="nav-link active" href="resources.html" data-barba-update aria-current="page"><span class="nav-link__label">Resources</span></a></li>
+            <li class="nav-item" style="--nav-i:3"><a class="nav-link" href="contact-us.html" data-barba-update><span class="nav-link__label">Contact Us</span></a></li>
+            <li class="nav-item" style="--nav-i:4"><a class="nav-link roombooking-button" href="https://roombookings.mcgilleus.ca" target="_blank" rel="noopener noreferrer"><span class="nav-link__label">Book a Room</span></a></li>
+          </ul>
+        </div>
       </div>
     </div>
   </nav>
@@ -84,7 +87,7 @@
                 </div>
                 <div class="resources-card__info">
                   <h3 class="resources-card__title">Frostbite</h3>
-                  <p class="resources-card__text">Student-run ice cream in the McConnell EUS Mall — hype tracks, great staff, and excellent scoops.</p>
+                  <p class="resources-card__text">Student-run ice cream in the McConnell EUS Mall - hype tracks, great staff, and excellent scoops.</p>
                   <a class="resources-card__cta" href="https://frostbite.mcgilleus.ca" target="_blank" rel="noopener noreferrer">Visit website →</a>
                 </div>
               </article>
@@ -108,7 +111,7 @@
                 </div>
                 <div class="resources-card__info">
                   <h3 class="resources-card__title">The G-Store</h3>
-                  <p class="resources-card__text">Student must-haves — from coffee to notebooks — at a reasonable price on downtown campus.</p>
+                  <p class="resources-card__text">Student must-haves - from coffee to notebooks - at a reasonable price on downtown campus.</p>
                   <a class="resources-card__cta" href="https://www.instagram.com/eusgstore/" target="_blank" rel="noopener noreferrer">Open Instagram →</a>
                 </div>
               </article>
@@ -144,6 +147,7 @@
           </div>
           <button type="button" data-radial-slider-control="next" class="radial-gsap-slider__control-btn is--next">Next</button>
         </div>
+        <p class="radial-gsap-slider__hint">Swipe sideways · scroll the page normally</p>
       </div>
     </section>
 
@@ -410,6 +414,7 @@
   <script src="js/content-public.js"></script>
   <script src="js/home.js"></script>
   <script src="js/eus-loader.js"></script>
+  <script src="js/site-nav.js"></script>
   <script src="js/page-transition.js"></script>
 </body>
 </html>
