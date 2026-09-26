@@ -222,16 +222,48 @@ function sanitizeHours(input) {
   }
   const instagramLabel =
     String(input.instagramLabel || "Check Instagram").trim() || "Check Instagram";
+  const existingHours = readHours();
+  const subtitle = Object.prototype.hasOwnProperty.call(input, "subtitle")
+    ? String(input.subtitle || "").trim()
+    : String(existingHours.subtitle || "").trim();
+  const note = Object.prototype.hasOwnProperty.call(input, "note")
+    ? String(input.note || "").trim()
+    : String(existingHours.note || "").trim();
+  const incomingSlots = Array.isArray(input.slots) ? input.slots : existingHours.slots;
+  const slots = sanitizeHourSlots(incomingSlots);
 
   return {
     timezone,
     title,
+    subtitle,
+    note,
     summerMode,
     summerMessage,
     instagramUrl,
     instagramLabel,
     days,
+    slots,
   };
+}
+
+function sanitizeHourSlots(input) {
+  const timePattern = /^([01]?\d|2[0-3]):([0-5]\d)$/;
+  const allowedDays = new Set(DAY_ORDER);
+  if (!Array.isArray(input)) return [];
+
+  return input
+    .map((slot) => {
+      const day = String(slot.day || "").trim().toLowerCase();
+      const name = String(slot.name || "").trim();
+      const role = String(slot.role || "").trim();
+      const start = String(slot.start || "").trim();
+      const end = String(slot.end || "").trim();
+      if (!allowedDays.has(day) || !name || !timePattern.test(start) || !timePattern.test(end)) {
+        return null;
+      }
+      return { day, name, role, start, end };
+    })
+    .filter(Boolean);
 }
 
 function requireAuth(req, res, next) {

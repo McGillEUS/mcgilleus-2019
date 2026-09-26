@@ -1,7 +1,9 @@
 {
   "timezone": "America/Montreal",
-  "title": "Office hours",
-  "summerMode": true,
+  "title": "Exec Office Hours",
+  "subtitle": "Fall 2026",
+  "note": "The EUS Office is open from 10 am to 5 pm every weekday and is located in the McConnell Building, EUS Mall, room 7.",
+  "summerMode": false,
   "summerMessage": "Over the summer, our office hours change often. Check Instagram for the most up-to-date schedule.",
   "instagramUrl": "https://www.instagram.com/mcgilleus/",
   "instagramLabel": "Check Instagram",
@@ -55,5 +57,25 @@
       "close": "",
       "closed": true
     }
+  ],
+  "slots": [
+    { "day": "monday", "name": "Célestin", "role": "comms", "start": "10:30", "end": "11:30" },
+    { "day": "monday", "name": "Isabella", "role": "events", "start": "10:30", "end": "11:30" },
+    { "day": "monday", "name": "Uri", "role": "student life", "start": "12:30", "end": "13:30" },
+    { "day": "monday", "name": "Simon", "role": "finance", "start": "15:00", "end": "16:00" },
+    { "day": "monday", "name": "Ollie", "role": "academic", "start": "15:00", "end": "16:00" },
+    { "day": "tuesday", "name": "Rachel", "role": "services", "start": "10:00", "end": "11:00" },
+    { "day": "tuesday", "name": "Hannah", "role": "internal", "start": "13:00", "end": "14:00" },
+    { "day": "tuesday", "name": "Gaspard", "role": "external", "start": "14:30", "end": "15:30" },
+    { "day": "wednesday", "name": "Isabella", "role": "events", "start": "10:30", "end": "11:30" },
+    { "day": "wednesday", "name": "Hannah", "role": "internal", "start": "13:00", "end": "14:00" },
+    { "day": "wednesday", "name": "Emile", "role": "president", "start": "13:00", "end": "14:30" },
+    { "day": "wednesday", "name": "Rachel", "role": "services", "start": "14:30", "end": "15:30" },
+    { "day": "thursday", "name": "Gaspard", "role": "external", "start": "10:00", "end": "11:30" },
+    { "day": "thursday", "name": "Ollie", "role": "academic", "start": "11:30", "end": "12:30" },
+    { "day": "thursday", "name": "Célestin", "role": "comms", "start": "12:00", "end": "13:00" },
+    { "day": "thursday", "name": "Emile", "role": "president", "start": "14:30", "end": "16:00" },
+    { "day": "thursday", "name": "Simon", "role": "finance", "start": "15:00", "end": "16:00" },
+    { "day": "friday", "name": "Uri", "role": "student life", "start": "11:00", "end": "12:00" }
   ]
 }

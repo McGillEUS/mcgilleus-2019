@@ -242,6 +242,14 @@
           <input name="title" required>
         </label>
         <label>
+          Subtitle
+          <input name="subtitle" placeholder="Fall 2026">
+        </label>
+        <label class="full-width">
+          Note
+          <textarea name="note" rows="3" placeholder="The EUS Office is open from 10 am to 5 pm every weekday..."></textarea>
+        </label>
+        <label>
           Timezone
           <input name="timezone" required>
         </label>
@@ -271,6 +279,12 @@
 
         <div id="hours-days-wrap">
           <div id="hours-days" class="hours-days"></div>
+          <div id="hours-slots-wrap" class="hours-slots-wrap">
+            <h3>Exec slots</h3>
+            <p class="muted">Named hours from the weekly poster. Times use 24-hour <code>HH:MM</code>.</p>
+            <div id="hours-slots" class="hours-slots"></div>
+            <button type="button" id="add-hour-slot" class="secondary">Add slot</button>
+          </div>
         </div>
         <button type="submit">Save office hours</button>
         <p id="hours-status" class="status" hidden></p>

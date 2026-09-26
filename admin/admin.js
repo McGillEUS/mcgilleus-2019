@@ -17,7 +17,10 @@ const adminStatus = document.getElementById("admin-status");
 const logoutBtn = document.getElementById("logout-btn");
 const hoursForm = document.getElementById("hours-form");
 const hoursDays = document.getElementById("hours-days");
+const hoursSlots = document.getElementById("hours-slots");
+const addHourSlotBtn = document.getElementById("add-hour-slot");
 const hoursStatus = document.getElementById("hours-status");
+const SLOT_DAYS = ["monday", "tuesday", "wednesday", "thursday", "friday"];
 const createGroupForm = document.getElementById("create-group-form");
 const groupsList = document.getElementById("groups-list");
 const groupsStatus = document.getElementById("groups-status");
@@ -143,8 +146,64 @@ function syncSummerModeUi() {
   if (daysWrap) daysWrap.hidden = enabled;
 }
 
+function slotDayOptions(selected) {
+  return SLOT_DAYS.map((day) => {
+    const label = day.charAt(0).toUpperCase() + day.slice(1);
+    const isSelected = day === selected ? " selected" : "";
+    return `<option value="${day}"${isSelected}>${label}</option>`;
+  }).join("");
+}
+
+function appendHourSlotRow(slot = {}) {
+  if (!hoursSlots) return;
+  const row = document.createElement("div");
+  row.className = "hours-slot-row";
+  row.innerHTML = `
+    <label>
+      Day
+      <select name="slot-day">${slotDayOptions(slot.day || "monday")}</select>
+    </label>
+    <label>
+      Name
+      <input name="slot-name" value="${escapeHtml(slot.name || "")}" required>
+    </label>
+    <label>
+      Role
+      <input name="slot-role" value="${escapeHtml(slot.role || "")}" placeholder="comms">
+    </label>
+    <label>
+      Start
+      <input name="slot-start" value="${escapeHtml(slot.start || "")}" placeholder="10:30" pattern="([01]?\\d|2[0-3]):[0-5]\\d" required>
+    </label>
+    <label>
+      End
+      <input name="slot-end" value="${escapeHtml(slot.end || "")}" placeholder="11:30" pattern="([01]?\\d|2[0-3]):[0-5]\\d" required>
+    </label>
+    <button type="button" class="secondary remove-slot">Remove</button>
+  `;
+  row.querySelector(".remove-slot").addEventListener("click", () => row.remove());
+  hoursSlots.appendChild(row);
+}
+
+function collectHourSlots() {
+  if (!hoursSlots) return [];
+  return Array.from(hoursSlots.querySelectorAll(".hours-slot-row")).map((row) => ({
+    day: row.querySelector('select[name="slot-day"]').value,
+    name: row.querySelector('input[name="slot-name"]').value.trim(),
+    role: row.querySelector('input[name="slot-role"]').value.trim(),
+    start: row.querySelector('input[name="slot-start"]').value.trim(),
+    end: row.querySelector('input[name="slot-end"]').value.trim(),
+  }));
+}
+
 function renderHoursForm(data) {
   hoursForm.title.value = data.title || "Office hours";
+  if (hoursForm.subtitle) {
+    hoursForm.subtitle.value = data.subtitle || "";
+  }
+  if (hoursForm.note) {
+    hoursForm.note.value = data.note || "";
+  }
   hoursForm.timezone.value = data.timezone || "America/Montreal";
   if (hoursForm.summerMode) {
     hoursForm.summerMode.checked = Boolean(data.summerMode);
@@ -194,6 +253,11 @@ function renderHoursForm(data) {
     syncDisabled();
     hoursDays.appendChild(row);
   });
+
+  if (hoursSlots) {
+    hoursSlots.innerHTML = "";
+    (data.slots || []).forEach((slot) => appendHourSlotRow(slot));
+  }
 }
 
 async function loadHours() {
@@ -676,6 +740,9 @@ const summerModeToggle = document.getElementById("summer-mode-toggle");
 if (summerModeToggle) {
   summerModeToggle.addEventListener("change", syncSummerModeUi);
 }
+if (addHourSlotBtn) {
+  addHourSlotBtn.addEventListener("click", () => appendHourSlotRow());
+}
 
 hoursForm.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -696,6 +763,8 @@ hoursForm.addEventListener("submit", async (event) => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         title: hoursForm.title.value.trim(),
+        subtitle: hoursForm.subtitle ? hoursForm.subtitle.value.trim() : "",
+        note: hoursForm.note ? hoursForm.note.value.trim() : "",
         timezone: hoursForm.timezone.value.trim(),
         summerMode: Boolean(hoursForm.summerMode && hoursForm.summerMode.checked),
         summerMessage: hoursForm.summerMessage
@@ -708,6 +777,7 @@ hoursForm.addEventListener("submit", async (event) => {
           ? hoursForm.instagramLabel.value.trim()
           : "",
         days,
+        slots: collectHourSlots(),
       }),
     });
     showHoursStatus("Office hours saved");

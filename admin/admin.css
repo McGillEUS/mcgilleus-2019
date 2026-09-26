@@ -670,6 +670,31 @@ button.danger:hover {
   background: #fff;
 }
 
+.hours-slots-wrap {
+  margin-top: 1.25rem;
+  display: grid;
+  gap: 0.75rem;
+}
+
+.hours-slots-wrap h3 {
+  margin: 0;
+}
+
+.hours-slots {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.hours-slot-row {
+  display: grid;
+  grid-template-columns: 140px 1fr 1fr 110px 110px auto;
+  gap: 0.75rem;
+  align-items: end;
+  padding: 0.85rem;
+  border: 1px solid var(--line);
+  background: #fff;
+}
+
 .hours-day-row .inline {
   margin-bottom: 0.35rem;
 }
@@ -704,6 +729,10 @@ button.danger:hover {
 
   .hours-day-row strong {
     grid-column: 1 / -1;
+  }
+
+  .hours-slot-row {
+    grid-template-columns: 1fr 1fr;
   }
 
   .contact-card,
