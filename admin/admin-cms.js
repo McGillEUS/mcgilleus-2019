@@ -171,15 +171,7 @@
   async function loadInvolved() {
     const data = await window.api("/api/admin/involved");
     involvedForm.title.value = data.hero?.title || "";
-    involvedForm.lead.value = data.hero?.lead || "";
-    involvedForm.ctaLabel.value = data.hero?.ctaLabel || "";
     involvedForm.mainTitle.value = data.mainTitle || "";
-    involvedForm.resultsTitle.value = data.quizUi?.resultsTitle || "";
-    involvedForm.emptyMessage.value = data.quizUi?.emptyMessage || "";
-    involvedForm.retakeLabel.value = data.quizUi?.retakeLabel || "";
-    involvedForm.browseLabel.value = data.quizUi?.browseLabel || "";
-    involvedForm.closeLabel.value = data.quizUi?.closeLabel || "";
-    involvedForm.progressTemplate.value = data.quizUi?.progressTemplate || "";
   }
 
   async function loadResources() {
@@ -389,18 +381,8 @@
         body: JSON.stringify({
           hero: {
             title: involvedForm.title.value.trim(),
-            lead: involvedForm.lead.value.trim(),
-            ctaLabel: involvedForm.ctaLabel.value.trim(),
           },
           mainTitle: involvedForm.mainTitle.value.trim(),
-          quizUi: {
-            resultsTitle: involvedForm.resultsTitle.value.trim(),
-            emptyMessage: involvedForm.emptyMessage.value.trim(),
-            retakeLabel: involvedForm.retakeLabel.value.trim(),
-            browseLabel: involvedForm.browseLabel.value.trim(),
-            closeLabel: involvedForm.closeLabel.value.trim(),
-            progressTemplate: involvedForm.progressTemplate.value.trim(),
-          },
         }),
       });
       showCmsStatus("involved", "Get Involved page saved");

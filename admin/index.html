@@ -86,7 +86,7 @@
       <button type="button" class="admin-tab" data-admin-tab="contact">Contact</button>
       <button type="button" class="admin-tab" data-admin-tab="involved">Get Involved</button>
       <button type="button" class="admin-tab" data-admin-tab="resources">Resources</button>
-      <button type="button" class="admin-tab" data-admin-tab="quiz">Quiz</button>
+      <button type="button" class="admin-tab" data-admin-tab="quiz" hidden>Quiz</button>
       <button type="button" class="admin-tab" data-admin-tab="hours">Hours</button>
       <button type="button" class="admin-tab" data-admin-tab="contacts">Contacts</button>
       <button type="button" class="admin-tab" data-admin-tab="groups">Groups</button>
@@ -196,21 +196,10 @@
 
     <section class="panel admin-panel" data-admin-panel="involved">
       <h2>Get Involved page</h2>
-      <p class="muted">Hero copy and quiz UI labels. Groups themselves are under Groups.</p>
+      <p class="muted">Page titles. Groups themselves are under Groups.</p>
       <form id="involved-form" class="cms-form">
         <label>Hero title <input name="title" required></label>
-        <label>Hero lead <textarea name="lead" rows="3"></textarea></label>
-        <label>Quiz button label <input name="ctaLabel" required></label>
         <label>Directory title <input name="mainTitle" required></label>
-        <fieldset>
-          <legend>Quiz UI</legend>
-          <label>Results title <input name="resultsTitle"></label>
-          <label>Empty message <textarea name="emptyMessage" rows="2"></textarea></label>
-          <label>Retake label <input name="retakeLabel"></label>
-          <label>Browse label <input name="browseLabel"></label>
-          <label>Close label <input name="closeLabel"></label>
-          <label>Progress template <input name="progressTemplate" placeholder="Question {n} of {total}"></label>
-        </fieldset>
         <button type="submit">Save Get Involved</button>
         <p class="status" data-cms-status="involved" hidden></p>
       </form>
@@ -334,7 +323,7 @@
 
     <section class="panel admin-panel" data-admin-panel="groups">
       <h2>Add group</h2>
-      <p class="muted">Groups appear on Get Involved. Tags power the “Find a group for you” quiz.</p>
+      <p class="muted">Groups appear on Get Involved.</p>
       <form id="create-group-form" class="contact-form">
         <label>Name <input name="name" required></label>
         <label>

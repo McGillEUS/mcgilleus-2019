@@ -255,19 +255,6 @@
     applyWhiteBgForTransparentLogos(mount, ".involved-collage-card");
   }
 
-  function formatDescription(text) {
-    const trimmed = String(text || "").trim();
-    if (!trimmed) {
-      return `<p class="involved-modal__desc involved-modal__desc--empty">More info coming soon.</p>`;
-    }
-    return trimmed
-      .split(/\n\s*\n/)
-      .map((block) => block.trim())
-      .filter(Boolean)
-      .map((block) => `<p class="involved-modal__desc">${escapeHtml(block).replace(/\n/g, "<br>")}</p>`)
-      .join("");
-  }
-
   function createSmoothScroller(getEl, isActive) {
     let target = 0;
     let current = 0;
@@ -488,27 +475,22 @@
           )}</h2>
         </div>
       </div>
-      <div class="involved-modal__scroll" data-modal-scroll>
-        <div class="involved-modal__layout${photos.length ? " has-photos" : ""}">
-          <div class="involved-modal__copy">
-            <div class="involved-modal__desc-wrap">
-              ${formatDescription(group.description)}
-            </div>
-          </div>
-          ${
-            photos.length
-              ? `<aside class="involved-modal__photos" aria-label="Photos">
+      ${
+        photos.length
+          ? `<div class="involved-modal__scroll" data-modal-scroll>
+        <div class="involved-modal__layout has-photos">
+          <aside class="involved-modal__photos" aria-label="Photos">
                   ${photos
                     .map(
                       (src) =>
                         `<img src="${escapeHtml(src)}" alt="" loading="lazy" class="involved-modal__photo">`
                     )
                     .join("")}
-                </aside>`
-              : ""
-          }
+          </aside>
         </div>
-      </div>
+      </div>`
+          : ""
+      }
       <div class="involved-modal__footer">
         ${
           actions ||
@@ -564,11 +546,6 @@
     const navMount = page.querySelector?.("#involved-navigator") || root.querySelector?.("#involved-navigator");
     const collageMount =
       page.querySelector?.("#involved-collage") || root.querySelector?.("#involved-collage");
-    const quizRoot = page.querySelector?.("#involved-quiz") || root.querySelector?.("#involved-quiz");
-    const quizButton =
-      page.querySelector?.("[data-open-groups-quiz]") ||
-      root.querySelector?.("[data-open-groups-quiz]");
-
     if (!navMount && !collageMount) return;
 
     try {
@@ -576,15 +553,6 @@
 
       renderNavigator(navMount, groups, openGroupModal);
       renderCollage(collageMount, groups, openGroupModal);
-
-      if (quizRoot && typeof window.initGroupsQuiz === "function") {
-        window.initGroupsQuiz({
-          root: quizRoot,
-          groups,
-          onOpenGroup: openGroupModal,
-          openButton: quizButton,
-        });
-      }
     } catch (error) {
       if (navMount) {
         navMount.innerHTML = `<p class="involved-error">Couldn’t load groups. Is the server running?</p>`;

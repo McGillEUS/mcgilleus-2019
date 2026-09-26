@@ -216,12 +216,6 @@
     const title = page.querySelector(".involved-hero__copy h1");
     if (title && data.hero?.title) title.textContent = data.hero.title;
 
-    const lead = page.querySelector(".involved-hero__lead");
-    if (lead && data.hero?.lead) lead.textContent = data.hero.lead;
-
-    const cta = page.querySelector("[data-open-groups-quiz]");
-    if (cta && data.hero?.ctaLabel) cta.textContent = data.hero.ctaLabel;
-
     const mainTitle = page.querySelector(".involved-main__title");
     if (mainTitle && data.mainTitle) mainTitle.textContent = data.mainTitle;
 
@@ -403,12 +397,6 @@
     if (involved) applyInvolved(involved, root);
     if (contactPage) applyContactPage(contactPage, root);
     if (resources) applyResources(resources, root);
-
-    // Quiz config only matters on involved; prefetch in background elsewhere.
-    if (typeof window.loadQuizConfig === "function") {
-      const quizPromise = window.loadQuizConfig();
-      if (ns === "involved") await quizPromise;
-    }
 
     window.__siteContent = { site, home, involved, contactPage, resources };
     return window.__siteContent;
