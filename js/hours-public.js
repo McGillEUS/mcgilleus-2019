@@ -148,6 +148,7 @@ function renderExecHoursWidget(data) {
         </div>
         ${renderStatusBadge()}
       </div>
+      <p class="exec-hours__swipe">Swipe to see each weekday</p>
       <div class="exec-hours__grid">
         ${columns}
       </div>

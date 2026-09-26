@@ -1172,6 +1172,18 @@ hr.light {
 
 /* Media queries */
 @media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: clip;
+  }
+
+  img,
+  video,
+  iframe,
+  svg {
+    max-width: 100%;
+  }
+
   .display-4 {
     font-size: 200%;
   }
