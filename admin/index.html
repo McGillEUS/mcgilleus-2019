@@ -133,7 +133,7 @@
 
     <section class="panel admin-panel" data-admin-panel="home">
       <h2>Home page</h2>
-      <p class="muted">Hero copy, CTAs, and intro loader imagery.</p>
+      <p class="muted">Hero copy, CTAs, and the homepage intro animation (kept on the site even when off).</p>
       <form id="home-form" class="cms-form">
         <fieldset>
           <legend>Hero</legend>
@@ -150,6 +150,11 @@
         </fieldset>
         <fieldset>
           <legend>Loader</legend>
+          <label class="inline summer-mode__toggle">
+            <input type="checkbox" name="loaderEnabled">
+            Play intro animation when the homepage opens
+          </label>
+          <p class="muted">When off, visitors go straight to the homepage. The animation is not deleted and can be turned back on here.</p>
           <label>Shot image paths (one per line) <textarea name="loaderShots" rows="5"></textarea></label>
           <label>Final image <input name="finalImage"></label>
           <label class="file-row">Upload final image <input type="file" accept="image/*" data-upload-into="finalImage"></label>

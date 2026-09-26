@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-intro-loader="off">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,9 +57,10 @@
       if (!el) return;
       var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       var mobile = window.matchMedia && window.matchMedia("(max-width: 767.98px)").matches;
+      var cmsOff = document.documentElement.getAttribute("data-intro-loader") !== "on";
       var seen = false;
       try { seen = sessionStorage.getItem("eus-intro-played") === "1"; } catch (e) {}
-      if (reduce || mobile || seen) {
+      if (reduce || mobile || seen || cmsOff) {
         el.setAttribute("hidden", "");
         el.classList.remove("is--loading");
         el.classList.add("is--done");

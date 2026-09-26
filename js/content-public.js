@@ -143,7 +143,14 @@
     });
   }
 
+  function applyIntroLoaderFlag(home) {
+    const enabled = Boolean(home?.loader?.enabled);
+    window.__EUS_LOADER_ENABLED__ = enabled;
+    document.documentElement.setAttribute("data-intro-loader", enabled ? "on" : "off");
+  }
+
   function applyHome(home, root) {
+    applyIntroLoaderFlag(home);
     if (!home?.hero) return;
     const scope = root || document;
     const hero = scope.querySelector?.(".home-hero") || document.querySelector(".home-hero");

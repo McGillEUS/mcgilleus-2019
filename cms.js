@@ -114,6 +114,7 @@ function createCms({ ROOT, requireAuth, GROUP_CATEGORIES, GROUP_TAGS, makeImageU
         })).filter((cta) => cta.label && cta.href),
       },
       loader: {
+        enabled: loader.enabled === true || loader.enabled === "true",
         shots: (Array.isArray(loader.shots) ? loader.shots : [])
           .map((shot) => sanitizeImagePath(shot))
           .filter(Boolean)

@@ -32,6 +32,7 @@
     ]
   },
   "loader": {
+    "enabled": false,
     "shots": [
       "img/getinvolved/rocket.jpg",
       "img/getinvolved/baja.jpg",

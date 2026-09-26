@@ -133,6 +133,9 @@
     homeForm.eyebrow.value = data.hero?.eyebrow || "";
     homeForm.title.value = data.hero?.title || "";
     homeForm.lead.value = data.hero?.lead || "";
+    if (homeForm.loaderEnabled) {
+      homeForm.loaderEnabled.checked = Boolean(data.loader?.enabled);
+    }
     homeForm.loaderShots.value = (data.loader?.shots || []).join("\n");
     homeForm.finalImage.value = data.loader?.finalImage || "";
     homeForm.brandLeft.value = data.loader?.brandLeft || "McGill";
@@ -302,6 +305,7 @@
             ctas,
           },
           loader: {
+            enabled: Boolean(homeForm.loaderEnabled && homeForm.loaderEnabled.checked),
             shots: homeForm.loaderShots.value
               .split("\n")
               .map((line) => line.trim())

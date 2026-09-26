@@ -90,7 +90,10 @@ async function initPageContent(next) {
 
   // Resources rebuilds DOM from CMS before the radial wheel mounts - must wait.
   // Other pages ship usable HTML; CMS hydrate can finish during/after the wipe.
-  const mustAwaitContent = ns === "resources" || has("[data-radial-slider-init]");
+  const mustAwaitContent =
+    ns === "resources" ||
+    ns === "home" ||
+    has("[data-radial-slider-init]");
   if (mustAwaitContent) {
     await contentPromise;
   } else {

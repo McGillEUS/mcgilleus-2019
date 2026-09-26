@@ -12,7 +12,19 @@
     );
   }
 
+  function isLoaderEnabled() {
+    const homeLoader = window.__siteContent?.home?.loader;
+    if (homeLoader && Object.prototype.hasOwnProperty.call(homeLoader, "enabled")) {
+      return homeLoader.enabled === true;
+    }
+    if (typeof window.__EUS_LOADER_ENABLED__ === "boolean") {
+      return window.__EUS_LOADER_ENABLED__;
+    }
+    return document.documentElement.getAttribute("data-intro-loader") === "on";
+  }
+
   function shouldPlay() {
+    if (!isLoaderEnabled()) return false;
     if (typeof window.matchMedia === "function") {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return false;
     }
@@ -289,5 +301,6 @@
 
   window.runEusLoader = runEusLoader;
   window.shouldPlayEusLoader = shouldPlay;
+  window.isEusLoaderEnabled = isLoaderEnabled;
   window.stopEusLoaderBleed = stopBleedSync;
 })();
